@@ -1,0 +1,58 @@
+* {
+    -fx-primary : #2A2E37;
+    -fx-secondary : #FFFF8D;
+    -fx-primarytext : #B2B2B2;
+}
+
+.tab{
+    -fx-background-color: -fx-primary;
+    -fx-pref-height : 60;
+    -fx-pref-width : 272;
+}
+
+.tab-header-background{
+    -fx-background-color: -fx-primary;
+}
+
+.root{
+    -fx-background-color: -fx-primary;
+}
+
+.tab-label{
+    -fx-text-fill: -fx-secondary;
+}
+
+.button{
+         -fx-text-fill: -fx-primarytext;
+         -fx-background-color: -fx-primary;
+         -fx-font-size: 12pt;
+         -fx-border-color: -fx-secondary;
+         -fx-border-width: 2 2 2 2;
+         -fx-border-radius: 15px;
+}
+.table-view .column-header-background{
+    -fx-background-color: -fx-primary;
+}
+.table-view .column-header-background .label{
+    -fx-text-fill: -fx-primary;
+}
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+.table-row-cell{
+     -fx-background-color: -fx-primary;
+     -fx-border-color: transparent;
+     -fx-table-cell-border-color: transparent;
+ }
+ .table-row-cell:selected {
+     -fx-background-color: white;
+     -fx-text-fill: -fx-primary;
+     -fx-background-insets: 0;
+ }
+ .table-row-cell:selected .table-cell{
+     -fx-text-fill: -fx-primary;
+ }
+.DeleteDiscWind{
+    -fx-background-color: -fx-primary;
+
+}

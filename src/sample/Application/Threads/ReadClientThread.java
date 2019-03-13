@@ -1,18 +1,18 @@
 package sample.Application.Threads;
 
-import sample.Application.FileOpe.Readers.DiscReader;
+import sample.Application.FileOpe.Readers.ClientReader;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class ReadingFileThread {
+public class ReadClientThread {
 
     public void threadRun() {
-        Runnable runFileRead = () -> {
-            System.out.println("Second thread is running..."
+        Runnable runClientRead = () -> {
+            System.out.println("Fourth thread is running..."
                     + "\n- file read complete.");
             try {
-                DiscReader readC = new DiscReader();
+                ClientReader readC = new ClientReader();
                 readC.readDFile();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -21,7 +21,7 @@ public class ReadingFileThread {
                 e.printStackTrace();
             }
         };
-        Thread t2 = new Thread(runFileRead);
-        t2.start();
+        Thread t4 = new Thread(runClientRead);
+        t4.start();
     }
 }

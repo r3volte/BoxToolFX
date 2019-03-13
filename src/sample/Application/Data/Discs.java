@@ -1,9 +1,9 @@
 package sample.Application.Data;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
 
 @Getter
 @Setter

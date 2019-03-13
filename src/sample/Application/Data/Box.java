@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 public class Box {
 
-    private final String name;
+    //private final String name;
     private final int number;
     private final int width;
     private final int height;

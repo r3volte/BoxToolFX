@@ -3,8 +3,11 @@ package sample.Application.Databases;
 import sample.Application.Data.Discs;
 import java.util.ArrayList;
 
-public interface InMemoryDiscsDB {
+public class InMemoryDiscsDB {
 
-    ArrayList<Discs> discs = new ArrayList<>();
+    private static ArrayList<Discs> discs = new ArrayList<Discs>();
 
+    public ArrayList<Discs> getDiscs() {
+        return discs;
+    }
 }

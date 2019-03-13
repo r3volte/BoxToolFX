@@ -7,5 +7,5 @@ import java.util.ArrayList;
 
 public interface InMemoryBoxDB {
 
-    ArrayList<Box> boc = new ArrayList<>();
+    ArrayList<Box> box = new ArrayList<>();
 }

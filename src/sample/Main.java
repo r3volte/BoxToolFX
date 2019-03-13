@@ -1,9 +1,13 @@
 package sample;
 
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import javafx.application.Application;
-import sample.Application.Threads.ReadingFileThread;
+import sample.Application.FileOpe.Writters.DiscWritter;
+import sample.Application.Threads.RunThreads;
 import sample.GUI.GUI;
 import java.io.IOException;
+
 
 public class Main{
 
@@ -17,7 +21,8 @@ public class Main{
         };
         Thread t1 = new Thread(guiRun);
         t1.start();
-        ReadingFileThread t2 = new ReadingFileThread();
-        t2.threadRun();
+        RunThreads runThreads = new RunThreads();
+        runThreads.runThreads();
+
     }
 }

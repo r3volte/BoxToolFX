@@ -13,7 +13,9 @@ import javafx.scene.text.Text;
 import sample.Application.Data.Discs;
 import sample.Application.Databases.InMemoryDiscsDB;
 
-public class AddDiscController extends Controller implements InMemoryDiscsDB {
+public class AddDiscController extends Controller {
+
+    private InMemoryDiscsDB discsDB = new InMemoryDiscsDB();
 
     @FXML
     public JFXButton clearButton, submitButton;
@@ -45,8 +47,8 @@ public class AddDiscController extends Controller implements InMemoryDiscsDB {
             double height = Double.parseDouble(hField.getText());
             double heightX2 = height * 2;
             double weight = Double.parseDouble(wField.getText());
-            discs.add(new Discs(number, diameter, height, heightX2, weight));
-            discs.forEach(c -> System.out.println(c));
+            discsDB.getDiscs().add(new Discs(number, diameter, height, heightX2, weight));
+            discsDB.getDiscs().forEach(c -> System.out.println(c));
         } catch (NumberFormatException e){
             JFXDialogLayout layout;layout = new JFXDialogLayout();
             Button oks = new Button("Okey");

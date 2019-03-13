@@ -1,19 +1,19 @@
 package sample.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import sample.Application.Databases.InMemoryDiscsDB;
 import sample.Application.ObservLists.ObservDiscList;
 
 
-public class Controller implements InMemoryDiscsDB {
+public class Controller {
 
     @FXML
     public TableColumn numberCol, dCol, hCol, h2Col, wCol;

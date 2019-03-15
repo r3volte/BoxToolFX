@@ -10,4 +10,8 @@ public class InMemoryDiscsDB {
     public ArrayList<Discs> getDiscs() {
         return discs;
     }
+
+    public void setDiscs(ArrayList<Discs> discs) {
+        InMemoryDiscsDB.discs = discs;
+    }
 }

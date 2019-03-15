@@ -16,15 +16,16 @@ import sample.Application.Databases.InMemoryDiscsDB;
 public class AddDiscController extends Controller {
 
     private InMemoryDiscsDB discsDB = new InMemoryDiscsDB();
+    private Controller controller = new Controller();
 
     @FXML
     public JFXButton clearButton, submitButton;
-
     public TextField numField;
     public TextField diaField;
     public TextField hField;
     public TextField wField;
     public StackPane rootPane;
+
 
     @FXML
     void initialize(){
@@ -48,9 +49,11 @@ public class AddDiscController extends Controller {
             double heightX2 = height * 2;
             double weight = Double.parseDouble(wField.getText());
             discsDB.getDiscs().add(new Discs(number, diameter, height, heightX2, weight));
+            controller.discTable.refresh();
             discsDB.getDiscs().forEach(c -> System.out.println(c));
         } catch (NumberFormatException e){
             JFXDialogLayout layout;layout = new JFXDialogLayout();
+            layout.setStyle("-fx-background-color: #2A2E37;");
             Button oks = new Button("Okey");
             JFXDialog error = new JFXDialog(rootPane,layout,JFXDialog.DialogTransition.TOP);
             oks.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent c )->{

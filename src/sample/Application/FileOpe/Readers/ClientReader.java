@@ -9,13 +9,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ClientReader implements InMemoryClientsDB {
+public class ClientReader  {
 
-    private String fileIn = "clients.txt";
+    private String fileIn = "clients.csv";
     private String emptyLine = null;
 
     private FileReader fileReader = new FileReader(fileIn);
     private BufferedReader bufferedReader = new BufferedReader(fileReader);
+    private InMemoryClientsDB clientsDB = new InMemoryClientsDB();
 
     public void readDFile() throws IOException {
 
@@ -32,11 +33,11 @@ public class ClientReader implements InMemoryClientsDB {
             int drumPcsPerBox = Integer.parseInt(temp[7]);
             String montInst = temp[8];
 
-            clients.add(new Clients(id,name,discConf,discPcsPerBox,coatedConf,coatedPcsPerBox,drumConf,drumPcsPerBox,montInst));
-            //name, discConf, discPcsPerBox,coatedConf,coatedPcsPerBox,drumConf,drumPcsPerBox,montInst
+            clientsDB.getClients().add(new Clients(id,name,discConf,discPcsPerBox,
+                    coatedConf,coatedPcsPerBox,drumConf,drumPcsPerBox,montInst));
         }
         bufferedReader.close();
-        clients.forEach(c -> System.out.println(c));
+        clientsDB.getClients().forEach(c -> System.out.println(c));
     }
 
     public ClientReader() throws FileNotFoundException {

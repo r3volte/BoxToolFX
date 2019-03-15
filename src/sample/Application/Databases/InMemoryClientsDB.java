@@ -3,7 +3,15 @@ package sample.Application.Databases;
 import sample.Application.Data.Clients;
 import java.util.ArrayList;
 
-public interface InMemoryClientsDB {
+public class InMemoryClientsDB {
 
-    ArrayList<Clients> clients = new ArrayList<>();
+    private static ArrayList<Clients> clients = new ArrayList<>();
+
+    public ArrayList<Clients> getClients() {
+        return clients;
+    }
+
+    public void setClients(ArrayList<Clients> clients) {
+        InMemoryClientsDB.clients = clients;
+    }
 }

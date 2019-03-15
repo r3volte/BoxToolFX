@@ -2,16 +2,16 @@ package sample.Application.FileOpe.Readers;
 
 import sample.Application.Data.Box;
 import sample.Application.Databases.InMemoryBoxDB;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class BoxReader implements InMemoryBoxDB {
+public class BoxReader {
 
-    private String fileIn = "box.txt";
+    private String fileIn = "box.csv";
     private String emptyLine = null;
+    private InMemoryBoxDB boxDB = new InMemoryBoxDB();
 
     private FileReader fileReader = new FileReader(fileIn);
     private BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -25,10 +25,10 @@ public class BoxReader implements InMemoryBoxDB {
             int width = Integer.parseInt(temp[1]);
             int height = Integer.parseInt(temp[2]);
 
-            box.add(new Box(number, width, height));
+            boxDB.getBox().add(new Box(number, width, height));
         }
         bufferedReader.close();
-        box.forEach(c -> System.out.println(c));
+        boxDB.getBox().forEach(c -> System.out.println(c));
     }
 
 

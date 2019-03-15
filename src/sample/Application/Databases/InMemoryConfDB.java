@@ -5,7 +5,15 @@ import sample.Application.Data.Configurations;
 
 import java.util.ArrayList;
 
-public interface InMemoryConfDB {
+public class InMemoryConfDB {
 
-    ArrayList<Configurations> conf = new ArrayList<>();
+   private static ArrayList<Configurations> conf = new ArrayList<>();
+
+    public static ArrayList<Configurations> getConf() {
+        return conf;
+    }
+
+    public static void setConf(ArrayList<Configurations> conf) {
+        InMemoryConfDB.conf = conf;
+    }
 }

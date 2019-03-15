@@ -9,11 +9,14 @@ import javafx.scene.text.Text;
 
 public class ErrorMessage extends AddDiscController{
 
+    private AddDiscController erc = new AddDiscController();
+
 
     public void errorDialog(){
         JFXDialogLayout layout;layout = new JFXDialogLayout();
+        layout.setStyle("-fx-background-color: #2A2E37;");
         JFXButton ok = new JFXButton("Okey");
-        JFXDialog error = new JFXDialog(rootPane,layout,JFXDialog.DialogTransition.TOP);
+        JFXDialog error = new JFXDialog(erc.rootPane,layout,JFXDialog.DialogTransition.TOP);
         ok.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent c )->{
             error.close();
         });

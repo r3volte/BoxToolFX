@@ -1,6 +1,7 @@
 package sample.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextArea;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -9,9 +10,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import lombok.Getter;
+import sample.Application.Databases.InMemoryDiscsDB;
 import sample.Application.ObservLists.ObservBoxList;
 import sample.Application.ObservLists.ObservClientList;
 import sample.Application.ObservLists.ObservDiscList;
+import sample.Controller.Events.AddDiscEvents;
+import sample.Controller.Events.SearchEvent;
 
 
 public class Controller {
@@ -31,6 +35,8 @@ public class Controller {
     private ObservClientList observClientList;
     public JFXButton addDisc;
     public JFXButton refresh;
+    public JFXButton searchButton;
+    public JFXTextArea discCount;
 
 
     @FXML
@@ -44,9 +50,11 @@ public class Controller {
         discTable.setItems(dataD);
         boxTable.setItems(dataB);
         clientTable.setItems(dataC);
+        discCount();
 
         addDisc.addEventHandler(MouseEvent.MOUSE_CLICKED, add);
         refresh.addEventHandler(MouseEvent.MOUSE_CLICKED, refreshTab);
+        searchButton.addEventHandler(MouseEvent.MOUSE_CLICKED, search);
     }
 
     private void initDiscTableContent(){
@@ -91,7 +99,7 @@ public class Controller {
 
 
     EventHandler<MouseEvent> add = add -> {
-    MouseEvents events = new MouseEvents();
+    AddDiscEvents events = new AddDiscEvents();
     events.addDisc();
     };
     EventHandler<MouseEvent> refreshTab = refresh -> {
@@ -99,5 +107,16 @@ public class Controller {
         System.out.println("Refresh");
     };
 
+    EventHandler<MouseEvent> search = add -> {
+        SearchEvent events = new SearchEvent();
+        events.searchDisc();
+    };
 
+
+    private void discCount(){
+        InMemoryDiscsDB db;
+        db = new InMemoryDiscsDB();
+        int count = db.getDiscs().size();
+        discCount.appendText(String.valueOf(count));
+    }
 }

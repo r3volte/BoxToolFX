@@ -1,13 +1,14 @@
-package sample.Controller;
+package sample.Controller.TableInits;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import sample.Controller.AddDiscController;
 
 
-public class ErrorMessage extends AddDiscController{
+public class ErrorMessage extends AddDiscController {
 
     private AddDiscController erc = new AddDiscController();
 

@@ -2,7 +2,9 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -11,6 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <JFXTabPane id="mainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../../../Theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Controller">
    <tabs>
@@ -26,8 +29,24 @@
                         <VBox id="optionDiscPanel" prefHeight="200.0" prefWidth="120.0" BorderPane.alignment="CENTER">
                            <children>
                               <JFXButton id="addDisc" fx:id="addDisc" prefHeight="100.0" prefWidth="150.0" text="Add Disc" />
-                              <JFXButton id="searchButton" prefHeight="100.0" prefWidth="150.0" text="Search" />
+                              <JFXButton fx:id="searchButton" prefHeight="100.0" prefWidth="150.0" text="Search" />
                               <JFXButton fx:id="refresh" prefHeight="100.0" prefWidth="150.0" text="Refresh" />
+                              <Label text="Discs:" textFill="#ffff8d">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="40.0" top="90.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <JFXTextArea fx:id="discCount" editable="false" labelFloat="true" maxHeight="36.0" maxWidth="50.0" prefHeight="36.0" prefWidth="50.0">
+                                 <VBox.margin>
+                                    <Insets left="35.0" />
+                                 </VBox.margin>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </JFXTextArea>
                            </children>
                         </VBox>
                      </left>
@@ -116,7 +135,7 @@
                         <VBox id="optionDiscPanel" prefHeight="200.0" prefWidth="120.0" BorderPane.alignment="CENTER">
                            <children>
                               <JFXButton fx:id="cclientRefreshButton" prefHeight="50.0" prefWidth="150.0" text="Refresh" />
-                              <JFXButton fx:id="addClient" prefHeight="50.0" prefWidth="150.0" text="Add Box">
+                              <JFXButton fx:id="addClient" prefHeight="50.0" prefWidth="150.0" text="Add Client">
                                  <VBox.margin>
                                     <Insets top="30.0" />
                                  </VBox.margin>

@@ -79,8 +79,13 @@
 .jfx-layout-body, .jfx-layout-actions{
     -fx-background-color: -fx-primary;   
 }
-.jfx-layout-body .label
-{
+.jfx-layout-body .label {
     -fx-text-fill: white;
     -fx-padding: 20px 0 0 0;
+}
+
+.text-area{
+    -fx-text-fill: white;
+    -fx-font-alignment: center;
+    -fx-background-color: -fx-primary;
 }

@@ -1,4 +1,4 @@
-package sample.Controller;
+package sample.Controller.Events;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MouseEvents {
+public class AddDiscEvents {
     public Parent root;
 
     public void addDisc() {
@@ -21,7 +21,5 @@ public class MouseEvents {
             e.printStackTrace();
         }
     }
-
-
 }
 

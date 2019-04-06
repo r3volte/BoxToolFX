@@ -32,5 +32,6 @@ public class DiscReader {
         }
         bufferedReader.close();
         discsDB.getDiscs().forEach(c -> System.out.println(c));
+        System.out.println(discsDB.getDiscs().size());
     }
 }

@@ -53,5 +53,39 @@
      -fx-text-fill: -fx-primary;
  }
 .table-column{
-    -fx-alignment: CENTER;
+    -fx-alignment: CENTER; 
+}
+    -fx-text-fill: -fx-primarytext;
+    -fx-font-size : 12pt;
+    -jfx-focus-color: -fx-secondary;
+    -fx-text-fill: derive(-fx-secondary, 20%);
+}
+.dialog-button{
+    -fx-border-color: -fx-color-1;
+    -fx-text-fill: white;
+    -fx-border-radius: 1px;
+    -fx-background-radius: 3px;
+}
+/*JFXDialog styling*/
+.jfx-layout-heading
+{
+    -fx-background-color: -fx-color-1;
+}
+.jfx-layout-heading .label
+{
+    -fx-text-fill: white;
+    -fx-font-size: 12pt;
+}
+.jfx-layout-body, .jfx-layout-actions{
+    -fx-background-color: -fx-primary;   
+}
+.jfx-layout-body .label
+{
+    -fx-text-fill: white;
+    -fx-padding: 20px 0 0 0;
+}
+.text-area{
+    -fx-text-fill: white;
+    -fx-font-alignment: center;
+    -fx-background-color: -fx-primary;
 }

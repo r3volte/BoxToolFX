@@ -11,5 +11,5 @@ import lombok.ToString;
 @ToString
 public class Configurations {
 
-    private final String name;
+  private final String name;
 }

@@ -1,45 +1,59 @@
 package sample.Application.FileOpe.Readers;
 
-
-import sample.Application.Data.Clients;
-import sample.Application.Databases.InMemoryClientsDB;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class ClientReader  {
+import sample.Application.Data.Clients;
+import sample.Application.Databases.InMemoryClientsDB;
 
-    private String fileIn = "clients.csv";
-    private String emptyLine = null;
+public class ClientReader implements FileRead {
 
-    private FileReader fileReader = new FileReader(fileIn);
-    private BufferedReader bufferedReader = new BufferedReader(fileReader);
-    private InMemoryClientsDB clientsDB = new InMemoryClientsDB();
+  private static final Logger logger = Logger.getLogger(ClientReader.class.getName());
+  private String emptyLine = null;
+  private InMemoryClientsDB clientsDB = new InMemoryClientsDB();
 
-    public void readDFile() throws IOException {
+  @Override
+  public void readFile(String fileIn) {
+    FileReader fileReader = null;
+    try {
+      fileReader = new FileReader(fileIn);
+    } catch (FileNotFoundException e) {
+      logger.log(Level.FINE, "File not found. Please restart program!");
+    }
+    BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-        while ((emptyLine = bufferedReader.readLine()) !=null ){
-
-            String[] temp = emptyLine.split(",");
-            int id = Integer.parseInt(temp[0]);
-            String name = temp[1];
-            String discConf = temp[2];
-            int discPcsPerBox = Integer.parseInt(temp[3]);
-            String coatedConf = temp[4];
-            int coatedPcsPerBox = Integer.parseInt(temp[5]);
-            String drumConf = temp[6];
-            int drumPcsPerBox = Integer.parseInt(temp[7]);
-            String montInst = temp[8];
-
-            clientsDB.getClients().add(new Clients(id,name,discConf,discPcsPerBox,
-                    coatedConf,coatedPcsPerBox,drumConf,drumPcsPerBox,montInst));
+    while (true) {
+      try {
+        if ((emptyLine = bufferedReader.readLine()) == null) {
+          break;
         }
-        bufferedReader.close();
-        clientsDB.getClients().forEach(c -> System.out.println(c));
-    }
+      } catch (IOException e) {
+        logger.log(Level.SEVERE, e.toString(), e);
+      }
 
-    public ClientReader() throws FileNotFoundException {
+      String[] temp = emptyLine.split(",");
+      int id = Integer.parseInt(temp[0]);
+      String name = temp[1];
+      String discConf = temp[2];
+      int discPcsPerBox = Integer.parseInt(temp[3]);
+      String coatedConf = temp[4];
+      int coatedPcsPerBox = Integer.parseInt(temp[5]);
+      String drumConf = temp[6];
+      int drumPcsPerBox = Integer.parseInt(temp[7]);
+      String montInst = temp[8];
+
+      clientsDB.getClients().add(new Clients(id, name, discConf, discPcsPerBox,
+              coatedConf, coatedPcsPerBox, drumConf, drumPcsPerBox, montInst));
     }
+    try {
+      bufferedReader.close();
+    } catch (IOException e) {
+      logger.log(Level.SEVERE, e.toString(), e);
+    }
+    clientsDB.showDB();
+  }
 }

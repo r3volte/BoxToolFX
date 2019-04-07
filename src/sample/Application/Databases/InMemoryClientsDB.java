@@ -1,17 +1,22 @@
 package sample.Application.Databases;
 
-import sample.Application.Data.Clients;
 import java.util.ArrayList;
+import java.util.List;
 
-public class InMemoryClientsDB {
+import sample.Application.Data.Clients;
 
-    private static ArrayList<Clients> clients = new ArrayList<>();
 
-    public ArrayList<Clients> getClients() {
-        return clients;
-    }
+public class InMemoryClientsDB implements InMemoryDB {
 
-    public void setClients(ArrayList<Clients> clients) {
-        InMemoryClientsDB.clients = clients;
-    }
+  private static List<Clients> clients = new ArrayList<>();
+
+  public List<Clients> getClients() {
+    return clients;
+  }
+
+  @Override
+  public void showDB() {
+    clients.stream().map(x -> x.toString())
+            .forEach(x -> System.out.println(x));
+  }
 }

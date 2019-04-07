@@ -1,27 +1,23 @@
 package sample.Application.Threads;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import sample.Application.FileOpe.Readers.BoxReader;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 public class ReadBoxFileThread {
 
-    public void threadRun() {
-        Runnable runBoxRead = () -> {
-            System.out.println("Third thread is running..."
-                    + "\n- file read complete.");
-            try {
-                BoxReader readC = new BoxReader();
-                readC.readDFile();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                System.out.println("Can't read file !");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        };
-        Thread t3 = new Thread(runBoxRead);
-        t3.start();
-    }
+  private static final Logger logger = Logger.getLogger(ReadBoxFileThread.class.getName());
+
+  public void threadRun() {
+    Runnable runBoxRead = () -> {
+      logger.log(Level.FINE, "Third thread is running..."
+              + "\n- file read complete.");
+      BoxReader readC = new BoxReader();
+      readC.readFile("box.csv");
+    };
+    Thread t3 = new Thread(runBoxRead);
+    t3.start();
+  }
 }

@@ -1,0 +1,24 @@
+
+Ö"squid:ClassVariableVisibilityCheck5"XMake searchButton a static final constant or non-public and provide accessors if needed.(®øê<
+å"squid:ClassVariableVisibilityCheck/"WMake clientTable a static final constant or non-public and provide accessors if needed.(Õ–˝Ú8ñÔ˝¥ü-
+é"squid:ClassVariableVisibilityCheck."TMake boxTable a static final constant or non-public and provide accessors if needed.(Ëﬂ«÷¸ˇˇˇˇ8ñÔ˝¥ü-
+É"squid:ClassVariableVisibilityCheck6"UMake discCount a static final constant or non-public and provide accessors if needed.(Ωñô∂
+à"squid:ClassVariableVisibilityCheck-"UMake discTable a static final constant or non-public and provide accessors if needed.(—›Ì≥˚ˇˇˇˇ
+Ü"squid:ClassVariableVisibilityCheck3"SMake addDisc a static final constant or non-public and provide accessors if needed.(ñøâê˙ˇˇˇˇ
+Ü"squid:ClassVariableVisibilityCheck4"SMake refresh a static final constant or non-public and provide accessors if needed.(ÇˇΩΩ¯ˇˇˇˇ
+Ñ"squid:ClassVariableVisibilityCheck"PMake dCol a static final constant or non-public and provide accessors if needed.(Õ‡Õ/8–ªîµü-
+ä"squid:ClassVariableVisibilityCheck"PMake hCol a static final constant or non-public and provide accessors if needed.(‡ã≈µ¯ˇˇˇˇ8–ªîµü-
+Ö"squid:ClassVariableVisibilityCheck"QMake h2Col a static final constant or non-public and provide accessors if needed.(¸ªá8–ªîµü-
+ä"squid:ClassVariableVisibilityCheck "PMake wCol a static final constant or non-public and provide accessors if needed.(Ëˆ≠ª˘ˇˇˇˇ8–ªîµü-
+ç"squid:ClassVariableVisibilityCheck!"SMake sizeCol a static final constant or non-public and provide accessors if needed.(∑Ê¯Û˛ˇˇˇˇ8–ªîµü-
+â"squid:ClassVariableVisibilityCheck""TMake widthCol a static final constant or non-public and provide accessors if needed.(Ï—«ü8–ªîµü-
+è"squid:ClassVariableVisibilityCheck#"UMake heightCol a static final constant or non-public and provide accessors if needed.(˘ñ˘ü¯ˇˇˇˇ8–ªîµü-
+ã"squid:ClassVariableVisibilityCheck$"QMake idCol a static final constant or non-public and provide accessors if needed.(¡ûàï˘ˇˇˇˇ8–ªîµü-
+ç"squid:ClassVariableVisibilityCheck%"SMake nameCol a static final constant or non-public and provide accessors if needed.(§Ê‚’˛ˇˇˇˇ8–ªîµü-
+ë"squid:ClassVariableVisibilityCheck&"WMake discConfCol a static final constant or non-public and provide accessors if needed.(â˙÷ßˇˇˇˇˇ8–ªîµü-
+ä"squid:ClassVariableVisibilityCheck'"VMake discPcsCol a static final constant or non-public and provide accessors if needed.(¥Ô£38–ªîµü-
+é"squid:ClassVariableVisibilityCheck("YMake coatedConfCol a static final constant or non-public and provide accessors if needed.(¿ªª∑8–ªîµü-
+ç"squid:ClassVariableVisibilityCheck)"XMake coatedPcsCol a static final constant or non-public and provide accessors if needed.(¸ˇ™≠8–ªîµü-
+í"squid:ClassVariableVisibilityCheck*"XMake drumsConfCol a static final constant or non-public and provide accessors if needed.(üÌòÔ˚ˇˇˇˇ8–ªîµü-
+ë"squid:ClassVariableVisibilityCheck+"WMake drumsPcsCol a static final constant or non-public and provide accessors if needed.(àÙ∫à¯ˇˇˇˇ8–ªîµü-
+à"squid:ClassVariableVisibilityCheck,"SMake montCol a static final constant or non-public and provide accessors if needed.(†°øì8–ªîµü-

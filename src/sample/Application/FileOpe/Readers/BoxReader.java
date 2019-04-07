@@ -1,41 +1,52 @@
 package sample.Application.FileOpe.Readers;
 
-import sample.Application.Data.Box;
-import sample.Application.Databases.InMemoryBoxDB;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class BoxReader {
+import sample.Application.Data.Box;
+import sample.Application.Databases.InMemoryBoxDB;
 
-    private String fileIn = "box.csv";
-    private String emptyLine = null;
-    private InMemoryBoxDB boxDB = new InMemoryBoxDB();
+public class BoxReader implements FileRead {
 
-    private FileReader fileReader = new FileReader(fileIn);
-    private BufferedReader bufferedReader = new BufferedReader(fileReader);
+  private static final Logger logger = Logger.getLogger(BoxReader.class.getName());
+  private String emptyLine = null;
+  private InMemoryBoxDB boxDB = new InMemoryBoxDB();
 
-    public void readDFile() throws IOException {
 
-        while ((emptyLine = bufferedReader.readLine()) !=null ){
-
-            String[] temp = emptyLine.split(",");
-            int number = Integer.parseInt(temp[0]);
-            int width = Integer.parseInt(temp[1]);
-            int height = Integer.parseInt(temp[2]);
-
-            boxDB.getBox().add(new Box(number, width, height));
+  @Override
+  public void readFile(String fileIn) {
+    FileReader fileReader = null;
+    try {
+      fileReader = new FileReader(fileIn);
+    } catch (FileNotFoundException e) {
+      logger.log(Level.FINE, "File not found. Please restart program!");
+    }
+    BufferedReader bufferedReader = new BufferedReader(fileReader);
+    while (true) {
+      try {
+        if ((emptyLine = bufferedReader.readLine()) == null) {
+          break;
         }
-        bufferedReader.close();
-        boxDB.getBox().forEach(c -> System.out.println(c));
+      } catch (IOException e) {
+        logger.log(Level.SEVERE, e.toString(), e);
+      }
+
+      String[] temp = emptyLine.split(",");
+      int number = Integer.parseInt(temp[0]);
+      int width = Integer.parseInt(temp[1]);
+      int height = Integer.parseInt(temp[2]);
+
+      boxDB.getBox().add(new Box(number, width, height));
     }
-
-
-
-
-
-
-    public BoxReader() throws FileNotFoundException {
+    try {
+      bufferedReader.close();
+    } catch (IOException e) {
+      logger.log(Level.SEVERE, e.toString(), e);
     }
+    boxDB.showDB();
+  }
 }

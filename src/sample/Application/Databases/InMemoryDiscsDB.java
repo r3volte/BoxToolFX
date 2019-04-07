@@ -1,17 +1,23 @@
 package sample.Application.Databases;
 
-import sample.Application.Data.Discs;
 import java.util.ArrayList;
+import java.util.List;
 
-public class InMemoryDiscsDB {
+import sample.Application.Data.Discs;
 
-    private static ArrayList<Discs> discs = new ArrayList<Discs>();
 
-    public ArrayList<Discs> getDiscs() {
-        return discs;
-    }
+public class InMemoryDiscsDB implements InMemoryDB {
 
-    public void setDiscs(ArrayList<Discs> discs) {
-        InMemoryDiscsDB.discs = discs;
-    }
+  private static List<Discs> discs = new ArrayList<>();
+
+  public List<Discs> getDiscs() {
+    return discs;
+  }
+
+  @Override
+  public void showDB() {
+    discs.stream().map(x -> x.toString())
+                  .forEach(x -> System.out.println(x));
+  }
+
 }

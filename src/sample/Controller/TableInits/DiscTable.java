@@ -2,21 +2,21 @@
 //
 //import javafx.collections.ObservableList;
 //import javafx.scene.control.cell.PropertyValueFactory;
-//import sample.Application.ObservLists.ObservDiscList;
+//import sample.Application.ObservLists.ObDiscList;
 //import sample.Controller.Controller;
 //
 //public class DiscTable {
 //
 //    private Controller controller = new Controller();
 //    private ObservableList data;
-//    private ObservDiscList observDiscList;
+//    private ObDiscList observDiscList;
 //
 //    public ObservableList getData() {
 //        return data;
 //    }
 //
 //    public void initTableContent(){
-//        observDiscList = new ObservDiscList();
+//        observDiscList = new ObDiscList();
 //        data = observDiscList.getData();
 //    }
 //

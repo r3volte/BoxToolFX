@@ -49,3 +49,5 @@ M
 src/sample/GUI/InterImpl.java,4\d\4de24ebb4a8e6a9176e6e838a0d9dc46e4c5664a
 `
 0src/sample/Application/Selecting/SelectDisc.java,0\1\0125a3eb7fbf8639e7dd7ffcc4c33475be355d55
+b
+2src/sample/Controller/Events/ErrorPanelEvents.java,6\6\66349b1d327a4e257dea5bcf3a80437df1620b08

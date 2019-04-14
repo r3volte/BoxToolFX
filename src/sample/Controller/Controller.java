@@ -1,15 +1,16 @@
 package sample.Controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextArea;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import lombok.Getter;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import lombok.Getter;
+import javafx.scene.layout.AnchorPane;
 import sample.Application.Databases.InMemoryDiscsDB;
 import sample.Application.ObservLists.ObBoxList;
 import sample.Application.ObservLists.ObClientList;
@@ -25,11 +26,15 @@ public class Controller {
 
   @FXML
   @Getter
-  public TableColumn numberCol;
-  public TableColumn dCol;
-  public TableColumn hCol;
-  public TableColumn h2Col;
-  public TableColumn wCol;
+  private TableColumn numberCol;
+  @FXML
+  private TableColumn dCol;
+  @FXML
+  private TableColumn hCol;
+  @FXML
+  private TableColumn h2Col;
+  @FXML
+  private TableColumn wCol;
   public TableColumn sizeCol;
   public TableColumn widthCol;
   public TableColumn heightCol;
@@ -42,16 +47,31 @@ public class Controller {
   public TableColumn drumsConfCol;
   public TableColumn drumsPcsCol;
   public TableColumn montCol;
-  public TableView discTable;
-  public TableView boxTable;
-  public TableView clientTable;
+  @FXML
+  @Getter
+  private TableView discTable;
+  //public TableView boxTable;
+  @FXML
+  private TableView clientTable;
   private ObservableList dataD;
   private ObservableList dataB;
   private ObservableList dataC;
-  public JFXButton addDisc;
-  public JFXButton refresh;
-  public JFXButton searchButton;
-  public JFXTextArea discCount;
+  @FXML
+  private AnchorPane pnl_discs;
+  @FXML
+  private AnchorPane pnl_clients;
+  @FXML
+  private JFXButton addDisc;
+  @FXML
+  private JFXButton refresh;
+  @FXML
+  private JFXButton searchButton;
+  @FXML
+  private JFXButton dButton;
+  @FXML
+  private JFXButton cButton;
+  @FXML
+  private TextField discCount;
   private static final Logger logger = Logger.getLogger(Controller.class.getName());
 
 
@@ -59,18 +79,20 @@ public class Controller {
   void initialize() {
     initDiscTableContent();
     initDiscData();
-    initBoxTableContent();
-    initBoxData();
+    //initBoxTableContent();
+    //initBoxData();
     initClientTableContent();
     initClientData();
     discTable.setItems(dataD);
-    boxTable.setItems(dataB);
+    //boxTable.setItems(dataB);
     clientTable.setItems(dataC);
     discCount();
 
     addDisc.addEventHandler(MouseEvent.MOUSE_CLICKED, add);
     refresh.addEventHandler(MouseEvent.MOUSE_CLICKED, refreshTab);
     searchButton.addEventHandler(MouseEvent.MOUSE_CLICKED, search);
+    dButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initDiscPanel);
+    cButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initClientPanel);
   }
 
   private void initDiscTableContent() {
@@ -108,27 +130,31 @@ public class Controller {
     dataC = obClientList.getData();
   }
 
-  private void initBoxData() {
-    sizeCol.setCellValueFactory(new PropertyValueFactory("number"));
-    heightCol.setCellValueFactory(new PropertyValueFactory("height"));
-    widthCol.setCellValueFactory(new PropertyValueFactory("width"));
-  }
+//  private void initBoxData() {
+//    sizeCol.setCellValueFactory(new PropertyValueFactory("number"));
+//    heightCol.setCellValueFactory(new PropertyValueFactory("height"));
+//    widthCol.setCellValueFactory(new PropertyValueFactory("width"));
+//  }
 
 
-  EventHandler<MouseEvent> add = adder -> {
+  private EventHandler<MouseEvent> add = adder -> {
     AddDiscEvents events = new AddDiscEvents();
     events.addDisc();
   };
-  EventHandler<MouseEvent> refreshTab = ref -> {
+  private EventHandler<MouseEvent> refreshTab = ref -> {
     discTable.refresh();
-    logger.log(Level.FINE,"Refresh");
+    logger.log(Level.FINE, "Refresh");
   };
 
-  EventHandler<MouseEvent> search = a -> {
+  private EventHandler<MouseEvent> search = a -> {
     SearchEvent events = new SearchEvent();
     events.searchDisc();
   };
 
+  private EventHandler<MouseEvent> initDiscPanel = idp -> pnl_discs.toFront();
+
+
+  private EventHandler<MouseEvent> initClientPanel = icp -> pnl_clients.toFront();
 
   private void discCount() {
     InMemoryDiscsDB db;

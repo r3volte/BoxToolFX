@@ -20,22 +20,23 @@ public class InterImpl extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("boxtool.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("NewWindows.fxml"));
     Controller controller = new Controller();
     FXMLLoader loader = new FXMLLoader();
     loader.setController(controller);
-    primaryStage.setTitle("Box Tool 1.1");
-    primaryStage.setScene(new Scene(root, 1100, 700));
+    primaryStage.setTitle("Box Tool 1.2 Alpha");
+    primaryStage.setScene(new Scene(root, 1300, 800));
     primaryStage.show();
+    primaryStage.setResizable(false);
 
   }
 
   @Override
   public void stop() {
     logger.log(Level.FINE, "Stage is closing");
-    // Save files...
-    saveDisc();
-    saveBox();
+    //Save files...
+    //saveDisc();
+    //saveBox();
     //saveClients();
 
   }

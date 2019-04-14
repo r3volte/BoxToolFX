@@ -10,15 +10,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class AddDiscEvents {
+public class ErrorPanelEvents {
+
   Parent root;
   private static final Logger logger = Logger.getLogger(AddDiscEvents.class.getName());
 
-  public void addDisc() {
+  public void errorPanel() {
     try {
-      root = FXMLLoader.load(getClass().getClassLoader().getResource("sample/GUI/adddisc.fxml"));
+      root = FXMLLoader.load(getClass().getClassLoader().getResource("sample/GUI/errorPanel.fxml"));
       Stage stage = new Stage();
-      stage.setTitle("Add disc to list");
+      stage.setTitle("Error");
       stage.setScene(new Scene(root, 450, 250));
       stage.show();
     } catch (IOException e) {
@@ -26,4 +27,3 @@ public class AddDiscEvents {
     }
   }
 }
-

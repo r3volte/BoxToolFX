@@ -12,9 +12,9 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class Discs {
 
-  private final int number;
+  private int number;
   private final double diameter;
-  private final double height;
+    private final double height;
   private final double height2;
   private final double weight;
 
@@ -29,4 +29,5 @@ public class Discs {
     this.height2 = height2;
     this.weight = weight;
   }
+
 }

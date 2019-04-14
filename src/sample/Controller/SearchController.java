@@ -11,14 +11,15 @@ public class SearchController {
 
   @FXML
   @Getter
-  public JFXButton searchSubmit;
-  public TextField numField;
+  private JFXButton searchSubmit;
+  @FXML
+  private TextField numField;
 
 
   @FXML
   void initialize() {
 
-    searchSubmit.addEventHandler(MouseEvent.MOUSE_CLICKED, search);
+    //searchSubmit.addEventHandler(MouseEvent.MOUSE_CLICKED, search);
   }
 
 

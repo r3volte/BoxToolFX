@@ -15,8 +15,9 @@ import sample.Application.Databases.InMemoryDiscsDB;
 import sample.Application.ObservLists.ObBoxList;
 import sample.Application.ObservLists.ObClientList;
 import sample.Application.ObservLists.ObDiscList;
-import sample.Controller.Events.AddDiscEvents;
-import sample.Controller.Events.SearchEvent;
+import sample.Controller.Events.ClientEvents.AddClientEvents;
+import sample.Controller.Events.DiscEvents.AddDiscEvents;
+import sample.Controller.Events.DiscEvents.SearchEvent;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,7 +51,8 @@ public class Controller {
   @FXML
   @Getter
   private TableView discTable;
-  //public TableView boxTable;
+  @FXML
+  private TableView boxTable;
   @FXML
   private TableView clientTable;
   private ObservableList dataD;
@@ -61,7 +63,11 @@ public class Controller {
   @FXML
   private AnchorPane pnl_clients;
   @FXML
+  private AnchorPane pnl_boxes;
+  @FXML
   private JFXButton addDisc;
+  @FXML
+  private JFXButton addClient;
   @FXML
   private JFXButton refresh;
   @FXML
@@ -71,6 +77,8 @@ public class Controller {
   @FXML
   private JFXButton cButton;
   @FXML
+  private JFXButton bButton;
+  @FXML
   private TextField discCount;
   private static final Logger logger = Logger.getLogger(Controller.class.getName());
 
@@ -79,20 +87,22 @@ public class Controller {
   void initialize() {
     initDiscTableContent();
     initDiscData();
-    //initBoxTableContent();
-    //initBoxData();
+    initBoxTableContent();
+    initBoxData();
     initClientTableContent();
     initClientData();
     discTable.setItems(dataD);
-    //boxTable.setItems(dataB);
+    boxTable.setItems(dataB);
     clientTable.setItems(dataC);
     discCount();
 
-    addDisc.addEventHandler(MouseEvent.MOUSE_CLICKED, add);
+    addDisc.addEventHandler(MouseEvent.MOUSE_CLICKED, addD);
+    addClient.addEventHandler(MouseEvent.MOUSE_CLICKED, addC);
     refresh.addEventHandler(MouseEvent.MOUSE_CLICKED, refreshTab);
     searchButton.addEventHandler(MouseEvent.MOUSE_CLICKED, search);
     dButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initDiscPanel);
     cButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initClientPanel);
+    bButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initBoxPanel);
   }
 
   private void initDiscTableContent() {
@@ -130,16 +140,20 @@ public class Controller {
     dataC = obClientList.getData();
   }
 
-//  private void initBoxData() {
-//    sizeCol.setCellValueFactory(new PropertyValueFactory("number"));
-//    heightCol.setCellValueFactory(new PropertyValueFactory("height"));
-//    widthCol.setCellValueFactory(new PropertyValueFactory("width"));
-//  }
+  private void initBoxData() {
+    sizeCol.setCellValueFactory(new PropertyValueFactory("number"));
+    heightCol.setCellValueFactory(new PropertyValueFactory("height"));
+    widthCol.setCellValueFactory(new PropertyValueFactory("width"));
+  }
 
 
-  private EventHandler<MouseEvent> add = adder -> {
+  private EventHandler<MouseEvent> addD = adder -> {
     AddDiscEvents events = new AddDiscEvents();
     events.addDisc();
+  };
+  private EventHandler<MouseEvent> addC = adder -> {
+    AddClientEvents events = new AddClientEvents();
+    events.addClient();
   };
   private EventHandler<MouseEvent> refreshTab = ref -> {
     discTable.refresh();
@@ -151,10 +165,25 @@ public class Controller {
     events.searchDisc();
   };
 
-  private EventHandler<MouseEvent> initDiscPanel = idp -> pnl_discs.toFront();
+  private EventHandler<MouseEvent> initDiscPanel = idp ->{
+    pnl_discs.toFront();
+    pnl_discs.setVisible(true);
+    pnl_clients.setVisible(false);
+    pnl_boxes.setVisible(false);
+  };
 
-
-  private EventHandler<MouseEvent> initClientPanel = icp -> pnl_clients.toFront();
+  private EventHandler<MouseEvent> initClientPanel = icp -> {
+    pnl_clients.toFront();
+    pnl_clients.setVisible(true);
+    pnl_discs.setVisible(false);
+    pnl_boxes.setVisible(false);
+  };
+  private EventHandler<MouseEvent> initBoxPanel = ibp -> {
+    pnl_boxes.toFront();
+    pnl_boxes.setVisible(true);
+    pnl_discs.setVisible(false);
+    pnl_clients.setVisible(false);
+  };
 
   private void discCount() {
     InMemoryDiscsDB db;

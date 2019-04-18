@@ -13,7 +13,7 @@ import javafx.scene.layout.StackPane;
 
 import sample.Application.Data.Discs;
 import sample.Application.Databases.InMemoryDiscsDB;
-import sample.Controller.Events.ErrorPanelEvents;
+import sample.Controller.Events.DiscEvents.ErrorPanelEvents;
 
 public class AddDiscController extends Controller {
 

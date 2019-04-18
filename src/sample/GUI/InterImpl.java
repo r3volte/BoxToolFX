@@ -1,21 +1,15 @@
 package sample.GUI;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.Application.FileOpe.Writters.BoxFileWrite;
-import sample.Application.FileOpe.Writters.ClientFileWrite;
-import sample.Application.FileOpe.Writters.DiscFileWrite;
+import sample.Application.FileOpe.Writters.*;
 import sample.Controller.Controller;
 
 
 public class InterImpl extends Application {
-
-  private static final Logger logger = Logger.getLogger(InterImpl.class.getName());
 
 
   @Override
@@ -33,26 +27,25 @@ public class InterImpl extends Application {
 
   @Override
   public void stop() {
-    logger.log(Level.FINE, "Stage is closing");
     //Save files...
-    //saveDisc();
-    //saveBox();
-    //saveClients();
 
+    saveDiscsJSON();
+    saveBoxJSON();
+    saveClientJSON();
   }
 
-  private void saveDisc() {
-    DiscFileWrite discWrite = new DiscFileWrite();
-    discWrite.save("discs.csv");
+  private void saveDiscsJSON() {
+    DiscFileWrite discFileWrite = new DiscFileWrite();
+    discFileWrite.save("discs.json");
   }
 
-  private void saveBox() {
-    BoxFileWrite boxWrite = new BoxFileWrite();
-    boxWrite.save("box.csv");
+  private void saveBoxJSON() {
+    BoxFileWrite boxFileWrite = new BoxFileWrite();
+    boxFileWrite.save("box.json");
   }
 
-  private void saveClients() {
-    ClientFileWrite clientWrite = new ClientFileWrite();
-    clientWrite.save("clients.csv");
+  private void saveClientJSON() {
+    ClientFileWrite clientFileWrite = new ClientFileWrite();
+    clientFileWrite.save("clients.json");
   }
 }

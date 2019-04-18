@@ -1,21 +1,18 @@
 package sample.Application.Threads;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import sample.Application.FileOpe.Readers.ClientReader;
+import sample.Application.FileOpe.Readers.ClientFileRead;
+import sample.Application.FileOpe.Writters.Backups.BackupClientFileWrite;
 
 
 public class ReadClientThread {
 
-  private static final Logger logger = Logger.getLogger(ReadClientThread.class.getName());
 
   public void threadRun() {
     Runnable runClientRead = () -> {
-      logger.log(Level.FINE, "Fourth thread is running..."
-              + "\n- file read complete.");
-      ClientReader readC = new ClientReader();
-      readC.readFile("clients.csv");
+      ClientFileRead clientFileRead = new ClientFileRead();
+      clientFileRead.readFile("clients.json");
+      BackupClientFileWrite backupClientFileWrite = new BackupClientFileWrite();
+      backupClientFileWrite.save("Backup/backupClients.json");
     };
     Thread t4 = new Thread(runClientRead);
     t4.start();

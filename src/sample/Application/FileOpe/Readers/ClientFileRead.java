@@ -10,25 +10,17 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ClientFileRead implements FileRead {
 
   private Gson gson = new Gson();
-  private static final Logger logger = Logger.getLogger(ClientFileRead.class.getName());
   private InMemoryClientsDB inMemoryClientsDB = new InMemoryClientsDB();
 
 
   @Override
-  public void readFile(String fileIn) {
-    FileReader fileReader = null; //reading json file.
-    try {
-      fileReader = new FileReader(fileIn);
-    } catch (FileNotFoundException e) {
-      logger.log(Level.FINE, "File not found !");
-    }
-
+  public void readFile(String fileIn) throws FileNotFoundException {
+    FileReader fileReader; //reading json file.
+    fileReader = new FileReader(fileIn);
     Type listType = new TypeToken<ArrayList<Clients>>() {
     }.getType();
 

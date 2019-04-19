@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import sample.Application.FileOpe.Writters.*;
 import sample.Controller.Controller;
 
+import java.io.IOException;
+
 
 public class InterImpl extends Application {
 
@@ -18,7 +20,7 @@ public class InterImpl extends Application {
     Controller controller = new Controller();
     FXMLLoader loader = new FXMLLoader();
     loader.setController(controller);
-    primaryStage.setTitle("Box Tool 1.2 Alpha");
+    primaryStage.setTitle("Box Tool 1.0.3");
     primaryStage.setScene(new Scene(root, 1300, 800));
     primaryStage.show();
     primaryStage.setResizable(false);
@@ -36,16 +38,28 @@ public class InterImpl extends Application {
 
   private void saveDiscsJSON() {
     DiscFileWrite discFileWrite = new DiscFileWrite();
-    discFileWrite.save("discs.json");
+    try {
+      discFileWrite.save("discs.json");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   private void saveBoxJSON() {
     BoxFileWrite boxFileWrite = new BoxFileWrite();
-    boxFileWrite.save("box.json");
+    try {
+      boxFileWrite.save("box.json");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   private void saveClientJSON() {
     ClientFileWrite clientFileWrite = new ClientFileWrite();
-    clientFileWrite.save("clients.json");
+    try {
+      clientFileWrite.save("clients.json");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }

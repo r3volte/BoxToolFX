@@ -31,7 +31,7 @@
             </JFXButton>
             <FontAwesomeIconView fill="#da1a1a" glyphName="CHECK_CIRCLE_ALT" layoutX="460.0" layoutY="81.0" size="30" />
             <FontAwesomeIconView fill="#da1a1a" glyphName="TIMES_CIRCLE" layoutX="462.0" layoutY="173.0" size="30" />
-            <TextField fx:id="numberField" layoutX="159.0" layoutY="50.0" prefWidth="250.0" promptText="Enter client name">
+            <TextField fx:id="nameField" layoutX="159.0" layoutY="50.0" prefWidth="250.0" promptText="Enter client name">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
@@ -54,7 +54,7 @@
                </font>
             </Label>
             <ChoiceBox layoutX="167.0" layoutY="174.0" prefWidth="100.0" />
-            <ChoiceBox layoutX="328.0" layoutY="104.0" prefWidth="50.0" />
+            <ChoiceBox fx:id="discPcs" layoutX="328.0" layoutY="104.0" prefWidth="50.0" />
             <Label layoutX="48.0" layoutY="109.0" text="Disc confguration" textFill="#da1a1a">
                <font>
                   <Font name="Bauhaus 93" size="13.0" />
@@ -65,19 +65,19 @@
                   <Font name="Bauhaus 93" size="13.0" />
                </font>
             </Label>
-            <ChoiceBox layoutX="328.0" layoutY="139.0" prefWidth="50.0" />
+            <ChoiceBox fx:id="coatedPcs" layoutX="328.0" layoutY="139.0" prefWidth="50.0" />
             <Label layoutX="298.0" layoutY="179.0" text="PCS" textFill="#da1a1a">
                <font>
                   <Font name="Bauhaus 93" size="13.0" />
                </font>
             </Label>
-            <ChoiceBox layoutX="328.0" layoutY="174.0" prefWidth="50.0" />
+            <ChoiceBox fx:id="drumsPcs" layoutX="328.0" layoutY="174.0" prefWidth="50.0" />
             <Label layoutX="41.0" layoutY="214.0" text="Mounting instruction" textFill="#da1a1a">
                <font>
                   <Font name="Bauhaus 93" size="13.0" />
                </font>
             </Label>
-            <ChoiceBox layoutX="167.0" layoutY="209.0" prefWidth="50.0" />
+            <ChoiceBox fx:id="montIns" layoutX="167.0" layoutY="209.0" prefWidth="50.0" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

@@ -41,7 +41,6 @@ public class AddDiscController extends Controller {
   @Override
   @FXML
   void initialize() {
-
     clearButton.addEventHandler(MouseEvent.MOUSE_CLICKED, clear);
     submitButton.addEventHandler(MouseEvent.MOUSE_CLICKED, submitOk);
   }
@@ -64,7 +63,7 @@ public class AddDiscController extends Controller {
       controller.getDiscTable();
       discsDB.showDB();
     } catch (NumberFormatException e) {
-      errorPanelEvents.errorPanel();
+      errorPanelEvents.error();
       logger.log(Level.FINE, "Brak danych, wpisz je jeszcze raz");
     }
   };

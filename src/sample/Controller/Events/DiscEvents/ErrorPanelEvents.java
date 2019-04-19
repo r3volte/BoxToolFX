@@ -8,14 +8,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.Controller.Events.ErrorEvent;
 
 
-public class ErrorPanelEvents {
+public class ErrorPanelEvents implements ErrorEvent {
 
   Parent root;
-  private static final Logger logger = Logger.getLogger(AddDiscEvents.class.getName());
+  private static final Logger logger = Logger.getLogger(ErrorPanelEvents.class.getName());
 
-  public void errorPanel() {
+  public void error() {
     try {
       root = FXMLLoader.load(getClass().getClassLoader().getResource("sample/GUI/errorPanel.fxml"));
       Stage stage = new Stage();

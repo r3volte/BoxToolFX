@@ -11,12 +11,8 @@ d
 4src/sample/Application/Databases/InMemoryConfDB.java,c\f\cfbdb1f718f0207aaf83605cf13f8986b9e6b430
 e
 5src/sample/Application/Databases/InMemoryDiscsDB.java,d\a\daf1e4aee07d043a95a669792b92c0a020b3c845
-h
-8src/sample/Application/FileOpe/Readers/ClientReader.java,c\2\c24b298c1a1ad6ebd29407d2b64cf372158e2824
 D
 src/sample/Main.java,a\d\ad8e8bd4ff8f02a914e3d9ca1bcc32dfc8c503a9
-f
-6src/sample/Application/FileOpe/Readers/DiscReader.java,5\3\53b4330fcbe3dabb778e713f528f130471e6147a
 T
 $src/sample/Application/Data/Box.java,5\6\564d9bb11f7bc2fdb554a4dde7361a8197f1c815
 V
@@ -29,14 +25,8 @@ d
 4src/sample/Application/ObservLists/ObClientList.java,c\2\c2db49272e00672e280709f2a472df3a0101b875
 a
 1src/sample/Application/ObservLists/ObBoxList.java,a\4\a4c92b79531e0081c796c470f65ed418ec83b3f9
-e
-5src/sample/Application/FileOpe/Readers/BoxReader.java,f\6\f6c23ea1e13bbcf466377a56c925d7d9db25a450
 ^
 .src/sample/Application/Threads/RunThreads.java,6\b\6b9a05325c2bb72848073bfc16cb2531652e56c2
-_
-/src/sample/Controller/Events/AddDiscEvents.java,f\c\fc72d0cd2adcf57e17de51fcec040939b4a5fe83
-]
--src/sample/Controller/Events/SearchEvent.java,4\d\4d3866b9a06eda71c45cb1671312b95bc405f9a2
 e
 5src/sample/Application/Threads/ReadBoxFileThread.java,c\f\cfb0edc59446151d0c3617146996bdfcd68decd7
 \
@@ -49,7 +39,5 @@ M
 src/sample/GUI/InterImpl.java,4\d\4de24ebb4a8e6a9176e6e838a0d9dc46e4c5664a
 `
 0src/sample/Application/Selecting/SelectDisc.java,0\1\0125a3eb7fbf8639e7dd7ffcc4c33475be355d55
-b
-2src/sample/Controller/Events/ErrorPanelEvents.java,6\6\66349b1d327a4e257dea5bcf3a80437df1620b08
-n
->src/sample/Application/FileOpe/Writters/JsonDiscFileWrite.java,e\7\e76e9d9850ff5b54e7498dec312ec272ed0f2922
+h
+8src/sample/Application/FileOpe/Readers/DiscFileRead.java,3\f\3ff9cb79803caaf7729e2b56816e0e00f680a9fa

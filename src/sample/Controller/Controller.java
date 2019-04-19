@@ -15,8 +15,9 @@ import sample.Application.Databases.InMemoryDiscsDB;
 import sample.Application.ObservLists.ObBoxList;
 import sample.Application.ObservLists.ObClientList;
 import sample.Application.ObservLists.ObDiscList;
-import sample.Controller.Events.ClientEvents.AddClientEvents;
-import sample.Controller.Events.DiscEvents.AddDiscEvents;
+import sample.Controller.Events.BoxEvents.AddBoxAddEvent;
+import sample.Controller.Events.ClientEvents.AddClientAddEvent;
+import sample.Controller.Events.DiscEvents.AddDiscAddEvent;
 import sample.Controller.Events.DiscEvents.SearchEvent;
 
 import java.util.logging.Level;
@@ -36,24 +37,38 @@ public class Controller {
   private TableColumn h2Col;
   @FXML
   private TableColumn wCol;
-  public TableColumn sizeCol;
-  public TableColumn widthCol;
-  public TableColumn heightCol;
-  public TableColumn idCol;
-  public TableColumn nameCol;
-  public TableColumn discConfCol;
-  public TableColumn discPcsCol;
-  public TableColumn coatedConfCol;
-  public TableColumn coatedPcsCol;
-  public TableColumn drumsConfCol;
-  public TableColumn drumsPcsCol;
-  public TableColumn montCol;
+  @FXML
+  private TableColumn sizeCol;
+  @FXML
+  private TableColumn widthCol;
+  @FXML
+  private TableColumn heightCol;
+  @FXML
+  private TableColumn idCol;
+  @FXML
+  private TableColumn nameCol;
+  @FXML
+  private TableColumn discConfCol;
+  @FXML
+  private TableColumn discPcsCol;
+  @FXML
+  private TableColumn coatedConfCol;
+  @FXML
+  private TableColumn coatedPcsCol;
+  @FXML
+  private TableColumn drumsConfCol;
+  @FXML
+  private TableColumn drumsPcsCol;
+  @FXML
+  private TableColumn montCol;
   @FXML
   @Getter
   private TableView discTable;
   @FXML
+  @Getter
   private TableView boxTable;
   @FXML
+  @Getter
   private TableView clientTable;
   private ObservableList dataD;
   private ObservableList dataB;
@@ -69,6 +84,8 @@ public class Controller {
   @FXML
   private JFXButton addClient;
   @FXML
+  private JFXButton addBox;
+  @FXML
   private JFXButton refresh;
   @FXML
   private JFXButton searchButton;
@@ -80,6 +97,7 @@ public class Controller {
   private JFXButton bButton;
   @FXML
   private TextField discCount;
+
   private static final Logger logger = Logger.getLogger(Controller.class.getName());
 
 
@@ -98,6 +116,7 @@ public class Controller {
 
     addDisc.addEventHandler(MouseEvent.MOUSE_CLICKED, addD);
     addClient.addEventHandler(MouseEvent.MOUSE_CLICKED, addC);
+    addBox.addEventHandler(MouseEvent.MOUSE_CLICKED, addB);
     refresh.addEventHandler(MouseEvent.MOUSE_CLICKED, refreshTab);
     searchButton.addEventHandler(MouseEvent.MOUSE_CLICKED, search);
     dButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initDiscPanel);
@@ -148,13 +167,20 @@ public class Controller {
 
 
   private EventHandler<MouseEvent> addD = adder -> {
-    AddDiscEvents events = new AddDiscEvents();
-    events.addDisc();
+    AddDiscAddEvent events = new AddDiscAddEvent();
+    events.add();
   };
+
   private EventHandler<MouseEvent> addC = adder -> {
-    AddClientEvents events = new AddClientEvents();
-    events.addClient();
+    AddClientAddEvent events = new AddClientAddEvent();
+    events.add();
   };
+
+  private EventHandler<MouseEvent> addB = adder -> {
+    AddBoxAddEvent events = new AddBoxAddEvent();
+    events.add();
+  };
+
   private EventHandler<MouseEvent> refreshTab = ref -> {
     discTable.refresh();
     logger.log(Level.FINE, "Refresh");
@@ -165,7 +191,7 @@ public class Controller {
     events.searchDisc();
   };
 
-  private EventHandler<MouseEvent> initDiscPanel = idp ->{
+  private EventHandler<MouseEvent> initDiscPanel = idp -> {
     pnl_discs.toFront();
     pnl_discs.setVisible(true);
     pnl_clients.setVisible(false);
@@ -178,6 +204,7 @@ public class Controller {
     pnl_discs.setVisible(false);
     pnl_boxes.setVisible(false);
   };
+
   private EventHandler<MouseEvent> initBoxPanel = ibp -> {
     pnl_boxes.toFront();
     pnl_boxes.setVisible(true);

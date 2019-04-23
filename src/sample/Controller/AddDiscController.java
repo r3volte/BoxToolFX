@@ -14,13 +14,14 @@ import javafx.scene.layout.StackPane;
 import sample.Application.Data.Discs;
 import sample.Application.Databases.InMemoryDiscsDB;
 import sample.Controller.Events.DiscEvents.ErrorPanelEvents;
+import sample.Controller.Events.ErrorEvent;
 
 public class AddDiscController extends Controller {
 
   private static final Logger logger = Logger.getLogger(AddDiscController.class.getName());
   private InMemoryDiscsDB discsDB = new InMemoryDiscsDB();
   private Controller controller = new Controller();
-  private ErrorPanelEvents errorPanelEvents = new ErrorPanelEvents();
+  private ErrorEvent errorPanelEvents = new ErrorPanelEvents();
 
   @FXML
   private JFXButton clearButton;

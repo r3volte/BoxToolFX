@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import sample.Application.FileOpe.Readers.BoxFileRead;
+import sample.Application.FileOpe.Readers.FileRead;
 import sample.Application.FileOpe.Writters.Backups.BackupBoxFileWrite;
 
 
@@ -16,7 +17,7 @@ public class ReadBoxFileThread {
 
   public void threadRun() {
     Runnable runBoxRead = () -> {
-      BoxFileRead boxFileRead = new BoxFileRead();
+      FileRead boxFileRead = new BoxFileRead();
       try {
         boxFileRead.readFile("box.json");
       } catch (FileNotFoundException e) {

@@ -1,6 +1,7 @@
 package sample.Application.Threads;
 
 import sample.Application.FileOpe.Readers.ClientFileRead;
+import sample.Application.FileOpe.Readers.FileRead;
 import sample.Application.FileOpe.Writters.Backups.BackupClientFileWrite;
 
 import java.io.FileNotFoundException;
@@ -16,7 +17,7 @@ public class ReadClientThread {
 
   public void threadRun() {
     Runnable runClientRead = () -> {
-      ClientFileRead clientFileRead = new ClientFileRead();
+      FileRead clientFileRead = new ClientFileRead();
       try {
         clientFileRead.readFile("clients.json");
       } catch (FileNotFoundException e) {

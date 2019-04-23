@@ -41,3 +41,13 @@ M
 0src/sample/Application/Selecting/SelectDisc.java,0\1\0125a3eb7fbf8639e7dd7ffcc4c33475be355d55
 h
 8src/sample/Application/FileOpe/Readers/DiscFileRead.java,3\f\3ff9cb79803caaf7729e2b56816e0e00f680a9fa
+Z
+*src/sample/Application/Data/PcsPerBox.java,8\f\8f670327664a4ee2a826ae2b8a426c583c0647eb
+[
++src/sample/Controller/AddBoxController.java,4\4\44a9743ab89650fae189748283b336045577309d
+†
+Vsrc/sample/Application/FileOpe/Writters/ExceptionWriterTests/ClientsFileWriteTest.java,e\7\e71e4938a1c689af214536de8ae4673f052e6190
+g
+7src/sample/Application/FileOpe/Readers/BoxFileRead.java,d\3\d33e8e55f3a8db1a1169939165340d5e1fac3ca2
+i
+9src/sample/Application/FileOpe/Writters/BoxFileWrite.java,4\0\40ea72371b8751c122732eebbbaeac3b5ddf4b89

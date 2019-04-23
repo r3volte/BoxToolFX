@@ -11,10 +11,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import sample.Application.Data.Box;
 import sample.Application.Databases.InMemoryDiscsDB;
 import sample.Application.ObservLists.ObBoxList;
 import sample.Application.ObservLists.ObClientList;
 import sample.Application.ObservLists.ObDiscList;
+import sample.Application.ObservLists.ObList;
+import sample.Controller.Events.AddEvent;
 import sample.Controller.Events.BoxEvents.AddBoxAddEvent;
 import sample.Controller.Events.ClientEvents.AddClientAddEvent;
 import sample.Controller.Events.DiscEvents.AddDiscAddEvent;
@@ -80,6 +83,8 @@ public class Controller {
   @FXML
   private AnchorPane pnl_boxes;
   @FXML
+  private AnchorPane pnl_conf;
+  @FXML
   private JFXButton addDisc;
   @FXML
   private JFXButton addClient;
@@ -95,6 +100,8 @@ public class Controller {
   private JFXButton cButton;
   @FXML
   private JFXButton bButton;
+  @FXML
+  private JFXButton cfgButton;
   @FXML
   private TextField discCount;
 
@@ -122,10 +129,11 @@ public class Controller {
     dButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initDiscPanel);
     cButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initClientPanel);
     bButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initBoxPanel);
+    cfgButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initConfPanel);
   }
 
   private void initDiscTableContent() {
-    ObDiscList obDiscList = new ObDiscList();
+    ObList obDiscList = new ObDiscList();
     dataD = obDiscList.getData();
   }
 
@@ -138,7 +146,7 @@ public class Controller {
   }
 
   private void initBoxTableContent() {
-    ObBoxList obBoxList = new ObBoxList();
+    ObList obBoxList = new ObBoxList();
     dataB = obBoxList.getData();
   }
 
@@ -155,29 +163,28 @@ public class Controller {
   }
 
   private void initClientTableContent() {
-    ObClientList obClientList = new ObClientList();
+    ObList obClientList = new ObClientList();
     dataC = obClientList.getData();
   }
 
   private void initBoxData() {
-    sizeCol.setCellValueFactory(new PropertyValueFactory("number"));
-    heightCol.setCellValueFactory(new PropertyValueFactory("height"));
-    widthCol.setCellValueFactory(new PropertyValueFactory("width"));
+    sizeCol.setCellValueFactory(new PropertyValueFactory<Box, Integer>("number"));
+    heightCol.setCellValueFactory(new PropertyValueFactory<Box, Integer>("height"));
+    widthCol.setCellValueFactory(new PropertyValueFactory<Box, Integer>("width"));
   }
 
-
   private EventHandler<MouseEvent> addD = adder -> {
-    AddDiscAddEvent events = new AddDiscAddEvent();
+    AddEvent events = new AddDiscAddEvent();
     events.add();
   };
 
   private EventHandler<MouseEvent> addC = adder -> {
-    AddClientAddEvent events = new AddClientAddEvent();
+    AddEvent events = new AddClientAddEvent();
     events.add();
   };
 
   private EventHandler<MouseEvent> addB = adder -> {
-    AddBoxAddEvent events = new AddBoxAddEvent();
+    AddEvent events = new AddBoxAddEvent();
     events.add();
   };
 
@@ -196,6 +203,7 @@ public class Controller {
     pnl_discs.setVisible(true);
     pnl_clients.setVisible(false);
     pnl_boxes.setVisible(false);
+    pnl_conf.setVisible(false);
   };
 
   private EventHandler<MouseEvent> initClientPanel = icp -> {
@@ -203,6 +211,7 @@ public class Controller {
     pnl_clients.setVisible(true);
     pnl_discs.setVisible(false);
     pnl_boxes.setVisible(false);
+    pnl_conf.setVisible(false);
   };
 
   private EventHandler<MouseEvent> initBoxPanel = ibp -> {
@@ -210,6 +219,14 @@ public class Controller {
     pnl_boxes.setVisible(true);
     pnl_discs.setVisible(false);
     pnl_clients.setVisible(false);
+    pnl_conf.setVisible(false);
+  };
+  private EventHandler<MouseEvent> initConfPanel = iCop -> {
+    pnl_conf.toFront();
+    pnl_conf.setVisible(true);
+    pnl_discs.setVisible(false);
+    pnl_clients.setVisible(false);
+    pnl_boxes.setVisible(false);
   };
 
   private void discCount() {

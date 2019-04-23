@@ -1,6 +1,7 @@
 package sample.Application.Threads;
 
 import sample.Application.FileOpe.Readers.DiscFileRead;
+import sample.Application.FileOpe.Readers.FileRead;
 import sample.Application.FileOpe.Writters.Backups.BackupDiscFileWrite;
 
 import java.io.FileNotFoundException;
@@ -15,7 +16,7 @@ public class ReadingFileThread {
 
   public void threadRun() {
     Runnable runFileRead = () -> {
-      DiscFileRead discFileRead = new DiscFileRead();
+      FileRead discFileRead = new DiscFileRead();
       try {
         discFileRead.readFile("discs.json");
       } catch (FileNotFoundException e) {

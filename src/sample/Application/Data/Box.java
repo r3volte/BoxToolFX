@@ -10,7 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Box {
-  private final int number;
-  private final int height;
-  private final int width;
+  private int number;
+  private int height;
+  private int width;
 }

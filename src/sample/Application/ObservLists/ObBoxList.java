@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sample.Application.Databases.InMemoryBoxDB;
 
-public class ObBoxList {
+public class ObBoxList implements ObList {
 
   private InMemoryBoxDB boxDB = new InMemoryBoxDB();
 

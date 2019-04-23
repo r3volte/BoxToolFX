@@ -50,7 +50,7 @@ public class AddBoxController extends Controller {
 
   EventHandler<MouseEvent> submitOk = ok -> {
     try {
-      int num = Integer.parseInt(numBox.getText());
+      Integer num = Integer.valueOf((numBox.getText()));
       int boxW = Integer.parseInt(boxWidth.getText());
       int boxH = Integer.parseInt(boxHeight.getText());
       inMemoryBoxDB.getBox().add(new Box(num, boxH, boxW));

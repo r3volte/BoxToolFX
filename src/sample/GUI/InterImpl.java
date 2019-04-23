@@ -37,7 +37,7 @@ public class InterImpl extends Application {
   }
 
   private void saveDiscsJSON() {
-    DiscFileWrite discFileWrite = new DiscFileWrite();
+    FileWrite discFileWrite = new DiscFileWrite();
     try {
       discFileWrite.save("discs.json");
     } catch (IOException e) {
@@ -46,7 +46,7 @@ public class InterImpl extends Application {
   }
 
   private void saveBoxJSON() {
-    BoxFileWrite boxFileWrite = new BoxFileWrite();
+    FileWrite boxFileWrite = new BoxFileWrite();
     try {
       boxFileWrite.save("box.json");
     } catch (IOException e) {
@@ -55,7 +55,7 @@ public class InterImpl extends Application {
   }
 
   private void saveClientJSON() {
-    ClientFileWrite clientFileWrite = new ClientFileWrite();
+    FileWrite clientFileWrite = new ClientFileWrite();
     try {
       clientFileWrite.save("clients.json");
     } catch (IOException e) {

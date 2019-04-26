@@ -24,7 +24,6 @@ public class InterImpl extends Application {
     primaryStage.setScene(new Scene(root, 1300, 800));
     primaryStage.show();
     primaryStage.setResizable(false);
-
   }
 
   @Override

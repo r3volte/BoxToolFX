@@ -8,13 +8,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.FileChooser;
 import lombok.Getter;
+import sample.Application.Databases.InMemoryBoxDB;
 import sample.Application.Databases.InMemoryDiscsDB;
+import sample.Application.FileOpe.Readers.ChooseFileReader;
 import sample.Application.ObservLists.ObSearchDisc;
+import sample.Application.Selecting.BoxSelector;
 import sample.Application.Selecting.SelectDisc;
 
-import java.io.File;
+import java.io.IOException;
 
 
 public class SearchController {
@@ -44,6 +46,7 @@ public class SearchController {
   void initialize() {
     initDiscData();
     searchSubmit.addEventHandler(MouseEvent.MOUSE_CLICKED, search);
+
     multipleSearchButton.addEventHandler(MouseEvent.MOUSE_CLICKED, fileChooser);
   }
 
@@ -53,6 +56,9 @@ public class SearchController {
     ObSearchDisc obSearchDisc = new ObSearchDisc();
     SelectDisc selectDisc = new SelectDisc();
     searchDiscView.setItems(obSearchDisc.getData(selectDisc.searchDisc(discsDB.getDiscs(), number)));
+    InMemoryBoxDB boxDB = new InMemoryBoxDB();
+    BoxSelector boxSelector = new BoxSelector();
+    boxSelector.selectBox(selectDisc.searchDisc(discsDB.getDiscs(),number), boxDB.getBox());
   };
 
   private void initDiscData() {
@@ -64,11 +70,13 @@ public class SearchController {
   }
 
   EventHandler<MouseEvent> fileChooser = f -> {
-    FileChooser fileChooser = new FileChooser();
-    fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Txt file","*.txt"));
-    File file = fileChooser.showOpenDialog(null);
-    if (file != null) {
-      System.out.println(file.getAbsoluteFile());
+    ChooseFileReader in = new ChooseFileReader();
+    try {
+      ObSearchDisc obSearchDisc = new ObSearchDisc();
+      searchDiscView.setItems(obSearchDisc.getData(in.fileReader()));
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+
   };
 }

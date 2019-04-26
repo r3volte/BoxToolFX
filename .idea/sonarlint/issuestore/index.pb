@@ -51,3 +51,5 @@ g
 7src/sample/Application/FileOpe/Readers/BoxFileRead.java,d\3\d33e8e55f3a8db1a1169939165340d5e1fac3ca2
 i
 9src/sample/Application/FileOpe/Writters/BoxFileWrite.java,4\0\40ea72371b8751c122732eebbbaeac3b5ddf4b89
+l
+<src/sample/Application/FileOpe/Readers/ChooseFileReader.java,6\c\6c425f50bd16af48fe54fae1c16c7b55b7516de6

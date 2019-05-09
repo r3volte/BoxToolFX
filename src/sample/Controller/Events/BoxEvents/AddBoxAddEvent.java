@@ -14,17 +14,21 @@ import java.util.logging.Logger;
 public class AddBoxAddEvent implements AddEvent {
   Parent root;
   private static final Logger logger = Logger.getLogger(AddBoxAddEvent.class.getName());
+  private Stage stage = new Stage();
 
   public void add() {
     try {
       root = FXMLLoader.load(getClass().getClassLoader().getResource("sample/GUI/addBox.fxml"));
-      Stage stage = new Stage();
       stage.setTitle("Add box to list");
       stage.setScene(new Scene(root, 450, 250));
       stage.show();
     } catch (IOException e) {
       logger.log(Level.SEVERE, e.toString(), e);
     }
+  }
+
+  public void closeWindows() {
+    stage.hide();
   }
 }
 

@@ -16,7 +16,7 @@ public class InMemoryClientsDB implements InMemoryDB {
 
   @Override
   public void showDB() {
-    clients.stream().map(x -> x.toString())
-            .forEach(x -> System.out.println(x));
+    clients.stream().map(Clients::toString)
+            .forEach(System.out::println);
   }
 }

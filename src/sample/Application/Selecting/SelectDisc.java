@@ -13,4 +13,7 @@ public class SelectDisc {
             .getNumber() == number)
             .collect(Collectors.toList());
   }
+//  public List<Discs> searchDisc(final List<Discs> list, List<Discs> list2) {
+//    return li
+//  }
 }

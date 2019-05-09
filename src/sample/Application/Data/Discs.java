@@ -14,7 +14,7 @@ public class Discs {
 
   private int number;
   private final double diameter;
-    private final double height;
+  private final double height;
   private final double height2;
   private final double weight;
 

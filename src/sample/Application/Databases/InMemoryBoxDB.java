@@ -16,7 +16,7 @@ public class InMemoryBoxDB implements InMemoryDB {
 
   @Override
   public void showDB() {
-    box.stream().map(x -> x.toString())
-            .forEach(x -> System.out.println(x));
+    box.stream().map(Box::toString)
+            .forEach(System.out::println);
   }
 }

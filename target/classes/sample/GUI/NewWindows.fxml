@@ -213,7 +213,7 @@
                   </AnchorPane>
                   <AnchorPane focusTraversable="true" layoutX="50.0" minHeight="700.0" minWidth="100.0" style="-fx-background-color: #2A2E37;">
                      <children>
-                        <JFXButton layoutY="100.0" prefHeight="100.0" prefWidth="100.0" text="Add Box" textFill="#da1a1a" wrapText="true">
+                        <JFXButton fx:id="addBoxesConf" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" text="Add Box" textFill="#da1a1a" wrapText="true">
                            <font>
                               <Font name="Bauhaus 93" size="16.0" />
                            </font>

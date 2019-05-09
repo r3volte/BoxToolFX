@@ -16,8 +16,8 @@ public class InMemoryDiscsDB implements InMemoryDB {
 
   @Override
   public void showDB() {
-    discs.stream().map(x -> x.toString())
-                  .forEach(x -> System.out.println(x));
+    discs.stream().map(Discs::toString)
+                  .forEach(System.out::println);
   }
 
 }

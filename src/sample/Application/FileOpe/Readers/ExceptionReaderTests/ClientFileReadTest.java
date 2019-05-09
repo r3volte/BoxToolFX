@@ -2,7 +2,6 @@ package sample.Application.FileOpe.Readers.ExceptionReaderTests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import sample.Application.FileOpe.Readers.BoxFileRead;
 import sample.Application.FileOpe.Readers.ClientFileRead;
 
 import java.io.FileNotFoundException;

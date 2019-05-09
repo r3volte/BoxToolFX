@@ -21,7 +21,7 @@ public class SearchEvent {
               .getResource("sample/GUI/searchDisc.fxml"));
       Stage stage = new Stage();
       stage.setTitle("Search disc");
-      stage.setScene(new Scene(roots, 550, 550));
+      stage.setScene(new Scene(roots, 735, 355));
       stage.show();
     } catch (IOException e) {
       logger.log(Level.SEVERE, e.toString(), e);

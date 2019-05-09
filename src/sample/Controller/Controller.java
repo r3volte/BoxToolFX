@@ -20,6 +20,7 @@ import sample.Application.ObservLists.ObList;
 import sample.Controller.Events.AddEvent;
 import sample.Controller.Events.BoxEvents.AddBoxAddEvent;
 import sample.Controller.Events.ClientEvents.AddClientAddEvent;
+import sample.Controller.Events.ConfEvent.AddConfAddEvent;
 import sample.Controller.Events.DiscEvents.AddDiscAddEvent;
 import sample.Controller.Events.DiscEvents.SearchEvent;
 
@@ -91,6 +92,8 @@ public class Controller {
   @FXML
   private JFXButton addBox;
   @FXML
+  private JFXButton addBoxesConf;
+  @FXML
   private JFXButton refresh;
   @FXML
   private JFXButton searchButton;
@@ -124,6 +127,7 @@ public class Controller {
     addDisc.addEventHandler(MouseEvent.MOUSE_CLICKED, addD);
     addClient.addEventHandler(MouseEvent.MOUSE_CLICKED, addC);
     addBox.addEventHandler(MouseEvent.MOUSE_CLICKED, addB);
+    addBoxesConf.addEventHandler(MouseEvent.MOUSE_CLICKED, addConf);
     refresh.addEventHandler(MouseEvent.MOUSE_CLICKED, refreshTab);
     searchButton.addEventHandler(MouseEvent.MOUSE_CLICKED, search);
     dButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initDiscPanel);
@@ -185,6 +189,11 @@ public class Controller {
 
   private EventHandler<MouseEvent> addB = adder -> {
     AddEvent events = new AddBoxAddEvent();
+    events.add();
+  };
+
+  private EventHandler<MouseEvent> addConf = adder -> {
+    AddEvent events = new AddConfAddEvent();
     events.add();
   };
 

@@ -53,3 +53,17 @@ i
 9src/sample/Application/FileOpe/Writters/BoxFileWrite.java,4\0\40ea72371b8751c122732eebbbaeac3b5ddf4b89
 l
 <src/sample/Application/FileOpe/Readers/ChooseFileReader.java,6\c\6c425f50bd16af48fe54fae1c16c7b55b7516de6
+a
+1src/sample/Application/Data/MountInstruction.java,4\d\4de55c481e0a4e6adece779bb50e4efaa6edf2b1
+`
+0src/sample/Application/Databases/InMemoryDB.java,d\e\de2e1fbfe449aeb3fa77e302179447df430371a6
+
+Qsrc/sample/Application/FileOpe/Readers/ExceptionReaderTests/DiscFileReadTest.java,8\c\8c8f81d84774d739940c33076f2c53c0fe06245e
+ƒ
+Ssrc/sample/Application/FileOpe/Readers/ExceptionReaderTests/ClientFileReadTest.java,5\7\57c98d9e5c1a7b2fd1e12781152fb175e7a2e9e4
+€
+Psrc/sample/Application/FileOpe/Readers/ExceptionReaderTests/BoxFileReadTest.java,7\e\7e065b4b18a94665049b85f3a2a73b70ae98a35f
+j
+:src/sample/Application/FileOpe/Readers/ClientFileRead.java,d\d\dd3c2aa87c21dc9f4e4962bfaf3f7aa9330f2538
+a
+1src/sample/Application/Selecting/BoxSelector.java,e\a\ea38446cc77761198d429b57c1a802a6d953e19e

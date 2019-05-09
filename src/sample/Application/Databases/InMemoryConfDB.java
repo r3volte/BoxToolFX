@@ -14,7 +14,7 @@ public class InMemoryConfDB {
     return conf;
   }
 
-  public void addOtherLists(List<Configurations> list){
+  public void addOtherLists(List<Configurations> list) {
     getConf().add(list);
   }
 }

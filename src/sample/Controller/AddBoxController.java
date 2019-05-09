@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import sample.Application.Data.Box;
 import sample.Application.Databases.InMemoryBoxDB;
+import sample.Controller.Events.BoxEvents.AddBoxAddEvent;
 import sample.Controller.Events.BoxEvents.ErrorBoxEvents;
 
 public class AddBoxController extends Controller {
@@ -33,6 +34,7 @@ public class AddBoxController extends Controller {
   private static final Logger logger = Logger.getLogger(AddDiscController.class.getName());
   private InMemoryBoxDB inMemoryBoxDB = new InMemoryBoxDB();
   private ErrorBoxEvents error = new ErrorBoxEvents();
+  private AddBoxAddEvent addBoxAddEvent = new AddBoxAddEvent();
 
 
   @Override
@@ -55,6 +57,8 @@ public class AddBoxController extends Controller {
       int boxH = Integer.parseInt(boxHeight.getText());
       inMemoryBoxDB.getBox().add(new Box(num, boxH, boxW));
       controller.getBoxTable();
+      getBoxTable().refresh();
+      addBoxAddEvent.closeWindows();
     } catch (NumberFormatException e) {
       error.error();
       logger.log(Level.FINE, "Brak danych, wpisz je jeszcze raz");

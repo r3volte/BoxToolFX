@@ -2,9 +2,6 @@ package sample.Controller;
 
 import com.jfoenix.controls.JFXButton;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -18,7 +15,6 @@ import sample.Controller.Events.ErrorEvent;
 
 public class AddDiscController extends Controller {
 
-  private static final Logger logger = Logger.getLogger(AddDiscController.class.getName());
   private InMemoryDiscsDB discsDB = new InMemoryDiscsDB();
   private Controller controller = new Controller();
   private ErrorEvent errorPanelEvents = new ErrorPanelEvents();
@@ -65,7 +61,6 @@ public class AddDiscController extends Controller {
       discsDB.showDB();
     } catch (NumberFormatException e) {
       errorPanelEvents.error();
-      logger.log(Level.FINE, "Brak danych, wpisz je jeszcze raz");
     }
   };
 }

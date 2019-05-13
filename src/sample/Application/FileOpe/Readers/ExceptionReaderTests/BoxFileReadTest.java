@@ -1,10 +1,10 @@
 package sample.Application.FileOpe.Readers.ExceptionReaderTests;
 
+import java.io.FileNotFoundException;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import sample.Application.FileOpe.Readers.BoxFileRead;
-
-import java.io.FileNotFoundException;
 
 class BoxFileReadTest {
 
@@ -15,7 +15,7 @@ class BoxFileReadTest {
     Assertions.assertThrows(FileNotFoundException.class, () -> {
       String name = ".json";
       boxFileRead = new BoxFileRead();
-      boxFileRead.readFile(name);
+      boxFileRead.databaseReader(name);
     });
   }
 }

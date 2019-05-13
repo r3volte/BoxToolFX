@@ -1,9 +1,9 @@
 package sample.Application.Selecting;
 
-
-import sample.Application.Data.Discs;
 import java.util.List;
 import java.util.stream.Collectors;
+import sample.Application.Data.Discs;
+
 
 public class SelectDisc {
 
@@ -13,7 +13,4 @@ public class SelectDisc {
             .getNumber() == number)
             .collect(Collectors.toList());
   }
-//  public List<Discs> searchDisc(final List<Discs> list, List<Discs> list2) {
-//    return li
-//  }
 }

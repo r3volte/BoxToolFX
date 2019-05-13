@@ -1,12 +1,12 @@
 package sample.Application.FileOpe.Writters.Backups;
 
 import com.google.gson.Gson;
-import sample.Application.Databases.InMemoryBoxDB;
-import sample.Application.FileOpe.Writters.FileWrite;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
+import sample.Application.Databases.InMemoryBoxDB;
+import sample.Application.FileOpe.Writters.FileWrite;
 
 
 public class BackupBoxFileWrite implements FileWrite {
@@ -16,9 +16,12 @@ public class BackupBoxFileWrite implements FileWrite {
 
   @Override
   public void save(String fileOut) throws IOException {
-    String jsonFromList = new Gson().toJson(inMemoryBoxDB.getBox());
     FileWriter file = new FileWriter(fileOut);
-    file.write(jsonFromList);
+    file.write(fileConverter());
     file.flush();
+  }
+
+  private String fileConverter() {
+    return new Gson().toJson(inMemoryBoxDB.getBox());
   }
 }

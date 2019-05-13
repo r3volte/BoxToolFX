@@ -1,10 +1,11 @@
 package sample.Application.FileOpe.Readers.ExceptionReaderTests;
 
+import java.io.FileNotFoundException;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import sample.Application.FileOpe.Readers.DiscFileRead;
 
-import java.io.FileNotFoundException;
 
 class DiscFileReadTest {
 
@@ -15,7 +16,7 @@ class DiscFileReadTest {
     Assertions.assertThrows(FileNotFoundException.class, () -> {
       String name = ".json";
       discFileRead = new DiscFileRead();
-      discFileRead.readFile(name);
+      discFileRead.databaseReader(name);
     });
   }
 }

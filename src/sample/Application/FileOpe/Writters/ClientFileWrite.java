@@ -1,10 +1,12 @@
 package sample.Application.FileOpe.Writters;
 
 import com.google.gson.Gson;
-import sample.Application.Databases.InMemoryClientsDB;
 
 import java.io.FileWriter;
 import java.io.IOException;
+
+import sample.Application.Databases.InMemoryClientsDB;
+
 
 public class ClientFileWrite implements FileWrite {
 
@@ -12,9 +14,12 @@ public class ClientFileWrite implements FileWrite {
 
   @Override
   public void save(String fileOut) throws IOException {
-    String jsonFromList = new Gson().toJson(inMemoryClientsDB.getClients());
     FileWriter file = new FileWriter(fileOut);
-    file.write(jsonFromList);
+    file.write(fileConverter());
     file.flush();
+  }
+
+  private String fileConverter() {
+    return new Gson().toJson(inMemoryClientsDB.getClients());
   }
 }

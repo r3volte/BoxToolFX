@@ -14,7 +14,7 @@ import sample.Controller.Events.ErrorEvent;
 public class ErrorPanelEvents implements ErrorEvent {
 
   Parent root;
-  private static final Logger logger = Logger.getLogger(ErrorPanelEvents.class.getName());
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
 
   public void error() {
     try {
@@ -24,7 +24,7 @@ public class ErrorPanelEvents implements ErrorEvent {
       stage.setScene(new Scene(root, 450, 250));
       stage.show();
     } catch (IOException e) {
-      logger.log(Level.SEVERE, e.toString(), e);
+      logger.info("Error" + e);
     }
   }
 }

@@ -1,7 +1,6 @@
 package sample.Controller.Events.DiscEvents;
 
 import java.io.IOException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javafx.fxml.FXMLLoader;
@@ -12,7 +11,7 @@ import javafx.stage.Stage;
 
 public class SearchEvent {
   public Parent roots;
-  private static final Logger logger = Logger.getLogger(SearchEvent.class.getName());
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
 
   public void searchDisc() {
     try {
@@ -24,7 +23,7 @@ public class SearchEvent {
       stage.setScene(new Scene(roots, 735, 355));
       stage.show();
     } catch (IOException e) {
-      logger.log(Level.SEVERE, e.toString(), e);
+      logger.info("Error" + e);
     }
   }
 }

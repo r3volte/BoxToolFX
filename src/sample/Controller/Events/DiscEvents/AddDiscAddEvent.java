@@ -13,7 +13,7 @@ import sample.Controller.Events.AddEvent;
 
 public class AddDiscAddEvent implements AddEvent {
   Parent root;
-  private static final Logger logger = Logger.getLogger(AddDiscAddEvent.class.getName());
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
 
   public void add() {
     try {
@@ -23,7 +23,7 @@ public class AddDiscAddEvent implements AddEvent {
       stage.setScene(new Scene(root, 450, 250));
       stage.show();
     } catch (IOException e) {
-      logger.log(Level.SEVERE, e.toString(), e);
+      logger.info("Error" + e);
     }
   }
 }

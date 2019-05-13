@@ -1,6 +1,11 @@
 package sample.Controller;
 
 import com.jfoenix.controls.JFXButton;
+
+import java.io.IOException;
+
+import java.util.List;
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -8,6 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import lombok.Getter;
 import sample.Application.Data.Discs;
@@ -17,9 +23,6 @@ import sample.Application.FileOpe.Readers.ChooseFileReader;
 import sample.Application.ObservLists.ObSearchDisc;
 import sample.Application.Selecting.BoxSelector;
 import sample.Application.Selecting.SelectDisc;
-
-import java.io.IOException;
-import java.util.List;
 
 
 public class SearchController {
@@ -65,20 +68,38 @@ public class SearchController {
     initSearchBox();
     searchSubmit.addEventHandler(MouseEvent.MOUSE_CLICKED, search);
     multipleSearchButton.addEventHandler(MouseEvent.MOUSE_CLICKED, fileChooser);
-    numField.setOnKeyPressed(event -> {
-      if (event.getCode().equals(KeyCode.ENTER)) {
-        int number = Integer.parseInt(numField.getText());
-        searchDiscView.setItems(obSearchDisc.getDataDisc(selectDisc.searchDisc(discsDB.getDiscs(), number)));
-        selectedBox.setItems(obSearchDisc.getDataBox(boxSelector.selectBox(selectDisc.searchDisc(discsDB.getDiscs(), number), boxDB.getBox())));
-      }
-    });
+    numField.setOnKeyPressed(getKeyEventEventHandler());
 
   }
 
-  EventHandler<MouseEvent> search = ok -> {
+  private EventHandler<KeyEvent> getKeyEventEventHandler() {
+    return event -> {
+      if (event.getCode().equals(KeyCode.ENTER)) {
+        int number = getNumber();
+        selectedBox.setItems(obSearchDisc
+                .getDataBox(boxSelector
+                        .selectBox(selectDisc
+                                .searchDisc(discsDB
+                                        .getDiscs(), number), boxDB.getBox())));
+      }
+    };
+  }
+
+  private int getNumber() {
     int number = Integer.parseInt(numField.getText());
-    searchDiscView.setItems(obSearchDisc.getDataDisc(selectDisc.searchDisc(discsDB.getDiscs(), number)));
-    selectedBox.setItems(obSearchDisc.getDataBox(boxSelector.selectBox(selectDisc.searchDisc(discsDB.getDiscs(), number), boxDB.getBox())));
+    searchDiscView.setItems(obSearchDisc
+            .getDataDisc(selectDisc
+                    .searchDisc(discsDB
+                            .getDiscs(), number)));
+    return number;
+  }
+
+  EventHandler<MouseEvent> search = ok -> {
+    int number = getNumber();
+    selectedBox.setItems(obSearchDisc
+            .getDataBox(boxSelector
+                    .selectBox(selectDisc
+                            .searchDisc(discsDB.getDiscs(), number), boxDB.getBox())));
   };
 
   private void initDiscData() {
@@ -98,7 +119,7 @@ public class SearchController {
   EventHandler<MouseEvent> fileChooser = f -> {
     ChooseFileReader in = new ChooseFileReader();
     try {
-      List<Discs> myList = in.fileReader();
+      List<Discs> myList = in.fileReader(discsDB);
       searchDiscView.setItems(obSearchDisc.getDataDisc(myList));
       selectedBox.setItems(obSearchDisc.getDataBox(boxSelector.selectBox(myList, boxDB.getBox())));
     } catch (IOException e) {

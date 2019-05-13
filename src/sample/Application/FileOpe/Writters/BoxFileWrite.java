@@ -15,9 +15,12 @@ public class BoxFileWrite implements FileWrite {
 
   @Override
   public void save(String fileOut) throws IOException {
-    String jsonFromList = new Gson().toJson(inMemoryBoxDB.getBox());
     FileWriter file = new FileWriter(fileOut);
-    file.write(jsonFromList);
+    file.write(fileConverter());
     file.flush();
+  }
+
+  private String fileConverter() {
+    return new Gson().toJson(inMemoryBoxDB.getBox());
   }
 }

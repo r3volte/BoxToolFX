@@ -2,9 +2,6 @@ package sample.Controller;
 
 import com.jfoenix.controls.JFXButton;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -31,7 +28,6 @@ public class AddBoxController extends Controller {
   public StackPane rootPane;
 
   private Controller controller = new Controller();
-  private static final Logger logger = Logger.getLogger(AddDiscController.class.getName());
   private InMemoryBoxDB inMemoryBoxDB = new InMemoryBoxDB();
   private ErrorBoxEvents error = new ErrorBoxEvents();
   private AddBoxAddEvent addBoxAddEvent = new AddBoxAddEvent();
@@ -61,7 +57,6 @@ public class AddBoxController extends Controller {
       addBoxAddEvent.closeWindows();
     } catch (NumberFormatException e) {
       error.error();
-      logger.log(Level.FINE, "Brak danych, wpisz je jeszcze raz");
     }
   };
 

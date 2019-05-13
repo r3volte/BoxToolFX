@@ -3,7 +3,7 @@ package sample.Application.Threads;
 public class RunThreads {
 
   public void runThreads() {
-    ReadingFileThread t2 = new ReadingFileThread();
+    ReadDiscThread t2 = new ReadDiscThread();
     t2.threadRun();
 
     ReadBoxFileThread t3 = new ReadBoxFileThread();

@@ -4,18 +4,18 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-import sample.Application.FileOpe.Readers.ClientFileRead;
+import sample.Application.FileOpe.Readers.DiscFileRead;
 import sample.Application.FileOpe.Readers.FileRead;
-import sample.Application.FileOpe.Writters.Backups.BackupClientFileWrite;
+import sample.Application.FileOpe.Writters.Backups.BackupDiscFileWrite;
 
 
-public class ReadClientThread implements FileThread {
+public class ReadDiscThread implements FileThread {
 
   private final Logger logger = Logger.getLogger(this.getClass().getName());
 
 
   public void threadRun() {
-    Runnable runClientRead = () -> {
+    Runnable runFileRead = () -> {
       try {
         fileSave();
       } catch (FileNotFoundException e) {
@@ -27,19 +27,19 @@ public class ReadClientThread implements FileThread {
         logger.warning("File not found !");
       }
     };
-    Thread t4 = new Thread(runClientRead);
-    t4.start();
+    Thread t2 = new Thread(runFileRead);
+    t2.start();
   }
 
   @Override
   public void fileSave() throws FileNotFoundException {
-    FileRead clientFileRead = new ClientFileRead();
-    clientFileRead.databaseReader("clients.json");
+    FileRead discFileRead = new DiscFileRead();
+    discFileRead.databaseReader("discs.json");
   }
 
   @Override
   public void backupFileSave() throws IOException {
-    BackupClientFileWrite backupClientFileWrite = new BackupClientFileWrite();
-    backupClientFileWrite.save("Backup/backupClients.json");
+    BackupDiscFileWrite backupDiscFileWrite = new BackupDiscFileWrite();
+    backupDiscFileWrite.save("Backup/backupDiscs.json");
   }
 }

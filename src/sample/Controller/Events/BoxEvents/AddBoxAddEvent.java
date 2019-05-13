@@ -1,19 +1,18 @@
 package sample.Controller.Events.BoxEvents;
 
+import java.io.IOException;
+import java.util.logging.Logger;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.Controller.Events.AddEvent;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 public class AddBoxAddEvent implements AddEvent {
   Parent root;
-  private static final Logger logger = Logger.getLogger(AddBoxAddEvent.class.getName());
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
   private Stage stage = new Stage();
 
   public void add() {
@@ -23,7 +22,7 @@ public class AddBoxAddEvent implements AddEvent {
       stage.setScene(new Scene(root, 450, 250));
       stage.show();
     } catch (IOException e) {
-      logger.log(Level.SEVERE, e.toString(), e);
+      logger.info("Error" + e);
     }
   }
 

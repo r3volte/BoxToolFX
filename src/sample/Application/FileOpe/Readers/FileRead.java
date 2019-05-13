@@ -5,7 +5,8 @@ import java.io.FileNotFoundException;
 public interface FileRead {
 
 
-  void readFile(String fileIn) throws FileNotFoundException;
+  void databaseReader(String fileIn) throws FileNotFoundException;
+
 
 
 }

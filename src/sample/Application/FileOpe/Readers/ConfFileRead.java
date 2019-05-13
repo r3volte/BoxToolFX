@@ -2,28 +2,33 @@ package sample.Application.FileOpe.Readers;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import sample.Application.Data.Box;
-import sample.Application.Databases.InMemoryBoxDB;
+import sample.Application.Data.Configurations;
+import sample.Application.Databases.InMemoryConfDB;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class ConfFileRead implements FileRead {
 
   private Gson gson = new Gson();
-  private InMemoryBoxDB inMemoryBoxDB = new InMemoryBoxDB();
+  private InMemoryConfDB inMemoryConfDB = new InMemoryConfDB();
 
   @Override
-  public void readFile(String fileIn) throws FileNotFoundException {
-    FileReader fileReader;
-    fileReader = new FileReader(fileIn);
-    Type listType = new TypeToken<ArrayList<Box>>() {}.getType();
-    ArrayList<Box> tempList = gson.fromJson(fileReader, listType);
-    inMemoryBoxDB.getBox().addAll(tempList);
-    System.out.println(inMemoryBoxDB.getBox());
-    System.out.println(tempList);
+  public void databaseReader(String fileIn) throws FileNotFoundException {
+    ArrayList<Configurations> tempList = gson.fromJson(readFile(fileIn), listType());
+    inMemoryConfDB.getConf().addAll(Collections.singleton(tempList));
+  }
+
+  private FileReader readFile(String fileIn) throws FileNotFoundException {
+    return new FileReader(fileIn);
+  }
+
+  private Type listType() {
+    return new TypeToken<ArrayList<Configurations>>() {
+    }.getType();
   }
 }

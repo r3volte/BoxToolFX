@@ -9,10 +9,12 @@ import sample.Application.FileOpe.Writters.*;
 import sample.Controller.Controller;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 
 public class InterImpl extends Application {
 
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
 
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -29,7 +31,6 @@ public class InterImpl extends Application {
   @Override
   public void stop() {
     //Save files...
-
     saveDiscsJSON();
     saveBoxJSON();
     saveClientJSON();
@@ -40,7 +41,7 @@ public class InterImpl extends Application {
     try {
       discFileWrite.save("discs.json");
     } catch (IOException e) {
-      e.printStackTrace();
+      logger.warning("Discs save Error" + e);
     }
   }
 
@@ -49,7 +50,7 @@ public class InterImpl extends Application {
     try {
       boxFileWrite.save("box.json");
     } catch (IOException e) {
-      e.printStackTrace();
+      logger.warning("Box save Error" + e);
     }
   }
 
@@ -58,7 +59,7 @@ public class InterImpl extends Application {
     try {
       clientFileWrite.save("clients.json");
     } catch (IOException e) {
-      e.printStackTrace();
+      logger.warning("Clients save Error" + e);
     }
   }
 }

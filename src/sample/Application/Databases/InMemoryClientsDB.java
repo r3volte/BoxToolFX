@@ -6,7 +6,7 @@ import java.util.List;
 import sample.Application.Data.Clients;
 
 
-public class InMemoryClientsDB implements InMemoryDB {
+public class InMemoryClientsDB extends InMemoryDB {
 
   private static List<Clients> clients = new ArrayList<>();
 

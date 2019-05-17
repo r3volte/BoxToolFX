@@ -12,11 +12,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import sample.Application.Data.Box;
+import sample.Application.Databases.InMemoryBoxDB;
+import sample.Application.Databases.InMemoryClientsDB;
 import sample.Application.Databases.InMemoryDiscsDB;
-import sample.Application.ObservLists.ObBoxList;
-import sample.Application.ObservLists.ObClientList;
-import sample.Application.ObservLists.ObDiscList;
-import sample.Application.ObservLists.ObList;
+import sample.Application.Databases.InMemoryRepo;
+import sample.Application.ObservLists.ObsList;
 import sample.Controller.Events.AddEvent;
 import sample.Controller.Events.BoxEvents.AddBoxAddEvent;
 import sample.Controller.Events.ClientEvents.AddClientAddEvent;
@@ -31,7 +31,6 @@ import java.util.logging.Logger;
 public class Controller {
 
   @FXML
-  @Getter
   private TableColumn numberCol;
   @FXML
   private TableColumn dCol;
@@ -42,11 +41,11 @@ public class Controller {
   @FXML
   private TableColumn wCol;
   @FXML
-  private TableColumn sizeCol;
+  private TableColumn<Box, Integer> sizeCol;
   @FXML
-  private TableColumn widthCol;
+  private TableColumn<Box, Integer> widthCol;
   @FXML
-  private TableColumn heightCol;
+  private TableColumn<Box, Integer> heightCol;
   @FXML
   private TableColumn idCol;
   @FXML
@@ -113,11 +112,9 @@ public class Controller {
 
   @FXML
   void initialize() {
-    initDiscTableContent();
     initDiscData();
-    initBoxTableContent();
+    initTableContent();
     initBoxData();
-    initClientTableContent();
     initClientData();
     discTable.setItems(dataD);
     boxTable.setItems(dataB);
@@ -136,10 +133,6 @@ public class Controller {
     cfgButton.addEventHandler(MouseEvent.MOUSE_CLICKED, initConfPanel);
   }
 
-  private void initDiscTableContent() {
-    ObList obDiscList = new ObDiscList();
-    dataD = obDiscList.getData();
-  }
 
   private void initDiscData() {
     numberCol.setCellValueFactory(new PropertyValueFactory("number"));
@@ -149,9 +142,13 @@ public class Controller {
     wCol.setCellValueFactory(new PropertyValueFactory("weight"));
   }
 
-  private void initBoxTableContent() {
-    ObList obBoxList = new ObBoxList();
-    dataB = obBoxList.getData();
+  private void initTableContent() {
+    ObsList list;
+    list = new ObsList(new InMemoryRepo(
+            new InMemoryClientsDB(), new InMemoryDiscsDB(), new InMemoryBoxDB()));
+    dataB = list.getData(list.getRepo().getBoxDB().getBox());
+    dataD = list.getData(list.getRepo().getDiscsDB().getDiscs());
+    dataC = list.getData(list.getRepo().getClientsDB().getClients());
   }
 
   private void initClientData() {
@@ -164,11 +161,6 @@ public class Controller {
     drumsConfCol.setCellValueFactory(new PropertyValueFactory("drumConf"));
     drumsPcsCol.setCellValueFactory(new PropertyValueFactory("drumPcsPerBox"));
     montCol.setCellValueFactory(new PropertyValueFactory("montInst"));
-  }
-
-  private void initClientTableContent() {
-    ObList obClientList = new ObClientList();
-    dataC = obClientList.getData();
   }
 
   private void initBoxData() {

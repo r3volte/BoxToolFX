@@ -6,7 +6,7 @@ import java.util.List;
 import sample.Application.Data.Discs;
 
 
-public class InMemoryDiscsDB implements InMemoryDB {
+public class InMemoryDiscsDB extends InMemoryDB {
 
   private static List<Discs> discs = new ArrayList<>();
 

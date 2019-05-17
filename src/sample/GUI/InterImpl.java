@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.Application.Databases.*;
 import sample.Application.FileOpe.Writters.*;
 import sample.Controller.Controller;
 
@@ -31,35 +32,20 @@ public class InterImpl extends Application {
   @Override
   public void stop() {
     //Save files...
-    saveDiscsJSON();
-    saveBoxJSON();
-    saveClientJSON();
+    saveJson();
   }
 
-  private void saveDiscsJSON() {
-    FileWrite discFileWrite = new DiscFileWrite();
+  private void saveJson() {
+    DatabaseFileWrite databaseFileWrite;
+    databaseFileWrite = new DatabaseFileWrite
+            (new InMemoryRepo(new InMemoryClientsDB(), new InMemoryDiscsDB(), new InMemoryBoxDB()));
     try {
-      discFileWrite.save("discs.json");
-    } catch (IOException e) {
-      logger.warning("Discs save Error" + e);
-    }
-  }
-
-  private void saveBoxJSON() {
-    FileWrite boxFileWrite = new BoxFileWrite();
-    try {
-      boxFileWrite.save("box.json");
+      databaseFileWrite.save("box.json", databaseFileWrite.getRepo().getBoxDB().getBox());
+      databaseFileWrite.save("clients.json", databaseFileWrite.getRepo().getClientsDB().getClients());
+      databaseFileWrite.save("discs.json", databaseFileWrite.getRepo().getDiscsDB().getDiscs());
     } catch (IOException e) {
       logger.warning("Box save Error" + e);
     }
   }
 
-  private void saveClientJSON() {
-    FileWrite clientFileWrite = new ClientFileWrite();
-    try {
-      clientFileWrite.save("clients.json");
-    } catch (IOException e) {
-      logger.warning("Clients save Error" + e);
-    }
-  }
 }

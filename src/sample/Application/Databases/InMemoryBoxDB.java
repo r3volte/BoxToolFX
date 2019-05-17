@@ -6,7 +6,7 @@ import java.util.List;
 import sample.Application.Data.Box;
 
 
-public class InMemoryBoxDB implements InMemoryDB {
+public class InMemoryBoxDB extends InMemoryDB {
 
   private static List<Box> box = new ArrayList<>();
 

@@ -1,0 +1,10 @@
+
+Qsquid:S1068"5Remove this unused "inMemoryClientsDB" private field.(¢µ—Ýùÿÿÿÿ
+asquid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(¤¶˜
+bsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(…Ë¨½
+Gsquid:S14810"+Remove this unused "number" local variable.(’ñÖ¨úÿÿÿÿ
+Esquid:S14811")Remove this unused "name" local variable.(¯òòÝúÿÿÿÿ
+Fsquid:S14812"*Remove this unused "ndPcs" local variable.(ãž×’úÿÿÿÿ
+Fsquid:S14813"*Remove this unused "cdPcs" local variable.(¦µÊœúÿÿÿÿ
+Asquid:S14814"*Remove this unused "ddPcs" local variable.(Ÿªº¾
+Fsquid:S14815"*Remove this unused "moIns" local variable.(ã÷Ò™úÿÿÿÿ

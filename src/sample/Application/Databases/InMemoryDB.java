@@ -1,7 +1,7 @@
 package sample.Application.Databases;
 
-public interface InMemoryDB {
+public abstract class InMemoryDB {
 
-  void showDB();
+  public void showDB(){}
 
 }

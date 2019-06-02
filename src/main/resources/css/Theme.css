@@ -1,0 +1,13 @@
+.table-column{
+    -fx-alignment: CENTER; 
+}
+    -fx-text-fill: #B2B2B2;
+    -fx-font-size : 12pt;
+    -jfx-focus-color: #FF0000;
+}
+.text-area *.text {
+    -fx-text-alignment: center;
+}
+.tab-header-background{
+    -fx-background-color:  #2A2E37;
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<JFXTabPane id="mainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../../../Theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Controller">
+   <tabs>
+      <Tab id="discTab" text="Discs">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BorderPane id="discPanel" layoutX="95.0" layoutY="231.0" prefHeight="700.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <top>
+                        <HBox id="logoHbox" prefHeight="60.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </top>
+                     <left>
+                        <VBox id="optionDiscPanel" prefHeight="200.0" prefWidth="120.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton id="addDisc" fx:id="addDisc" prefHeight="100.0" prefWidth="150.0" text="Add Disc" />
+                              <JFXButton fx:id="searchButton" prefHeight="100.0" prefWidth="150.0" text="Search" />
+                              <JFXButton fx:id="refresh" prefHeight="100.0" prefWidth="150.0" text="Refresh" />
+                              <Label text="Discs:" textFill="#ffff8d">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="40.0" top="90.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <JFXTextArea fx:id="discCount" editable="false" labelFloat="true" maxHeight="36.0" maxWidth="50.0" prefHeight="36.0" prefWidth="50.0">
+                                 <VBox.margin>
+                                    <Insets left="35.0" />
+                                 </VBox.margin>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </JFXTextArea>
+                           </children>
+                        </VBox>
+                     </left>
+                     <center>
+                        <TableView fx:id="discTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="numberCol" prefWidth="200.0" text="Number" />
+                            <TableColumn fx:id="dCol" prefWidth="200.0" text="Diameter" />
+                              <TableColumn fx:id="hCol" prefWidth="200.0" text="Height" />
+                              <TableColumn fx:id="h2Col" prefWidth="200.0" text="Double Height" />
+                              <TableColumn fx:id="wCol" prefWidth="170.0" text="Weight" />
+                          </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab id="boxTab" text="Boxes">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BorderPane id="discPanel" prefHeight="639.0" prefWidth="1100.0">
+                     <top>
+                        <HBox id="logoHbox" prefHeight="60.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </top>
+                     <left>
+                        <VBox id="optionDiscPanel" prefHeight="579.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="boxbuttonRefresh" prefHeight="50.0" prefWidth="150.0" text="Refresh">
+                                 <VBox.margin>
+                                    <Insets left="50.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <TextField fx:id="boxNumber" maxWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Enter box number.">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="80.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="boxWidth" maxWidth="-Infinity" prefWidth="150.0" promptText="Enter box height.">
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="30.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="boxHeight" maxWidth="-Infinity" prefWidth="150.0" promptText="Enter box width.">
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="30.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <JFXButton fx:id="addBox" text="Add">
+                                 <VBox.margin>
+                                    <Insets left="97.0" top="30.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </left>
+                     <center>
+                        <TableView fx:id="boxTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="sizeCol" prefWidth="200.0" text="Size" />
+                              <TableColumn fx:id="heightCol" prefWidth="200.0" text="Height" />
+                              <TableColumn fx:id="widthCol" prefWidth="200.0" text="Width" />
+                           </columns>
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab id="clientTab" text="Clients">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BorderPane id="discPanel" prefHeight="639.0" prefWidth="1100.0">
+                     <top>
+                        <HBox id="logoHbox" prefHeight="60.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </top>
+                     <left>
+                        <VBox id="optionDiscPanel" prefHeight="200.0" prefWidth="120.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="cclientRefreshButton" prefHeight="50.0" prefWidth="150.0" text="Refresh" />
+                              <JFXButton fx:id="addClient" prefHeight="50.0" prefWidth="150.0" text="Add Client">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                           </children>
+                        </VBox>
+                     </left>
+                     <center>
+                        <TableView fx:id="clientTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="idCol" prefWidth="77.0" text="ID" />
+                              <TableColumn fx:id="nameCol" prefWidth="348.0" text="Name" />
+                              <TableColumn fx:id="discConfCol" prefWidth="76.0" text="Disc Conf." />
+                              <TableColumn fx:id="discPcsCol" minWidth="5.0" prefWidth="63.0" text="Disc Pcs" />
+                              <TableColumn fx:id="coatedConfCol" prefWidth="81.0" text="Coated Conf" />
+                              <TableColumn fx:id="coatedPcsCol" prefWidth="73.0" text="Coated Pcs" />
+                              <TableColumn fx:id="drumsConfCol" prefWidth="85.0" text="Drums Conf" />
+                              <TableColumn fx:id="drumsPcsCol" prefWidth="83.0" text="Drums Pcs" />
+                              <TableColumn fx:id="montCol" prefWidth="91.0" text="Mont" />
+                           </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab id="confTab" text="Configurations">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+   </tabs>
+</JFXTabPane>

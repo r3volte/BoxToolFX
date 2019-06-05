@@ -1,30 +1,0 @@
-
-"squid:ClassVariableVisibilityCheck0"XMake coatedPcsCol a static final constant or non-public and provide accessors if needed.(üÿª­8Ğ»”µŸ-
-‰"squid:ClassVariableVisibilityCheck)"TMake widthCol a static final constant or non-public and provide accessors if needed.(ìÑÇŸ8Ğ»”µŸ-
-‘"squid:ClassVariableVisibilityCheck-"WMake discConfCol a static final constant or non-public and provide accessors if needed.(‰úÖ§ÿÿÿÿÿ8Ğ»”µŸ-
-‘"squid:ClassVariableVisibilityCheck2"WMake drumsPcsCol a static final constant or non-public and provide accessors if needed.(ˆôºˆøÿÿÿÿ8Ğ»”µŸ-
-Š"squid:ClassVariableVisibilityCheck."VMake discPcsCol a static final constant or non-public and provide accessors if needed.(´ï£38Ğ»”µŸ-
-ˆ"squid:ClassVariableVisibilityCheck3"SMake montCol a static final constant or non-public and provide accessors if needed.( ¡¿“8Ğ»”µŸ-
-’"squid:ClassVariableVisibilityCheck1"XMake drumsConfCol a static final constant or non-public and provide accessors if needed.(Ÿí˜ïûÿÿÿÿ8Ğ»”µŸ-
-"squid:ClassVariableVisibilityCheck/"YMake coatedConfCol a static final constant or non-public and provide accessors if needed.(À»»·8Ğ»”µŸ-
-"squid:ClassVariableVisibilityCheck*"UMake heightCol a static final constant or non-public and provide accessors if needed.(ù–ùŸøÿÿÿÿ8Ğ»”µŸ-
-‹"squid:ClassVariableVisibilityCheck+"QMake idCol a static final constant or non-public and provide accessors if needed.(Áˆ•ùÿÿÿÿ8Ğ»”µŸ-
-"squid:ClassVariableVisibilityCheck("SMake sizeCol a static final constant or non-public and provide accessors if needed.(·æøóşÿÿÿÿ8Ğ»”µŸ-
-"squid:ClassVariableVisibilityCheck,"SMake nameCol a static final constant or non-public and provide accessors if needed.(¤æâÕşÿÿÿÿ8Ğ»”µŸ-
-isquid:UnusedPrivateMethodq"8Remove this unused private "initBoxTableContent" method.(ÁßÙ¬ûÿÿÿÿ8â‡´´¡-
-dsquid:UnusedPrivateMethodv"3Remove this unused private "initClientData" method.(åù²³ûÿÿÿÿ8â‡´´¡-
-msquid:UnusedPrivateMethod‚";Remove this unused private "initClientTableContent" method.(œöÿßşÿÿÿÿ8â‡´´¡-
-Wsquid:UnusedPrivateMethod"-Remove this unused private "editCell" method.(²„ıÉ8â‡´´¡-
-Lsquid:S1068;")Remove this unused "dataB" private field.(¯õˆûúÿÿÿÿ8â‡´´¡-
-Lsquid:S1068<")Remove this unused "dataC" private field.(ÆëÚ¹şÿÿÿÿ8â‡´´¡-
-wsquid:S1450;"TRemove the "dataB" field and declare it as a local variable in the relevant methods.(¯õˆûúÿÿÿÿ8â‡´´¡-
-wsquid:S1450<"TRemove the "dataC" field and declare it as a local variable in the relevant methods.(ÆëÚ¹şÿÿÿÿ8â‡´´¡-
-isquid:CommentedOutCodeLine7"<This block of commented-out lines of code should be removed.(äİ 8â‡´´¡-
-nsquid:CommentedOutCodeLineL"<This block of commented-out lines of code should be removed.(Í»®…şÿÿÿÿ8â‡´´¡-
-nsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(íß¦ûúÿÿÿÿ8â‡´´¡-
-isquid:CommentedOutCodeLineY"<This block of commented-out lines of code should be removed.(ŠÅæ’8â‡´´¡-
-osquid:CommentedOutCodeLine‡"<This block of commented-out lines of code should be removed.(âù¿Õıÿÿÿÿ8â‡´´¡-
-osquid:CommentedOutCodeLine¡"<This block of commented-out lines of code should be removed.(İï¿Èÿÿÿÿÿ8â‡´´¡-
-xsquid:S00116>"TRename this field "pnl_discs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ¦Öëüÿÿÿÿ8â‡´´¡-
-zsquid:S00116@"VRename this field "pnl_clients" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£½ùüÿÿÿÿ8â‡´´¡-
-esquid:UselessImportCheck"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ıÿÿÿÿ8â‡´´¡-

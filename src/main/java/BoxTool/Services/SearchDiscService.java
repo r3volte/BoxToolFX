@@ -1,0 +1,74 @@
+package BoxTool.Services;
+
+import BoxTool.Data.Discs;
+import BoxTool.DatabaseOperations.Read.ChooseFileReader;
+import BoxTool.Selector.BoxSelector;
+import BoxTool.Selector.SelectDisc;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.io.IOException;
+import java.util.List;
+
+
+@Service(value = "searchService")
+public class SearchDiscService {
+
+  @Autowired
+  private DatabaseDiscService databaseDiscService;
+  @Autowired
+  private SelectDisc selectDisc;
+  @Autowired
+  private BoxSelector boxSelector;
+  @Autowired
+  private DatabaseBoxService databaseBoxService;
+
+
+  public void initDiscData(TableColumn searchNumber, TableColumn searchDiameter,
+                           TableColumn searchHeight, TableColumn searchDoubHei, TableColumn searchWeight) {
+    searchNumber.setCellValueFactory(new PropertyValueFactory("number"));
+    searchDiameter.setCellValueFactory(new PropertyValueFactory("diameter"));
+    searchHeight.setCellValueFactory(new PropertyValueFactory("height"));
+    searchDoubHei.setCellValueFactory(new PropertyValueFactory("height2"));
+    searchWeight.setCellValueFactory(new PropertyValueFactory("weight"));
+  }
+
+  public void initSearchBox(TableColumn numberSelected, TableColumn heightSelected,
+                            TableColumn widthSelected) {
+    numberSelected.setCellValueFactory(new PropertyValueFactory("number"));
+    heightSelected.setCellValueFactory(new PropertyValueFactory("height"));
+    widthSelected.setCellValueFactory(new PropertyValueFactory("width"));
+  }
+
+  public void initFileChooser(TableView searchDiscView, TableView selectedBox) {
+    ChooseFileReader in = new ChooseFileReader();
+    try {
+      List<Discs> myList = in.fileReader(selectDisc, databaseDiscService);
+      searchDiscView.setItems(databaseDiscService.getDataDisc(myList));
+      selectedBox.setItems(databaseBoxService
+              .getDataBox(boxSelector
+                      .selectBox(myList, databaseBoxService.getData())));
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public int getNumber(TableView searchDiscView, TextField numField) {
+    int number = Integer.parseInt(numField.getText());
+    searchDiscView.setItems(databaseDiscService
+            .getDataDisc(selectDisc
+                    .searchDisc(databaseDiscService.getData(), number)));
+    return number;
+  }
+
+  public void searchBox(TableView selectedBox, int number) {
+    selectedBox.setItems(databaseBoxService
+            .getDataBox(boxSelector.selectBox(selectDisc
+                    .searchDisc(databaseDiscService
+                            .getData(), number), databaseBoxService.getData())));
+  }
+}

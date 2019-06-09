@@ -1,6 +1,7 @@
 package BoxTool.Controllers;
 
 import BoxTool.Services.DatabaseBoxService;
+import BoxTool.Services.DatabaseClientService;
 import BoxTool.Services.DatabaseDiscService;
 import BoxTool.UI.Frames.AddFrame;
 import BoxTool.UI.Frames.SceneChanges;
@@ -31,11 +32,17 @@ public class Controller {
   @Qualifier("dService")
   private DatabaseDiscService discService;
   @Autowired
+  @Qualifier("clService")
+  private DatabaseClientService clientService;
+  @Autowired
   @Qualifier("boxFrame")
   private AddFrame addFrame;
   @Autowired
   @Qualifier("confFrame")
   private AddFrame addCFrame;
+  @Autowired
+  @Qualifier("clientFrame")
+  private AddFrame addClFrame;
   @Autowired
   @Qualifier("discFrame")
   private AddFrame addDFrame;
@@ -66,11 +73,15 @@ public class Controller {
   @FXML
   private JFXButton addDisc;
   @FXML
+  private JFXButton addClient;
+  @FXML
   private JFXButton searchButton;
   @FXML
   private TableView boxTable;
   @FXML
   private TableView discTable;
+  @FXML
+  private TableView clientTable;
   @FXML
   private TableColumn sizeCol;
   @FXML
@@ -88,6 +99,24 @@ public class Controller {
   @FXML
   private TableColumn wCol;
   @FXML
+  private TableColumn idCol;
+  @FXML
+  private TableColumn nameCol;
+  @FXML
+  private TableColumn discConfCol;
+  @FXML
+  private TableColumn discPcsCol;
+  @FXML
+  private TableColumn coatedConfCol;
+  @FXML
+  private TableColumn coatedPcsCol;
+  @FXML
+  private TableColumn drumsConfCol;
+  @FXML
+  private TableColumn drumsPcsCol;
+  @FXML
+  private TableColumn montCol;
+  @FXML
   private TabPane tabPane;
 
 
@@ -96,6 +125,7 @@ public class Controller {
     buttonInit();
     initBoxTable();
     initDiscTable();
+    intClientTable();
   }
 
   private void buttonInit() {
@@ -106,6 +136,7 @@ public class Controller {
     boxAddDB.addEventHandler(MouseEvent.MOUSE_CLICKED, boxFramePath);
     addConf.addEventHandler(MouseEvent.MOUSE_CLICKED, confFramePath);
     addDisc.addEventHandler(MouseEvent.MOUSE_CLICKED, discFramePath);
+    addClient.addEventHandler(MouseEvent.MOUSE_CLICKED, clientFramePath);
     searchButton.addEventHandler(MouseEvent.MOUSE_CLICKED, discSearchPath);
   }
 
@@ -119,6 +150,14 @@ public class Controller {
     discService.databaseDiscReader();
     discTable.setItems(discService.getData());
     discService.initDiscTable(numberCol, dCol, hCol, h2Col, wCol);
+  }
+
+  public void intClientTable() throws FileNotFoundException {
+    clientService.databaseClientReader();
+    clientTable.setItems(clientService.getData());
+    clientService.initClientTable(idCol, nameCol, discConfCol,
+            discPcsCol, coatedConfCol, coatedPcsCol,
+            drumsConfCol, drumsPcsCol, montCol);
   }
 
   private EventHandler<MouseEvent> initDiscPanel = IDP ->
@@ -135,6 +174,9 @@ public class Controller {
 
   private EventHandler<MouseEvent> boxFramePath = adder ->
           addFrame.add();
+
+  private EventHandler<MouseEvent> clientFramePath = adder ->
+          addClFrame.add();
 
   private EventHandler<MouseEvent> confFramePath = adder ->
           addCFrame.add();

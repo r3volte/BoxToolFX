@@ -164,7 +164,7 @@
     <center>
         <AnchorPane fx:id="pnl_discs" prefHeight="2000.0" prefWidth="2000.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
             <children>
-                <AnchorPane fx:id="pnl_discs" prefHeight="750.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane fx:id="pnl_discs" prefHeight="750.0" prefWidth="1080.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
                         <BorderPane prefHeight="750.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <center>
@@ -206,23 +206,6 @@
                                                     </HBox.margin>
                                                 </FontAwesomeIconView>
                                                 <JFXButton fx:id="searchButton" text="Search" textAlignment="CENTER" textFill="#fcfaf5">
-                                                    <font>
-                                                        <Font name="Bitstream Vera Sans Bold" size="16.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="10.0" />
-                                                    </HBox.margin>
-                                                </JFXButton>
-                                            </children>
-                                        </HBox>
-                                        <HBox fx:id="refresh" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;" AnchorPane.topAnchor="350.0">
-                                            <children>
-                                                <FontAwesomeIconView fill="#fcfaf5" glyphName="REFRESH" size="20">
-                                                    <HBox.margin>
-                                                        <Insets left="10.0" />
-                                                    </HBox.margin>
-                                                </FontAwesomeIconView>
-                                                <JFXButton fx:id="refreshDisc" text="Refresh" textAlignment="CENTER" textFill="#fcfaf5">
                                                     <font>
                                                         <Font name="Bitstream Vera Sans Bold" size="16.0" />
                                                     </font>
@@ -276,7 +259,7 @@
                         </BorderPane>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="pnl_clients" layoutX="10.0" layoutY="10.0" prefHeight="770.0" prefWidth="1100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane fx:id="pnl_clients" layoutX="10.0" layoutY="10.0" prefHeight="770.0" prefWidth="1100.0" stylesheets="@../css/Theme.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
                         <BorderPane prefHeight="750.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <center>

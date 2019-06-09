@@ -29,13 +29,9 @@ public class AddConfController {
   @FXML
   void initialize() {
     clearConfButton.addEventHandler(MouseEvent.MOUSE_CLICKED, clear);
-    submitConfButton.addEventHandler(MouseEvent.MOUSE_CLICKED, submitOk);
   }
 
   private EventHandler<MouseEvent> clear = cl ->
           confName.clear();
 
-  private EventHandler<MouseEvent> submitOk = ok -> {
-    databaseConfService.createConf(confName, controller, confList);
-  };
 }

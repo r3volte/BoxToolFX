@@ -27,7 +27,6 @@ public class DatabaseFileRead {
   public void databaseConfReader(String fileIn, Map<String, List<Box>> list, Type type) throws FileNotFoundException {
     HashMap<String, List<Box>> tempList = new Gson().fromJson(readFile(fileIn), type);
     list.putAll(tempList);
-    System.out.println(list);
     logger.info("Configuration database read successfully");
   }
 

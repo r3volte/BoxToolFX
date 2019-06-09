@@ -38,7 +38,6 @@ public class DatabaseDiscService {
     databaseFileRead.databaseReader(Resources.DiscDBFile(),
             dataRepository.getComponent(),
             ListType.listDisk());
-    System.out.println(dataRepository.getComponent().toString());
   }
 
   private void databaseDiscWriter() throws IOException {

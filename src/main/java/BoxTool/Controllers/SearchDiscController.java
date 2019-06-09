@@ -4,6 +4,7 @@ import BoxTool.Services.SearchDiscService;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -22,6 +23,8 @@ public class SearchDiscController {
   private JFXButton multipleSearchButton;
   @FXML
   private TextField numField;
+  @FXML
+  private ComboBox confBox;
   @FXML
   private TableView searchDiscView;
   @FXML
@@ -53,6 +56,7 @@ public class SearchDiscController {
     searchSubmit.addEventHandler(MouseEvent.MOUSE_CLICKED, search);
     multipleSearchButton.addEventHandler(MouseEvent.MOUSE_CLICKED, fileChooser);
     numField.setOnKeyPressed(getKeyEventEventHandler());
+    searchDiscService.initComboConfigurationBox(confBox);
   }
 
   private EventHandler<KeyEvent> getKeyEventEventHandler() {
@@ -60,15 +64,16 @@ public class SearchDiscController {
       if (event.getCode().equals(KeyCode.ENTER)) {
         searchDiscService
                 .searchBox(selectedBox, searchDiscService
-                        .getNumber(searchDiscView, numField));
+                        .getNumber(searchDiscView, numField), String.valueOf(confBox.getValue()));
       }
     };
   }
 
-  private EventHandler<MouseEvent> search = ok ->
-          searchDiscService
-                  .searchBox(selectedBox, searchDiscService.
-                          getNumber(searchDiscView, numField));
+  private EventHandler<MouseEvent> search = ok -> {
+    searchDiscService
+            .searchBox(selectedBox, searchDiscService.
+                    getNumber(searchDiscView, numField), String.valueOf(confBox.getValue()));
+  };
 
   private EventHandler<MouseEvent> fileChooser = f ->
           searchDiscService.initFileChooser(searchDiscView, selectedBox);

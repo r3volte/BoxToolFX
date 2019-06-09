@@ -18,6 +18,14 @@ public class Resources {
     return "/xml/errorBoxPanel.fxml";
   }
 
+  public static String clientFramePath() {
+    return "/xml/addClient.fxml";
+  }
+
+  public static String clientFrameErrorPath() {
+    return "/xml/errorClientPanel.fxml";
+  }
+
   public static String confFramePath() {
     return "/xml/addConf.fxml";
   }
@@ -43,7 +51,7 @@ public class Resources {
   }
 
   public static String ClientDBFile() {
-    return "/json/clients.json";
+    return "clients.json";
   }
 
   public static String ConfDBFile() {

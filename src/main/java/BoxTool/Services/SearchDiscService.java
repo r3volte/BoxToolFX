@@ -4,6 +4,7 @@ import BoxTool.Data.Discs;
 import BoxTool.DatabaseOperations.Read.ChooseFileReader;
 import BoxTool.Selector.BoxSelector;
 import BoxTool.Selector.SelectDisc;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -26,6 +27,8 @@ public class SearchDiscService {
   private BoxSelector boxSelector;
   @Autowired
   private DatabaseBoxService databaseBoxService;
+  @Autowired
+  private DatabaseConfService databaseConfService;
 
 
   public void initDiscData(TableColumn searchNumber, TableColumn searchDiameter,
@@ -57,6 +60,13 @@ public class SearchDiscService {
     }
   }
 
+  public void initComboConfigurationBox(ComboBox comboBox) {
+    databaseConfService.configurationComboBox(comboBox);
+  }
+  public List initTest(String string) {
+    return databaseConfService.initComboList(string);
+  }
+
   public int getNumber(TableView searchDiscView, TextField numField) {
     int number = Integer.parseInt(numField.getText());
     searchDiscView.setItems(databaseDiscService
@@ -65,10 +75,10 @@ public class SearchDiscService {
     return number;
   }
 
-  public void searchBox(TableView selectedBox, int number) {
+  public void searchBox(TableView selectedBox, int number, String string) {
     selectedBox.setItems(databaseBoxService
             .getDataBox(boxSelector.selectBox(selectDisc
                     .searchDisc(databaseDiscService
-                            .getData(), number), databaseBoxService.getData())));
+                            .getData(), number), databaseConfService.initComboList(string))));
   }
 }

@@ -38,7 +38,6 @@ public class DatabaseBoxService {
     databaseFileRead.databaseReader(Resources.BoxDBFile(),
             dataRepository.getComponent(),
             ListType.listBox());
-    System.out.println(dataRepository.getComponent().toString());
   }
 
   private void databaseBoxWriter() throws IOException {

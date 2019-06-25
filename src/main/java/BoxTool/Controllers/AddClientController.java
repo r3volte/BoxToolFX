@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,7 +16,7 @@ public class AddClientController {
   @FXML
   private JFXButton clientClearButt;
   @FXML
-  private JFXButton clientSubmitButt;
+  private JFXButton clientSumbitButt;
   @FXML
   private TextField idField;
   @FXML
@@ -52,7 +51,7 @@ public class AddClientController {
   @FXML
   void initialize() {
     clientClearButt.addEventHandler(MouseEvent.MOUSE_CLICKED, clear);
-    //clientSubmitButt.addEventHandler(MouseEvent.MOUSE_CLICKED, submitOk);
+    clientSumbitButt.addEventHandler(MouseEvent.MOUSE_CLICKED, submitOk);
   }
 
   EventHandler<MouseEvent> clear = cl -> {
@@ -65,10 +64,10 @@ public class AddClientController {
 
   EventHandler<MouseEvent> submitOk = ok -> {
     try {
-//      databaseClientService.addNewClient(idField, nameField, discConfField,
-//              coatedConfField, drumConfField, montIns, discsPcs, coatedPcs, drumPcs);
+      databaseClientService.addNewClient(idField, nameField, discConfField,
+              coatedConfField, drumConfField, montIns, discsPcs, coatedPcs, drumPcs);
     } catch (NumberFormatException e) {
-      //boxFrame.error();
+      boxFrame.error();
     }
   };
 }

@@ -63,9 +63,6 @@ public class SearchDiscService {
   public void initComboConfigurationBox(ComboBox comboBox) {
     databaseConfService.configurationComboBox(comboBox);
   }
-  public List initTest(String string) {
-    return databaseConfService.initComboList(string);
-  }
 
   public int getNumber(TableView searchDiscView, TextField numField) {
     int number = Integer.parseInt(numField.getText());

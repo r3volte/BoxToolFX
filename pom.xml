@@ -11,8 +11,9 @@
     <groupId>BoxTool</groupId>
     <artifactId>BoxTool</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>BoxTool</name>
-    <description>BoxTool Project</description>
+    <name>boxTool</name>
+    <description>boxTool Project</description>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>1.8</java.version>
@@ -123,14 +124,22 @@
             <version>8.40.14</version>
         </dependency>
 
-
     </dependencies>
+
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.8.3</version>
+                <configuration>
+                    <mainClass>boxTool.BoxToolApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

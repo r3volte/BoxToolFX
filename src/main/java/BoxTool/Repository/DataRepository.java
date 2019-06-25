@@ -1,15 +1,14 @@
-package BoxTool.Repository;
-
+package boxTool.repository;
 
 import java.util.List;
 
 public interface DataRepository {
 
-  void add(Object component);
+    void add(Object component);
 
-  void delete(Object component);
+    void delete(Object component);
 
-  List getComponent();
+    List getComponent();
 
-  String fileConverter(List repo);
+    String fileConverter(List repo);
 }

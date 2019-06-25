@@ -1,4 +1,4 @@
-package BoxTool.DatabaseOperations.Write;
+package boxTool.databaseOperations.write;
 
 import org.springframework.stereotype.Component;
 

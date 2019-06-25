@@ -1,9 +1,8 @@
-package BoxTool.Selector;
+package boxTool.selector;
 
-import BoxTool.Data.Discs;
+import boxTool.data.Discs;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
 import java.util.List;

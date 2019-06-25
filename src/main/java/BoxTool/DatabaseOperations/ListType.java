@@ -1,9 +1,8 @@
-package BoxTool.DatabaseOperations;
+package boxTool.databaseOperations;
 
-import BoxTool.Data.Box;
-import BoxTool.Data.Clients;
-import BoxTool.Data.Configurations;
-import BoxTool.Data.Discs;
+import boxTool.data.Box;
+import boxTool.data.Clients;
+import boxTool.data.Discs;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -13,23 +12,23 @@ import java.util.List;
 
 public class ListType {
 
-  public static Type listDisk() {
-    return new TypeToken<ArrayList<Discs>>() {
-    }.getType();
-  }
+    public static Type listDisk() {
+        return new TypeToken<ArrayList<Discs>>() {
+        }.getType();
+    }
 
-  public static Type listBox() {
-    return new TypeToken<ArrayList<Box>>() {
-    }.getType();
-  }
+    public static Type listBox() {
+        return new TypeToken<ArrayList<Box>>() {
+        }.getType();
+    }
 
-  public static Type listClient() {
-    return new TypeToken<ArrayList<Clients>>() {
-    }.getType();
-  }
+    public static Type listClient() {
+        return new TypeToken<ArrayList<Clients>>() {
+        }.getType();
+    }
 
-  public static Type listTypeConf() {
-    return new TypeToken<HashMap<String, List<Box>>>() {
-    }.getType();
-  }
+    public static Type listTypeConf() {
+        return new TypeToken<HashMap<String, List<Box>>>() {
+        }.getType();
+    }
 }

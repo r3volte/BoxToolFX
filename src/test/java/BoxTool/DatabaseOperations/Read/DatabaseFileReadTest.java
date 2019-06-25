@@ -1,16 +1,12 @@
-package BoxTool.DatabaseOperations.Read;
+package boxTool.databaseOperations.read;
 
-import BoxTool.Data.Box;
-import BoxTool.DatabaseOperations.ListType;
+import boxTool.databaseOperations.ListType;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DatabaseFileReadTest {
@@ -20,7 +16,7 @@ public class DatabaseFileReadTest {
 
   @BeforeClass
   public static void beforeClass() {
-    fileIn = "src\\main\\resources\\json\\box.json";
+    fileIn = "box.json";
   }
 
   @Test
@@ -36,10 +32,4 @@ public class DatabaseFileReadTest {
     assertFalse(myList.isEmpty());
   }
 
-  @Test
-  public void shouldReadConf() throws FileNotFoundException {
-    DatabaseFileRead read = new DatabaseFileRead();
-    Map<String, List<Box>> map = new HashMap<>();
-    read.databaseConfReader("",map, ListType.listTypeConf());
-  }
 }

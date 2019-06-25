@@ -1,12 +1,12 @@
-package BoxTool.Services;
+package boxTool.services;
 
-import BoxTool.Controllers.Controller;
-import BoxTool.Data.Box;
-import BoxTool.FileResources.Resources;
-import BoxTool.DatabaseOperations.ListType;
-import BoxTool.DatabaseOperations.Read.DatabaseFileRead;
-import BoxTool.DatabaseOperations.Write.DatabaseFileWrite;
-import BoxTool.Repository.DataRepository;
+import boxTool.controllers.Controller;
+import boxTool.data.Box;
+import boxTool.fileResources.Resources;
+import boxTool.databaseOperations.ListType;
+import boxTool.databaseOperations.read.DatabaseFileRead;
+import boxTool.databaseOperations.write.DatabaseFileWrite;
+import boxTool.repository.DataRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
@@ -24,58 +24,61 @@ import java.util.List;
 public class DatabaseBoxService {
 
 
-  @Autowired
-  @Qualifier("bRepo")
-  private DataRepository dataRepository;
+    private final DataRepository dataRepository;
+    private final DatabaseFileRead databaseFileRead;
+    private final DatabaseFileWrite databaseFileWrite;
 
-  @Autowired
-  private DatabaseFileRead databaseFileRead;
-
-  @Autowired
-  private DatabaseFileWrite databaseFileWrite;
-
-  public void databaseBoxReader() throws FileNotFoundException {
-    databaseFileRead.databaseReader(Resources.BoxDBFile(),
-            dataRepository.getComponent(),
-            ListType.listBox());
-  }
-
-  private void databaseBoxWriter() throws IOException {
-    databaseFileWrite.save(Resources.BoxDBFile(), dataRepository.fileConverter(dataRepository.getComponent()));
-  }
-
-  public void initBoxTable(TableColumn sizeCol, TableColumn heightCol, TableColumn widthCol) {
-    sizeCol.setCellValueFactory(new PropertyValueFactory("number"));
-    heightCol.setCellValueFactory(new PropertyValueFactory("height"));
-    widthCol.setCellValueFactory(new PropertyValueFactory("width"));
-  }
-
-  public void addNewBox(TextField numBox, TextField boxWidth, TextField boxHeight) {
-    Integer first = Integer.valueOf(numBox.getText());
-    Integer second = Integer.valueOf(boxWidth.getText());
-    Integer third = Integer.valueOf(boxHeight.getText());
-    dataRepository.add(new Box(first, second, third));
-    System.out.println(dataRepository.getComponent());
-  }
-
-  public void refreshTable(Controller controller) {
-    try {
-      controller.getBoxTable().setVisible(false);
-      controller.getBoxTable()
-              .setItems(controller.getBoxService().getData().sorted());
-      controller.getBoxTable().setVisible(true);
-      databaseBoxWriter();
-    } catch (IOException e) {
-      e.printStackTrace();
+    @Autowired
+    public DatabaseBoxService(@Qualifier("bRepo") DataRepository dataRepository,
+                              DatabaseFileRead databaseFileRead,
+                              DatabaseFileWrite databaseFileWrite) {
+        this.dataRepository = dataRepository;
+        this.databaseFileRead = databaseFileRead;
+        this.databaseFileWrite = databaseFileWrite;
     }
-  }
 
-  public ObservableList getData() {
-    return FXCollections.observableArrayList(dataRepository.getComponent());
-  }
+    public void databaseBoxReader() throws FileNotFoundException {
+        databaseFileRead.databaseReader(Resources.boxDBFile(),
+                dataRepository.getComponent(),
+                ListType.listBox());
+    }
+
+    private void databaseBoxWriter() throws IOException {
+        databaseFileWrite.save(Resources.boxDBFile(), dataRepository.fileConverter(dataRepository.getComponent()));
+    }
+
+    public void initBoxTable(TableColumn sizeCol, TableColumn heightCol, TableColumn widthCol) {
+        sizeCol.setCellValueFactory(new PropertyValueFactory("number"));
+        heightCol.setCellValueFactory(new PropertyValueFactory("height"));
+        widthCol.setCellValueFactory(new PropertyValueFactory("width"));
+    }
+
+    public void addNewBox(TextField numBox, TextField boxWidth, TextField boxHeight) {
+        Integer first = Integer.valueOf(numBox.getText());
+        Integer second = Integer.valueOf(boxWidth.getText());
+        Integer third = Integer.valueOf(boxHeight.getText());
+        dataRepository.add(new Box(first, second, third));
+        System.out.println(dataRepository.getComponent());
+    }
+
+    public void refreshTable(Controller controller) {
+        try {
+            controller.getBoxTable().setVisible(false);
+            controller.getBoxTable()
+                    .setItems(controller.getBoxService().getData().sorted());
+            controller.getBoxTable().setVisible(true);
+            databaseBoxWriter();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ObservableList getData() {
+        return FXCollections.observableArrayList(dataRepository.getComponent());
+    }
 
 
-  public ObservableList getDataBox(List<Box> list) {
-    return FXCollections.observableArrayList(list);
-  }
+    public ObservableList getDataBox(List<Box> list) {
+        return FXCollections.observableArrayList(list);
+    }
 }

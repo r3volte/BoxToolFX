@@ -1,4 +1,4 @@
-package BoxTool.Data;
+package boxTool.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,11 +10,11 @@ public class Clients {
   private Integer id;
   private String name;
   private String discConf;
-  private PcsPerBox discPcsPerBox;
+  private String discPcsPerBox;
   private String coatedConf;
-  private PcsPerBox coatedPcsPerBox;
+  private String coatedPcsPerBox;
   private String drumConf;
-  private PcsPerBox drumPcsPerBox;
-  private MountInstruction montInst;
+  private String drumPcsPerBox;
+  private String montInst;
 
 }

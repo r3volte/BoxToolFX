@@ -1,8 +1,6 @@
-package BoxTool.Repository;
+package boxTool.repository;
 
-import BoxTool.Data.Clients;
-import BoxTool.Data.MountInstruction;
-import BoxTool.Data.PcsPerBox;
+import boxTool.data.Clients;
 import org.json.JSONException;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
@@ -10,32 +8,11 @@ import org.skyscreamer.jsonassert.JSONAssert;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ClientsRepositoryTest {
 
 
-  @Test
-  public void shouldAddClientsToList() {
-    DataRepository clientRepo = new ClientRepository();
-    List<Clients> beforeAdd = new ArrayList<>();
-    Clients clients = new Clients(12, "NK", "NK", PcsPerBox.ONE,
-            "NK", PcsPerBox.ONE, "NK", PcsPerBox.ONE, MountInstruction.YES);
-    clientRepo.add(clients);
-    assertEquals(beforeAdd.size() + 1, clientRepo.getComponent().size());
-  }
-
-  @Test
-  public void shouldRemoveBoxFromList() {
-    DataRepository clientRepo = new ClientRepository();
-    List<Clients> afterRemove = new ArrayList<>();
-    Clients clients = new Clients(12, "NK", "NK", PcsPerBox.ONE,
-            "NK", PcsPerBox.ONE, "NK", PcsPerBox.ONE, MountInstruction.YES);
-    clientRepo.getComponent().add(clients);
-    clientRepo.delete(clients);
-    assertEquals(afterRemove.size(), clientRepo.getComponent().size());
-  }
 
   @Test
   public void shouldBeJSonException() {

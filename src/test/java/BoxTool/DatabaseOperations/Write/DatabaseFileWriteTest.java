@@ -1,9 +1,8 @@
-package BoxTool.DatabaseOperations.Write;
+package boxTool.databaseOperations.write;
 
-import BoxTool.Data.Box;
-import BoxTool.Repository.BoxRepository;
-import BoxTool.Repository.DataRepository;
-import org.junit.AfterClass;
+import boxTool.data.Box;
+import boxTool.repository.BoxRepository;
+import boxTool.repository.DataRepository;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;

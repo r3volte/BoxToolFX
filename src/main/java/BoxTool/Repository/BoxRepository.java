@@ -1,6 +1,5 @@
-package BoxTool.Repository;
+package boxTool.repository;
 
-import BoxTool.Data.Box;
 import com.google.gson.Gson;
 import org.springframework.stereotype.Repository;
 
@@ -12,10 +11,6 @@ public class BoxRepository implements DataRepository {
 
 
   private static List componentList = new ArrayList<>();
-
-  public Box createBox(Integer number, Integer width, Integer height) {
-    return new Box(number, width, height);
-  }
 
   public void add(Object component) {
     componentList.add(component);

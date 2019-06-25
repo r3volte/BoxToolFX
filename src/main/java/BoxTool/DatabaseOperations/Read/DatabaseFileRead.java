@@ -1,6 +1,6 @@
-package BoxTool.DatabaseOperations.Read;
+package boxTool.databaseOperations.read;
 
-import BoxTool.Data.Box;
+import boxTool.data.Box;
 import com.google.gson.Gson;
 import org.springframework.stereotype.Component;
 

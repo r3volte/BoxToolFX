@@ -1,4 +1,4 @@
-package BoxTool.Data;
+package boxTool.data;
 
 import com.google.gson.annotations.SerializedName;
 

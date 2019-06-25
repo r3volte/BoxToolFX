@@ -1,6 +1,6 @@
-package BoxTool;
+package boxTool;
 
-import BoxTool.FileResources.Resources;
+import boxTool.fileResources.Resources;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -1,12 +1,9 @@
-package BoxTool.DatabaseOperations.Read;
+package boxTool.databaseOperations.read;
 
-import BoxTool.Data.Discs;
-import BoxTool.Repository.DataRepository;
-import BoxTool.Repository.DiscRepository;
-import BoxTool.Selector.SelectDisc;
-import BoxTool.Services.DatabaseDiscService;
+import boxTool.data.Discs;
+import boxTool.selector.SelectDisc;
+import boxTool.services.DatabaseDiscService;
 import javafx.stage.FileChooser;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -14,9 +11,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Supplier;
+import java.util.logging.Logger;
 
 @Component
 public class ChooseFileReader {
+
+  private final Logger logger = Logger.getLogger(this.getClass().getName());
 
 
   public List<Discs> fileReader(SelectDisc selectDisc, DatabaseDiscService discsDB) throws IOException {
@@ -38,7 +39,7 @@ public class ChooseFileReader {
     FileChooser fileChooser = getFileChooser();
     File file = fileChooser.showOpenDialog(null);
     if (file != null) {
-      System.out.println(file.getAbsoluteFile());
+      logger.info((Supplier<String>) file.getAbsoluteFile());
     }
     return file;
   }
@@ -46,7 +47,8 @@ public class ChooseFileReader {
   private FileChooser getFileChooser() {
     FileChooser fileChooser = new FileChooser();
     fileChooser.getExtensionFilters()
-            .add(new FileChooser.ExtensionFilter("Txt file", "*.txt"));
+            .add(new FileChooser
+                    .ExtensionFilter("Txt file", "*.txt"));
     return fileChooser;
   }
 }

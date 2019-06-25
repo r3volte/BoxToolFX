@@ -1,4 +1,4 @@
-package BoxTool.Data;
+package boxTool.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,4 +10,5 @@ public class Box {
   private Integer number;
   private Integer width;
   private Integer height;
+
 }

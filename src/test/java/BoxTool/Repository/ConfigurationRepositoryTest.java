@@ -1,6 +1,6 @@
-package BoxTool.Repository;
+package boxTool.repository;
 
-import BoxTool.Data.Configurations;
+import boxTool.data.Configurations;
 import org.json.JSONException;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
@@ -29,15 +29,6 @@ public class ConfigurationRepositoryTest {
     repo.fileConverter(myList);
     assertThrows(JSONException.class, () -> JSONAssert
             .assertEquals("", repo.fileConverter(myList), true));
-  }
-
-  @Test
-  public void shouldGetConvertedJSon() throws JSONException {
-    ConfigurationsRepository repo = new ConfigurationsRepository();
-    repo.add("NK", 325, 270, 115);
-    repo.fileConverter(repo.getComponent());
-    JSONAssert.assertEquals("{\"NK\":{\"number\":325,\"width\":270,\"height\":115}}", repo.fileConverter(repo.getComponent()), true);
-    JSONAssert.assertEquals("{\"NK\":{\"width\":270,\"number\":325,\"height\":115}}", repo.fileConverter(repo.getComponent()), false);
   }
 
 }

@@ -1,9 +1,9 @@
-package BoxTool.Services;
+package boxTool.services;
 
-import BoxTool.Data.Discs;
-import BoxTool.DatabaseOperations.Read.ChooseFileReader;
-import BoxTool.Selector.BoxSelector;
-import BoxTool.Selector.SelectDisc;
+import boxTool.data.Discs;
+import boxTool.databaseOperations.read.ChooseFileReader;
+import boxTool.selector.BoxSelector;
+import boxTool.selector.SelectDisc;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;

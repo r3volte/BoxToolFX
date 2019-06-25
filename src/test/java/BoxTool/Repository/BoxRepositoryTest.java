@@ -1,6 +1,6 @@
-package BoxTool.Repository;
+package boxTool.repository;
 
-import BoxTool.Data.Box;
+import boxTool.data.Box;
 import org.json.JSONException;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
@@ -29,7 +29,6 @@ public class BoxRepositoryTest {
     DataRepository boxRepo = new BoxRepository();
     List<Box> afterRemove = new ArrayList<>();
     Box box = new Box(120, 120, 120);
-    boxRepo.getComponent().add(box);
     boxRepo.delete(box);
     assertEquals(afterRemove.size(), boxRepo.getComponent().size());
   }

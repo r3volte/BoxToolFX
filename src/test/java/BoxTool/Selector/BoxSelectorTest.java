@@ -1,4 +1,4 @@
-package BoxTool.Selector;
+package boxTool.selector;
 
 public class BoxSelectorTest {
 }

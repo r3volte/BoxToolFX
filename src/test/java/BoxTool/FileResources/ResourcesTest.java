@@ -1,4 +1,4 @@
-package BoxTool.FileResources;
+package boxTool.fileResources;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;

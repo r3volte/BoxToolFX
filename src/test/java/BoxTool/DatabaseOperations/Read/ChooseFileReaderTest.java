@@ -1,4 +1,4 @@
-package BoxTool.DatabaseOperations.Read;
+package boxTool.databaseOperations.read;
 
 public class ChooseFileReaderTest {
 

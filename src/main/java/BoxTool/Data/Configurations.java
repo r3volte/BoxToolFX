@@ -1,4 +1,4 @@
-package BoxTool.Data;
+package boxTool.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

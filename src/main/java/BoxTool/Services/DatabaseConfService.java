@@ -1,14 +1,10 @@
-package BoxTool.Services;
+package boxTool.services;
 
-import BoxTool.FileResources.Resources;
-import BoxTool.DatabaseOperations.ListType;
-import BoxTool.DatabaseOperations.Read.DatabaseFileRead;
-import BoxTool.Repository.ConfigurationsRepository;
+import boxTool.fileResources.Resources;
+import boxTool.databaseOperations.ListType;
+import boxTool.databaseOperations.read.DatabaseFileRead;
+import boxTool.repository.ConfigurationsRepository;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 
 
@@ -26,34 +22,38 @@ import java.util.List;
 @Service
 public class DatabaseConfService {
 
-  @Autowired
-  private ConfigurationsRepository dataRepository;
+    private final ConfigurationsRepository dataRepository;
+    private final DatabaseFileRead databaseFileRead;
 
-  @Autowired
-  private DatabaseFileRead databaseFileRead;
-
-
-  public void databaseConfigReaderReader() throws FileNotFoundException {
-    databaseFileRead.databaseConfReader(Resources.ConfDBFile(),
-            dataRepository.getComponent(),
-            ListType.listTypeConf());
-  }
-
-  public void configurationComboBox(ComboBox comboBox) {
-    try {
-      databaseConfigReaderReader();
-      comboBox.getItems().setAll(dataRepository.getComponent().keySet());
-    } catch (FileNotFoundException e) {
-      e.printStackTrace();
+    @Autowired
+    public DatabaseConfService(ConfigurationsRepository dataRepository,
+                               DatabaseFileRead databaseFileRead) {
+        this.dataRepository = dataRepository;
+        this.databaseFileRead = databaseFileRead;
     }
-  }
 
-  public List initComboList(String box) {
-   List temp = new ArrayList();
-    dataRepository.getComponent().get(box);
-    temp.addAll((Collection) dataRepository.getComponent().get(box));
-    System.out.println(temp.size());
-    return temp;
-  }
+
+    public void databaseConfigReaderReader() throws FileNotFoundException {
+        databaseFileRead.databaseConfReader(Resources.confDBFile(),
+                dataRepository.getComponent(),
+                ListType.listTypeConf());
+    }
+
+    public void configurationComboBox(ComboBox comboBox) {
+        try {
+            databaseConfigReaderReader();
+            comboBox.getItems().setAll(dataRepository.getComponent().keySet());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List initComboList(String box) {
+        List temp = new ArrayList();
+        dataRepository.getComponent().get(box);
+        temp.addAll((Collection) dataRepository.getComponent().get(box));
+        System.out.println(temp.size());
+        return temp;
+    }
 
 }

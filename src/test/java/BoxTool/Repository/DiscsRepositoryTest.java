@@ -1,7 +1,6 @@
-package BoxTool.Repository;
+package boxTool.repository;
 
-import BoxTool.Data.Box;
-import BoxTool.Data.Discs;
+import boxTool.data.Discs;
 import org.json.JSONException;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
@@ -29,7 +28,6 @@ public class DiscsRepositoryTest {
     DataRepository discRepo = new DiscRepository();
     List<Discs> afterRemove = new ArrayList<>();
     Discs discs = new Discs(201011, 300.0, 40.3, 80.6, 5.3);
-    discRepo.getComponent().add(discs);
     discRepo.delete(discs);
     assertEquals(afterRemove.size(), discRepo.getComponent().size());
   }

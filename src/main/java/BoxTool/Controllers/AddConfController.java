@@ -1,6 +1,6 @@
-package BoxTool.Controllers;
+package boxTool.controllers;
 
-import BoxTool.Services.DatabaseConfService;
+import boxTool.services.DatabaseConfService;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,25 +13,33 @@ import org.springframework.stereotype.Component;
 @Component
 public class AddConfController {
 
-  @FXML
-  private JFXButton clearConfButton;
-  @FXML
-  private JFXButton submitConfButton;
-  @FXML
-  private TextField confName;
-  @FXML
-  private CheckComboBox<String> confList;
-  @Autowired
-  private DatabaseConfService databaseConfService;
-  @Autowired
-  private Controller controller;
+    @FXML
+    private JFXButton clearConfButton;
+    @FXML
+    private JFXButton submitConfButton;
+    @FXML
+    private TextField confName;
+    @FXML
+    private CheckComboBox<String> confList;
+    private DatabaseConfService databaseConfService;
+    private Controller controller;
 
-  @FXML
-  void initialize() {
-    clearConfButton.addEventHandler(MouseEvent.MOUSE_CLICKED, clear);
-  }
+    @Autowired
+    public void setDatabaseConfService(DatabaseConfService databaseConfService) {
+        this.databaseConfService = databaseConfService;
+    }
 
-  private EventHandler<MouseEvent> clear = cl ->
-          confName.clear();
+    @Autowired
+    public void setController(Controller controller) {
+        this.controller = controller;
+    }
+
+    @FXML
+    void initialize() {
+        clearConfButton.addEventHandler(MouseEvent.MOUSE_CLICKED, clear);
+    }
+
+    private EventHandler<MouseEvent> clear = cl ->
+            confName.clear();
 
 }

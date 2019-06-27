@@ -4,10 +4,7 @@ import boxTool.data.Discs;
 import boxTool.databaseOperations.read.ChooseFileReader;
 import boxTool.selector.BoxSelector;
 import boxTool.selector.SelectDisc;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,14 +44,14 @@ public class SearchDiscService {
     widthSelected.setCellValueFactory(new PropertyValueFactory("width"));
   }
 
-  public void initFileChooser(TableView searchDiscView, TableView selectedBox) {
+  public void initFileChooser(TableView searchDiscView, TableView selectedBox, TextArea result) {
     ChooseFileReader in = new ChooseFileReader();
     try {
       List<Discs> myList = in.fileReader(selectDisc, databaseDiscService);
       searchDiscView.setItems(databaseDiscService.getDataDisc(myList));
       selectedBox.setItems(databaseBoxService
               .getDataBox(boxSelector
-                      .selectBox(myList, databaseBoxService.getData())));
+                      .selectBox(myList, databaseBoxService.getData(), result)));
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -72,10 +69,10 @@ public class SearchDiscService {
     return number;
   }
 
-  public void searchBox(TableView selectedBox, int number, String string) {
+  public void searchBox(TableView selectedBox, int number, String string, TextArea result) {
     selectedBox.setItems(databaseBoxService
             .getDataBox(boxSelector.selectBox(selectDisc
                     .searchDisc(databaseDiscService
-                            .getData(), number), databaseConfService.initComboList(string))));
+                            .getData(), number), databaseConfService.initComboList(string), result)));
   }
 }

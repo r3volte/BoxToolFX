@@ -6,11 +6,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lombok.Data;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 
+@Data
 @SpringBootApplication
 public class BoxToolApplication extends Application {
 
@@ -31,9 +35,12 @@ public class BoxToolApplication extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
+    Resources.setLocale();
+    ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");
+    fxmlLoader.setResources(bundle);
     fxmlLoader.setLocation(getClass().getResource(Resources.mainFrame()));
     rootNode = fxmlLoader.load();
-    primaryStage.setTitle("Box Tool 1.0.3");
+    primaryStage.setTitle(bundle.getString("title.application"));
     primaryStage.setScene(new Scene(rootNode, 1300, 800));
     primaryStage.show();
   }

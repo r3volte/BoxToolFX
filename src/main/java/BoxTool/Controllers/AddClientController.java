@@ -36,7 +36,7 @@ public class AddClientController {
   @FXML
   private TextField drumPcs;
   private DatabaseClientService databaseClientService;
-  private AddFrame boxFrame;
+  private AddFrame clientFrame;
 
   @Autowired
   public void setDatabaseClientService(DatabaseClientService databaseClientService) {
@@ -45,7 +45,7 @@ public class AddClientController {
 
   @Autowired
   public void setClientFrame(AddFrame boxFrame) {
-    this.boxFrame = boxFrame;
+    this.clientFrame = boxFrame;
   }
 
   @FXML
@@ -67,7 +67,7 @@ public class AddClientController {
       databaseClientService.addNewClient(idField, nameField, discConfField,
               coatedConfField, drumConfField, montIns, discsPcs, coatedPcs, drumPcs);
     } catch (NumberFormatException e) {
-      boxFrame.error();
+      clientFrame.error();
     }
   };
 }

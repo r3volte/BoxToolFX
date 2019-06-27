@@ -39,7 +39,7 @@ public class ChooseFileReader {
     FileChooser fileChooser = getFileChooser();
     File file = fileChooser.showOpenDialog(null);
     if (file != null) {
-      logger.info((Supplier<String>) file.getAbsoluteFile());
+      System.out.println(file.getAbsoluteFile());
     }
     return file;
   }

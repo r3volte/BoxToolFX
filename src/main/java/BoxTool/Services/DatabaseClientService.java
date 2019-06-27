@@ -66,16 +66,16 @@ public class DatabaseClientService {
     public void addNewClient(TextField idField, TextField nameField, TextField discConfField,
                              TextField coatedConfField, TextField drumConfField, TextField montIns,
                              TextField discsPcs, TextField coatedPcs, TextField drumPcs) {
-//        Integer first = Integer.valueOf(idField.getText());
-//        String second = nameField.getText();
-//        String third = discConfField.getText();
-//        String four = coatedConfField.getText();
-//        String five = drumConfField.getText();
-//        dataRepository.add(new Clients(first, second,
-//                third, discsPcs.getText(),
-//                four, coatedPcs.getText(),
-//                five, drumPcs.getText(),
-//                montIns.getText()));
+        Integer first = Integer.valueOf(idField.getText());
+        String second = nameField.getText();
+        String third = discConfField.getText();
+        String four = coatedConfField.getText();
+        String five = drumConfField.getText();
+        dataRepository.add(new Clients(first, second,
+                third, discsPcs.getText(),
+                four, coatedPcs.getText(),
+                five, drumPcs.getText(),
+                montIns.getText()));
     }
 
     public ObservableList getData() {

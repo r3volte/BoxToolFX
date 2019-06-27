@@ -2,6 +2,8 @@ package boxTool.fileResources;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Locale;
+
 @Component
 public class Resources {
 
@@ -14,7 +16,7 @@ public class Resources {
         return "/xml/addBox.fxml";
     }
 
-    public static String boxFrameErrorPath() {
+    public static String errorPath() {
         return "/xml/errorBoxPanel.fxml";
     }
 
@@ -56,5 +58,9 @@ public class Resources {
 
     public static String confDBFile() {
         return "config.json";
+    }
+
+    public static void setLocale () {
+        Locale.setDefault(new Locale("en"));
     }
 }

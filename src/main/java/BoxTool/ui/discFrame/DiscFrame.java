@@ -11,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
-@Component
+@Component(value = "discFrame")
 public class DiscFrame implements AddFrame {
 
     private Parent root;
@@ -33,11 +35,14 @@ public class DiscFrame implements AddFrame {
         fxmlLoader = new FXMLLoader();
         stage = new Stage();
         try {
+            Resources.setLocale();
+            ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");
+            fxmlLoader.setResources(bundle);
             fxmlLoader.setLocation(getClass().getResource(Resources.discFramePath()));
             fxmlLoader.setController(addFrame);
             root = fxmlLoader.load();
             stage.setTitle("Add disc to list");
-            stage.setScene(new Scene(root, 450, 250));
+            stage.setScene(new Scene(root, 520, 250));
             stage.show();
         } catch (IOException e) {
             logger.info("Error" + e);
@@ -48,7 +53,10 @@ public class DiscFrame implements AddFrame {
         fxmlLoader = new FXMLLoader();
         stage = new Stage();
         try {
-            fxmlLoader.setLocation(getClass().getResource(Resources.discFrameErrorPath()));
+            Resources.setLocale();
+            ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");
+            fxmlLoader.setResources(bundle);
+            fxmlLoader.setLocation(getClass().getResource(Resources.errorPath()));
             root = fxmlLoader.load();
             stage.setTitle("Error");
             stage.setScene(new Scene(root, 450, 250));

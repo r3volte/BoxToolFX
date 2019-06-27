@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-@Component
+@Component(value = "confFrame")
 public class ConfFrame implements AddFrame {
 
     private Parent root;

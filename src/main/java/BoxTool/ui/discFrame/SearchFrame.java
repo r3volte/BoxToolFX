@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 @Component(value = "searchFrame")
@@ -32,6 +34,9 @@ public class SearchFrame implements AddFrame {
         fxmlLoader = new FXMLLoader();
         stage = new Stage();
         try {
+            Resources.setLocale();
+            ResourceBundle bundle = ResourceBundle.getBundle("bundles.messages");
+            fxmlLoader.setResources(bundle);
             fxmlLoader.setLocation(getClass().getResource(Resources.discSearchFramePath()));
             fxmlLoader.setController(addFrame);
             root = fxmlLoader.load();

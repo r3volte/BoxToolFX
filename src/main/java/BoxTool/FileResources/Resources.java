@@ -1,5 +1,6 @@
 package boxTool.fileResources;
 
+import javafx.scene.image.Image;
 import org.springframework.stereotype.Component;
 
 import java.util.Locale;
@@ -52,6 +53,10 @@ public class Resources {
         return "box.json";
     }
 
+    public static String neuDB() {
+        return "boxTest.json";
+    }
+
     public static String clientDBFile() {
         return "clients.json";
     }
@@ -62,5 +67,9 @@ public class Resources {
 
     public static void setLocale () {
         Locale.setDefault(new Locale("en"));
+    }
+
+    public static Image appIcon() {
+        return new Image("icon/icon.png");
     }
 }

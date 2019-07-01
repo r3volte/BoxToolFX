@@ -43,6 +43,7 @@ public class SearchFrame implements AddFrame {
             stage.setTitle("Search Disc");
             stage.setScene(new Scene(root, 735, 355));
             stage.show();
+            stage.getIcons().add(Resources.appIcon());
         } catch (IOException e) {
             logger.info("Error" + e);
         }
@@ -57,6 +58,7 @@ public class SearchFrame implements AddFrame {
             stage.setTitle("Error");
             stage.setScene(new Scene(root, 450, 250));
             stage.show();
+            stage.getIcons().add(Resources.appIcon());
         } catch (IOException e) {
             logger.info("Error" + e);
         }

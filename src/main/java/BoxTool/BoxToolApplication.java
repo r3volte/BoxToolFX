@@ -43,6 +43,7 @@ public class BoxToolApplication extends Application {
     primaryStage.setTitle(bundle.getString("title.application"));
     primaryStage.setScene(new Scene(rootNode, 1300, 800));
     primaryStage.show();
+    primaryStage.getIcons().add(Resources.appIcon());
   }
 
   @Override

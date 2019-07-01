@@ -43,6 +43,7 @@ public class ClientFrame implements AddFrame {
       stage.setTitle("Add box to list");
       stage.setScene(new Scene(root, 625, 285));
       stage.show();
+      stage.getIcons().add(Resources.appIcon());
     } catch (IOException e) {
       logger.info("Error" + e);
     }
@@ -60,6 +61,7 @@ public class ClientFrame implements AddFrame {
       stage.setTitle("Error");
       stage.setScene(new Scene(root, 450, 250));
       stage.show();
+      stage.getIcons().add(Resources.appIcon());
     } catch (IOException e) {
       logger.info("Error" + e);
     }

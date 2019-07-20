@@ -7,8 +7,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class Box {
 
-  private Integer number;
-  private Integer width;
-  private Integer height;
+    private Integer number;
+    private Integer width;
+    private Integer height;
 
 }

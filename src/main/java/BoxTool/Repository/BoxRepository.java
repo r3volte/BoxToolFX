@@ -10,22 +10,22 @@ import java.util.List;
 public class BoxRepository implements DataRepository {
 
 
-  private static List componentList = new ArrayList<>();
+    private static List componentList = new ArrayList<>();
 
-  public void add(Object component) {
-    componentList.add(component);
-  }
+    public void add(Object component) {
+        componentList.add(component);
+    }
 
-  @Override
-  public void delete(Object component) {
-    componentList.remove(component);
-  }
+    @Override
+    public void delete(Object component) {
+        componentList.remove(component);
+    }
 
-  public List getComponent() {
-    return componentList;
-  }
+    public List getComponent() {
+        return componentList;
+    }
 
-  public String fileConverter(List repo) {
-    return new Gson().toJson(repo);
-  }
+    public String fileConverter(List repo) {
+        return new Gson().toJson(repo);
+    }
 }

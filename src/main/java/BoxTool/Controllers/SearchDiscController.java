@@ -80,6 +80,6 @@ public class SearchDiscController {
     };
 
     private EventHandler<MouseEvent> fileChooser = f ->
-            searchDiscService.initFileChooser(searchDiscView, selectedBox, result);
+            searchDiscService.initFileChooser(searchDiscView, selectedBox, String.valueOf(confBox.getValue()), result);
 
 }

@@ -11,8 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SelectDiscTest {
 
-  public static Integer number;
-  public static List myList = new ArrayList();
+    public static Integer number;
+    public static List myList = new ArrayList();
 
 //  @BeforeClass
 //  public static void before() {

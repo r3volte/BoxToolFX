@@ -9,20 +9,20 @@ import java.nio.charset.StandardCharsets;
 
 public class ResourcesTest {
 
-  @Test
-  public void loadXMLTest() {
+    @Test
+    public void loadXMLTest() {
 
-    ClassLoader classLoader = getClass().getClassLoader();
+        ClassLoader classLoader = getClass().getClassLoader();
 
-    try (InputStream inputStream = classLoader.getResourceAsStream("xml/data.xml")) {
+        try (InputStream inputStream = classLoader.getResourceAsStream("xml/data.xml")) {
 
-      String result = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+            String result = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
 
 
-      System.out.println(result);
+            System.out.println(result);
 
-    } catch (IOException e) {
-      e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-  }
 }

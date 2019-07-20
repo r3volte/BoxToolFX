@@ -9,66 +9,106 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="rootPane" minHeight="250.0" minWidth="450.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.AddConfBoxController">
-   <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="250.0" minWidth="450.0" prefHeight="324.0" prefWidth="450.0" style="-fx-background-color: #2A2E37;">
-         <children>
-            <TextField fx:id="numConfBox" layoutX="14.0" layoutY="26.0" promptText="Enter configuration name.">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </TextField>
-            <JFXButton fx:id="submitConfBoxButton" layoutX="267.0" layoutY="209.0" prefHeight="82.0" prefWidth="148.0" text="Submit" textFill="#da1a1a">
-               <font>
-                  <Font name="Bauhaus 93" size="30.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="clearConfBoxButton" layoutX="68.0" layoutY="209.0" prefHeight="82.0" prefWidth="148.0" text="Clear" textFill="#da1a1a">
-               <font>
-                  <Font name="Bauhaus 93" size="30.0" />
-               </font>
-            </JFXButton>
-            <FontAwesomeIconView fill="#da1a1a" glyphName="CHECK_CIRCLE_ALT" layoutX="230.0" layoutY="260.0" size="30" />
-            <FontAwesomeIconView fill="#da1a1a" glyphName="TIMES_CIRCLE" layoutX="44.0" layoutY="260.0" size="30" />
-            <CheckBox fx:id="cb33" layoutX="135.0" layoutY="176.0" mnemonicParsing="false" text="420" textFill="WHITE" />
-            <CheckBox fx:id="cb34" layoutX="189.0" layoutY="176.0" mnemonicParsing="false" text="430" textFill="WHITE" />
-            <CheckBox fx:id="cb35" layoutX="247.0" layoutY="176.0" mnemonicParsing="false" text="440" textFill="WHITE" />
-            <CheckBox fx:id="cb1" layoutX="16.0" layoutY="65.0" mnemonicParsing="false" text="230" textFill="WHITE" />
-            <CheckBox fx:id="cb2" layoutX="68.0" layoutY="65.0" mnemonicParsing="false" text="272" textFill="WHITE" />
-            <CheckBox fx:id="cb3" layoutX="121.0" layoutY="65.0" mnemonicParsing="false" text="280" textFill="WHITE" />
-            <CheckBox fx:id="cb4" layoutX="171.0" layoutY="65.0" mnemonicParsing="false" text="285" textFill="WHITE" />
-            <CheckBox fx:id="cb5" layoutX="223.0" layoutY="65.0" mnemonicParsing="false" text="288" textFill="WHITE" />
-            <CheckBox fx:id="cb6" layoutX="276.0" layoutY="65.0" mnemonicParsing="false" text="325" textFill="WHITE" />
-            <CheckBox fx:id="cb9" layoutX="16.0" layoutY="94.0" mnemonicParsing="false" text="350" textFill="WHITE" />
-            <CheckBox fx:id="cb10" layoutX="68.0" layoutY="94.0" mnemonicParsing="false" text="352" textFill="WHITE" />
-            <CheckBox fx:id="cb11" layoutX="121.0" layoutY="94.0" mnemonicParsing="false" text="355" textFill="WHITE" />
-            <CheckBox fx:id="cb12" layoutX="171.0" layoutY="94.0" mnemonicParsing="false" text="360" textFill="WHITE" />
-            <CheckBox fx:id="cb13" layoutX="223.0" layoutY="94.0" mnemonicParsing="false" text="361" textFill="WHITE" />
-            <CheckBox fx:id="cb14" layoutX="276.0" layoutY="94.0" mnemonicParsing="false" text="362" textFill="WHITE" />
-            <CheckBox fx:id="cb7" layoutX="326.0" layoutY="65.0" mnemonicParsing="false" text="330" textFill="WHITE" />
-            <CheckBox fx:id="cb8" layoutX="379.0" layoutY="65.0" mnemonicParsing="false" text="340" textFill="WHITE" />
-            <CheckBox fx:id="cb15" layoutX="326.0" layoutY="94.0" mnemonicParsing="false" text="365" textFill="WHITE" />
-            <CheckBox fx:id="cb16" layoutX="379.0" layoutY="94.0" mnemonicParsing="false" text="370" textFill="WHITE" />
-            <CheckBox fx:id="cb17" layoutX="15.0" layoutY="121.0" mnemonicParsing="false" text="375" textFill="WHITE" />
-            <CheckBox fx:id="cb18" layoutX="67.0" layoutY="121.0" mnemonicParsing="false" text="377" textFill="WHITE" />
-            <CheckBox fx:id="cb19" layoutX="120.0" layoutY="121.0" mnemonicParsing="false" text="379" textFill="WHITE" />
-            <CheckBox fx:id="cb20" layoutX="170.0" layoutY="121.0" mnemonicParsing="false" text="380" textFill="WHITE" />
-            <CheckBox fx:id="cb21" layoutX="222.0" layoutY="121.0" mnemonicParsing="false" text="381" textFill="WHITE" />
-            <CheckBox fx:id="cb22" layoutX="275.0" layoutY="121.0" mnemonicParsing="false" text="382" textFill="WHITE" />
-            <CheckBox fx:id="cb23" layoutX="325.0" layoutY="121.0" mnemonicParsing="false" text="383" textFill="WHITE" />
-            <CheckBox fx:id="cb24" layoutX="378.0" layoutY="121.0" mnemonicParsing="false" text="384" textFill="WHITE" />
-            <CheckBox fx:id="cb25" layoutX="15.0" layoutY="146.0" mnemonicParsing="false" text="385" textFill="WHITE" />
-            <CheckBox fx:id="cb26" layoutX="67.0" layoutY="146.0" mnemonicParsing="false" text="388" textFill="WHITE" />
-            <CheckBox fx:id="cb27" layoutX="120.0" layoutY="146.0" mnemonicParsing="false" text="389" textFill="WHITE" />
-            <CheckBox fx:id="cb28" layoutX="170.0" layoutY="146.0" mnemonicParsing="false" text="390" textFill="WHITE" />
-            <CheckBox fx:id="cb29" layoutX="222.0" layoutY="146.0" mnemonicParsing="false" text="400" textFill="WHITE" />
-            <CheckBox fx:id="cb30" layoutX="275.0" layoutY="146.0" mnemonicParsing="false" text="402" textFill="WHITE" />
-            <CheckBox fx:id="cb31" layoutX="325.0" layoutY="146.0" mnemonicParsing="false" text="408" textFill="WHITE" />
-            <CheckBox fx:id="cb32" layoutX="378.0" layoutY="146.0" mnemonicParsing="false" text="410" textFill="WHITE" />
-         </children>
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </AnchorPane>
-   </children>
+<StackPane fx:id="rootPane" minHeight="250.0" minWidth="450.0" xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.AddConfBoxController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="250.0" minWidth="450.0" prefHeight="324.0"
+                    prefWidth="450.0" style="-fx-background-color: #2A2E37;">
+            <children>
+                <TextField fx:id="numConfBox" layoutX="14.0" layoutY="26.0" promptText="Enter configuration name.">
+                    <font>
+                        <Font name="System Italic" size="12.0"/>
+                    </font>
+                </TextField>
+                <JFXButton fx:id="submitConfBoxButton" layoutX="267.0" layoutY="209.0" prefHeight="82.0"
+                           prefWidth="148.0" text="Submit" textFill="#da1a1a">
+                    <font>
+                        <Font name="Bauhaus 93" size="30.0"/>
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="clearConfBoxButton" layoutX="68.0" layoutY="209.0" prefHeight="82.0" prefWidth="148.0"
+                           text="Clear" textFill="#da1a1a">
+                    <font>
+                        <Font name="Bauhaus 93" size="30.0"/>
+                    </font>
+                </JFXButton>
+                <FontAwesomeIconView fill="#da1a1a" glyphName="CHECK_CIRCLE_ALT" layoutX="230.0" layoutY="260.0"
+                                     size="30"/>
+                <FontAwesomeIconView fill="#da1a1a" glyphName="TIMES_CIRCLE" layoutX="44.0" layoutY="260.0" size="30"/>
+                <CheckBox fx:id="cb33" layoutX="135.0" layoutY="176.0" mnemonicParsing="false" text="420"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb34" layoutX="189.0" layoutY="176.0" mnemonicParsing="false" text="430"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb35" layoutX="247.0" layoutY="176.0" mnemonicParsing="false" text="440"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb1" layoutX="16.0" layoutY="65.0" mnemonicParsing="false" text="230"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb2" layoutX="68.0" layoutY="65.0" mnemonicParsing="false" text="272"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb3" layoutX="121.0" layoutY="65.0" mnemonicParsing="false" text="280"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb4" layoutX="171.0" layoutY="65.0" mnemonicParsing="false" text="285"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb5" layoutX="223.0" layoutY="65.0" mnemonicParsing="false" text="288"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb6" layoutX="276.0" layoutY="65.0" mnemonicParsing="false" text="325"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb9" layoutX="16.0" layoutY="94.0" mnemonicParsing="false" text="350"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb10" layoutX="68.0" layoutY="94.0" mnemonicParsing="false" text="352"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb11" layoutX="121.0" layoutY="94.0" mnemonicParsing="false" text="355"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb12" layoutX="171.0" layoutY="94.0" mnemonicParsing="false" text="360"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb13" layoutX="223.0" layoutY="94.0" mnemonicParsing="false" text="361"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb14" layoutX="276.0" layoutY="94.0" mnemonicParsing="false" text="362"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb7" layoutX="326.0" layoutY="65.0" mnemonicParsing="false" text="330"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb8" layoutX="379.0" layoutY="65.0" mnemonicParsing="false" text="340"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb15" layoutX="326.0" layoutY="94.0" mnemonicParsing="false" text="365"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb16" layoutX="379.0" layoutY="94.0" mnemonicParsing="false" text="370"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb17" layoutX="15.0" layoutY="121.0" mnemonicParsing="false" text="375"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb18" layoutX="67.0" layoutY="121.0" mnemonicParsing="false" text="377"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb19" layoutX="120.0" layoutY="121.0" mnemonicParsing="false" text="379"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb20" layoutX="170.0" layoutY="121.0" mnemonicParsing="false" text="380"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb21" layoutX="222.0" layoutY="121.0" mnemonicParsing="false" text="381"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb22" layoutX="275.0" layoutY="121.0" mnemonicParsing="false" text="382"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb23" layoutX="325.0" layoutY="121.0" mnemonicParsing="false" text="383"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb24" layoutX="378.0" layoutY="121.0" mnemonicParsing="false" text="384"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb25" layoutX="15.0" layoutY="146.0" mnemonicParsing="false" text="385"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb26" layoutX="67.0" layoutY="146.0" mnemonicParsing="false" text="388"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb27" layoutX="120.0" layoutY="146.0" mnemonicParsing="false" text="389"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb28" layoutX="170.0" layoutY="146.0" mnemonicParsing="false" text="390"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb29" layoutX="222.0" layoutY="146.0" mnemonicParsing="false" text="400"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb30" layoutX="275.0" layoutY="146.0" mnemonicParsing="false" text="402"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb31" layoutX="325.0" layoutY="146.0" mnemonicParsing="false" text="408"
+                          textFill="WHITE"/>
+                <CheckBox fx:id="cb32" layoutX="378.0" layoutY="146.0" mnemonicParsing="false" text="410"
+                          textFill="WHITE"/>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </AnchorPane>
+    </children>
 </StackPane>

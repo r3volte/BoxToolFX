@@ -1,19 +1,32 @@
-.table-column{
-    -fx-alignment: CENTER; 
+.table-column {
+    -fx-alignment: CENTER;
 }
-    -fx-text-fill: #B2B2B2;
-    -fx-font-size : 12pt;
-    -jfx-focus-color: #FF0000;
+
+-fx-text-fill: #B2B2B2
+
+;
+-fx-font-size :
+
+12
+pt
+
+;
+-jfx-focus-color: #FF0000
+
+;
 }
 .text-area *.text {
     -fx-text-alignment: center;
 }
-.tab-header-background{
-    -fx-background-color:  #2A2E37;
+
+.tab-header-background {
+    -fx-background-color: #2A2E37;
 }
-.tab-label{
+
+.tab-label {
     -fx-text-fill: #da1a1a;
 }
-.tab{
-    -fx-pref-width : 92;
+
+.tab {
+    -fx-pref-width: 92;
 }

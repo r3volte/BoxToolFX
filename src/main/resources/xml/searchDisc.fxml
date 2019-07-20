@@ -13,53 +13,57 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="rootPane" prefHeight="355.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="735.0" style="-fx-background-color: #1e213d;">
-         <children>
-            <TextField fx:id="numField" layoutX="39.0" layoutY="50.0">
-               <font>
-                  <Font name="System Italic" size="12.0" />
-               </font>
-            </TextField>
-            <JFXButton fx:id="searchSubmit" layoutX="313.0" layoutY="45.0" text="%submit" textFill="#fcfaf5">
-               <font>
-                  <Font name="Bitstream Vera Sans Bold" size="20.0" />
-               </font>
-            </JFXButton>
-            <FontAwesomeIconView fill="#fcfaf5" glyphName="SEARCH" layoutX="264.0" layoutY="74.0" size="30" />
-            <TableView fx:id="searchDiscView" layoutX="39.0" layoutY="114.0" prefHeight="138.0" prefWidth="413.0">
-              <columns>
-                <TableColumn fx:id="searchNumber" prefWidth="95.0" text="%number" />
-                <TableColumn fx:id="searchDiameter" prefWidth="71.0" text="%diameter" />
-                  <TableColumn fx:id="searchHeight" prefWidth="65.0" text="%height" />
-                  <TableColumn fx:id="searchDoubHei" prefWidth="95.0" text="%doubleheight" />
-                  <TableColumn fx:id="searchWeight" prefWidth="85.0" text="%weight" />
-              </columns>
-            </TableView>
-            <JFXButton fx:id="multipleSearchButton" layoutX="531.0" layoutY="47.0" prefHeight="32.0" prefWidth="148.0" style="-fx-border-color: #fcfaf5;" text="%choosefile" textFill="#fcfaf5">
-               <font>
-                  <Font name="Bitstream Vera Sans Bold" size="14.0" />
-               </font>
-            </JFXButton>
-            <TableView fx:id="selectedBox" layoutX="452.0" layoutY="114.0" prefHeight="138.0" prefWidth="248.0">
-               <columns>
-                  <TableColumn fx:id="numberSelected" prefWidth="95.0" text="%boxnumber" />
-                  <TableColumn fx:id="heightSelected" prefWidth="65.0" text="%height" />
-                  <TableColumn fx:id="widthSelected" prefWidth="85.0" text="%width" />
-               </columns>
-            </TableView>
-            <ComboBox fx:id="confBox" layoutX="38.0" layoutY="84.0" prefWidth="150.0" promptText="%chooseconf" />
-            <Text fill="#fcfaf5" layoutX="39.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%enterdiscnumber">
-               <font>
-                  <Font name="Bitstream Vera Sans Bold" size="12.0" />
-               </font>
-            </Text>
-            <TextArea fx:id="result" layoutX="38.0" layoutY="255.0" prefHeight="14.0" prefWidth="662.0" />
-         </children>
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </AnchorPane>
-   </children>
+<StackPane fx:id="rootPane" prefHeight="355.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                    prefHeight="355.0" prefWidth="735.0" style="-fx-background-color: #1e213d;">
+            <children>
+                <TextField fx:id="numField" layoutX="39.0" layoutY="50.0">
+                    <font>
+                        <Font name="System Italic" size="12.0"/>
+                    </font>
+                </TextField>
+                <JFXButton fx:id="searchSubmit" layoutX="313.0" layoutY="45.0" text="%submit" textFill="#fcfaf5">
+                    <font>
+                        <Font name="Bitstream Vera Sans Bold" size="20.0"/>
+                    </font>
+                </JFXButton>
+                <FontAwesomeIconView fill="#fcfaf5" glyphName="SEARCH" layoutX="264.0" layoutY="74.0" size="30"/>
+                <TableView fx:id="searchDiscView" layoutX="39.0" layoutY="114.0" prefHeight="138.0" prefWidth="413.0">
+                    <columns>
+                        <TableColumn fx:id="searchNumber" prefWidth="95.0" text="%number"/>
+                        <TableColumn fx:id="searchDiameter" prefWidth="71.0" text="%diameter"/>
+                        <TableColumn fx:id="searchHeight" prefWidth="65.0" text="%height"/>
+                        <TableColumn fx:id="searchDoubHei" prefWidth="95.0" text="%doubleheight"/>
+                        <TableColumn fx:id="searchWeight" prefWidth="85.0" text="%weight"/>
+                    </columns>
+                </TableView>
+                <JFXButton fx:id="multipleSearchButton" layoutX="531.0" layoutY="47.0" prefHeight="32.0"
+                           prefWidth="148.0" style="-fx-border-color: #fcfaf5;" text="%choosefile" textFill="#fcfaf5">
+                    <font>
+                        <Font name="Bitstream Vera Sans Bold" size="14.0"/>
+                    </font>
+                </JFXButton>
+                <TableView fx:id="selectedBox" layoutX="452.0" layoutY="114.0" prefHeight="138.0" prefWidth="248.0">
+                    <columns>
+                        <TableColumn fx:id="numberSelected" prefWidth="95.0" text="%boxnumber"/>
+                        <TableColumn fx:id="heightSelected" prefWidth="65.0" text="%height"/>
+                        <TableColumn fx:id="widthSelected" prefWidth="85.0" text="%width"/>
+                    </columns>
+                </TableView>
+                <ComboBox fx:id="confBox" layoutX="38.0" layoutY="84.0" prefWidth="150.0" promptText="%chooseconf"/>
+                <Text fill="#fcfaf5" layoutX="39.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="%enterdiscnumber">
+                    <font>
+                        <Font name="Bitstream Vera Sans Bold" size="12.0"/>
+                    </font>
+                </Text>
+                <TextArea fx:id="result" layoutX="38.0" layoutY="255.0" prefHeight="14.0" prefWidth="662.0"/>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </AnchorPane>
+    </children>
 </StackPane>

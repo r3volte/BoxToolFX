@@ -65,7 +65,7 @@ public class Resources {
         return "config.json";
     }
 
-    public static void setLocale () {
+    public static void setLocale() {
         Locale.setDefault(new Locale("en"));
     }
 

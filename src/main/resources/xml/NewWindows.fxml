@@ -14,7 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boxTool.controllers.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="boxTool.controllers.Controller">
     <top>
         <HBox prefHeight="50.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
             <children>
@@ -24,30 +26,31 @@
                             <children>
                                 <FontAwesomeIconView fill="#cc0605" glyphName="DESKTOP" size="20">
                                     <HBox.margin>
-                                        <Insets left="20.0" top="15.0" />
+                                        <Insets left="20.0" top="15.0"/>
                                     </HBox.margin>
                                 </FontAwesomeIconView>
-                                <Text fill="#cc0605" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="%version" wrappingWidth="131.0">
+                                <Text fill="#cc0605" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="%version" wrappingWidth="131.0">
                                     <font>
-                                        <Font name="Bauhaus 93" size="22.0" />
+                                        <Font name="Bauhaus 93" size="22.0"/>
                                     </font>
                                     <HBox.margin>
-                                        <Insets left="20.0" top="10.0" />
+                                        <Insets left="20.0" top="10.0"/>
                                     </HBox.margin>
                                 </Text>
                             </children>
                         </HBox>
                         <FontAwesomeIconView fill="#fcfaf5" glyphName="DATABASE" size="20">
                             <HBox.margin>
-                                <Insets left="20.0" top="13.0" />
+                                <Insets left="20.0" top="13.0"/>
                             </HBox.margin>
                         </FontAwesomeIconView>
                         <Text fill="#fcfaf5" strokeType="OUTSIDE" strokeWidth="0.0" text="%dashboard">
                             <font>
-                                <Font name="Bitstream Vera Sans Bold" size="16.0" />
+                                <Font name="Bitstream Vera Sans Bold" size="16.0"/>
                             </font>
                             <HBox.margin>
-                                <Insets left="20.0" top="13.0" />
+                                <Insets left="20.0" top="13.0"/>
                             </HBox.margin>
                         </Text>
                     </children>
@@ -58,151 +61,170 @@
     <left>
         <VBox prefHeight="750.0" prefWidth="220.0" style="-fx-background-color: #1e213d;" BorderPane.alignment="CENTER">
             <children>
-                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;">
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0"
+                      style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;">
                     <children>
                         <FontAwesomeIconView fill="#fcfaf5" glyphName="DOT_CIRCLE_ALT" size="20">
                             <HBox.margin>
-                                <Insets left="10.0" />
+                                <Insets left="10.0"/>
                             </HBox.margin>
                         </FontAwesomeIconView>
                         <JFXButton fx:id="dButton" text="%discs" textAlignment="CENTER" textFill="#fcfaf5">
                             <font>
-                                <Font name="Bitstream Vera Sans Bold" size="16.0" />
+                                <Font name="Bitstream Vera Sans Bold" size="16.0"/>
                             </font>
                             <HBox.margin>
-                                <Insets left="20.0" />
+                                <Insets left="20.0"/>
                             </HBox.margin>
                         </JFXButton>
                     </children>
                     <VBox.margin>
-                        <Insets top="45.0" />
+                        <Insets top="45.0"/>
                     </VBox.margin>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="40.0" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;">
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="40.0" prefHeight="50.0" prefWidth="190.0"
+                      style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;">
                     <children>
                         <FontAwesomeIconView fill="#fcfaf5" glyphName="GROUP" size="20">
                             <HBox.margin>
-                                <Insets left="10.0" />
+                                <Insets left="10.0"/>
                             </HBox.margin>
                         </FontAwesomeIconView>
                         <JFXButton fx:id="cButton" text="%clients" textFill="#fcfaf5">
                             <font>
-                                <Font name="Bitstream Vera Sans Bold" size="16.0" />
+                                <Font name="Bitstream Vera Sans Bold" size="16.0"/>
                             </font>
                             <HBox.margin>
-                                <Insets left="15.0" />
+                                <Insets left="15.0"/>
                             </HBox.margin>
                         </JFXButton>
                     </children>
                     <VBox.margin>
-                        <Insets top="45.0" />
+                        <Insets top="45.0"/>
                     </VBox.margin>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="90.0" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;">
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="90.0" prefHeight="50.0" prefWidth="190.0"
+                      style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;">
                     <children>
                         <FontAwesomeIconView fill="#fcfaf5" glyphName="CUBES" size="20">
                             <HBox.margin>
-                                <Insets left="10.0" />
+                                <Insets left="10.0"/>
                             </HBox.margin>
                         </FontAwesomeIconView>
                         <JFXButton fx:id="bButton" text="%box" textFill="#fcfaf5">
                             <font>
-                                <Font name="Bitstream Vera Sans Bold" size="16.0" />
+                                <Font name="Bitstream Vera Sans Bold" size="16.0"/>
                             </font>
                             <HBox.margin>
-                                <Insets left="10.0" />
+                                <Insets left="10.0"/>
                             </HBox.margin>
                         </JFXButton>
                     </children>
                     <VBox.margin>
-                        <Insets top="45.0" />
+                        <Insets top="45.0"/>
                     </VBox.margin>
                 </HBox>
-                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="340.0" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;">
+                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="340.0" prefHeight="50.0" prefWidth="190.0"
+                      style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;">
                     <children>
                         <FontAwesomeIconView fill="#fcfaf5" glyphName="INFO_CIRCLE" size="20">
                             <HBox.margin>
-                                <Insets left="10.0" />
+                                <Insets left="10.0"/>
                             </HBox.margin>
                         </FontAwesomeIconView>
                         <JFXButton fx:id="help" text="%help" textFill="#fcfaf5">
                             <font>
-                                <Font name="Bitstream Vera Sans Bold" size="16.0" />
+                                <Font name="Bitstream Vera Sans Bold" size="16.0"/>
                             </font>
                             <HBox.margin>
-                                <Insets left="18.0" />
+                                <Insets left="18.0"/>
                             </HBox.margin>
                         </JFXButton>
                     </children>
                     <VBox.margin>
-                        <Insets top="45.0" />
+                        <Insets top="45.0"/>
                     </VBox.margin>
                 </HBox>
             </children>
         </VBox>
     </left>
     <center>
-        <AnchorPane fx:id="pnl_discs" prefHeight="2000.0" prefWidth="2000.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+        <AnchorPane fx:id="pnl_discs" prefHeight="2000.0" prefWidth="2000.0" style="-fx-background-color: white;"
+                    BorderPane.alignment="CENTER">
             <children>
-                <AnchorPane fx:id="pnl_discs" layoutY="42.0" prefHeight="708.0" prefWidth="1080.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="42.0">
+                <AnchorPane fx:id="pnl_discs" layoutY="42.0" prefHeight="708.0" prefWidth="1080.0" visible="false"
+                            AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                            AnchorPane.topAnchor="42.0">
                     <children>
-                  <HBox layoutY="-44.0" prefHeight="55.0" prefWidth="1080.0" style="-fx-background-color: #1e213d;" AnchorPane.bottomAnchor="697.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-44.0">
-                     <children>
-                        <Text fill="#fcfaf5" strokeType="OUTSIDE" strokeWidth="0.0" text="%panel.discs">
-                           <font>
-                              <Font name="Bitstream Vera Sans Bold" size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="450.0" top="15.0" />
-                           </HBox.margin>
-                        </Text>
-                     </children>
-                  </HBox>
-                        <BorderPane layoutY="8.0" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0">
+                        <HBox layoutY="-44.0" prefHeight="55.0" prefWidth="1080.0"
+                              style="-fx-background-color: #1e213d;" AnchorPane.bottomAnchor="697.0"
+                              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-44.0">
+                            <children>
+                                <Text fill="#fcfaf5" strokeType="OUTSIDE" strokeWidth="0.0" text="%panel.discs">
+                                    <font>
+                                        <Font name="Bitstream Vera Sans Bold" size="16.0"/>
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets left="450.0" top="15.0"/>
+                                    </HBox.margin>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <BorderPane layoutY="8.0" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0"
+                                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0">
                             <center>
-                                <TableView fx:id="discTable" prefHeight="750.0" prefWidth="1080.0" stylesheets="@../css/Theme.css" BorderPane.alignment="CENTER">
+                                <TableView fx:id="discTable" prefHeight="750.0" prefWidth="1080.0"
+                                           stylesheets="@../css/Theme.css" BorderPane.alignment="CENTER">
                                     <columns>
-                                        <TableColumn fx:id="numberCol" prefWidth="132.0" style="-fx-alignment: CENTER;" text="%number" />
-                                        <TableColumn fx:id="dCol" prefWidth="183.0" text="%diameter" />
-                                        <TableColumn fx:id="hCol" prefWidth="184.0" text="%height" />
-                                        <TableColumn fx:id="h2Col" prefWidth="164.0" text="%doubleheight" />
-                                        <TableColumn fx:id="wCol" prefWidth="287.0" text="%weight" />
+                                        <TableColumn fx:id="numberCol" prefWidth="132.0" style="-fx-alignment: CENTER;"
+                                                     text="%number"/>
+                                        <TableColumn fx:id="dCol" prefWidth="183.0" text="%diameter"/>
+                                        <TableColumn fx:id="hCol" prefWidth="184.0" text="%height"/>
+                                        <TableColumn fx:id="h2Col" prefWidth="164.0" text="%doubleheight"/>
+                                        <TableColumn fx:id="wCol" prefWidth="287.0" text="%weight"/>
                                     </columns>
                                 </TableView>
                             </center>
                             <right>
-                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1e213d;" BorderPane.alignment="CENTER">
+                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1e213d;"
+                                            BorderPane.alignment="CENTER">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;" AnchorPane.topAnchor="150.0">
+                                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0"
+                                              style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;"
+                                              AnchorPane.topAnchor="150.0">
                                             <children>
                                                 <FontAwesomeIconView fill="#fcfaf5" glyphName="PLUS_CIRCLE" size="20">
                                                     <HBox.margin>
-                                                        <Insets left="10.0" />
+                                                        <Insets left="10.0"/>
                                                     </HBox.margin>
                                                 </FontAwesomeIconView>
-                                                <JFXButton fx:id="addDisc" text="%adddisc" textAlignment="CENTER" textFill="#fcfaf5">
+                                                <JFXButton fx:id="addDisc" text="%adddisc" textAlignment="CENTER"
+                                                           textFill="#fcfaf5">
                                                     <font>
-                                                        <Font name="Bitstream Vera Sans Bold" size="14.0" />
+                                                        <Font name="Bitstream Vera Sans Bold" size="14.0"/>
                                                     </font>
                                                     <HBox.margin>
-                                                        <Insets left="10.0" />
+                                                        <Insets left="10.0"/>
                                                     </HBox.margin>
                                                 </JFXButton>
                                             </children>
                                         </HBox>
-                                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;" AnchorPane.topAnchor="250.0">
+                                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0"
+                                              style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;"
+                                              AnchorPane.topAnchor="250.0">
                                             <children>
                                                 <FontAwesomeIconView fill="#fcfaf5" glyphName="SEARCH" size="20">
                                                     <HBox.margin>
-                                                        <Insets left="10.0" />
+                                                        <Insets left="10.0"/>
                                                     </HBox.margin>
                                                 </FontAwesomeIconView>
-                                                <JFXButton fx:id="searchButton" text="%searchdisc" textAlignment="CENTER" textFill="#fcfaf5">
+                                                <JFXButton fx:id="searchButton" text="%searchdisc"
+                                                           textAlignment="CENTER" textFill="#fcfaf5">
                                                     <font>
-                                                        <Font name="Bitstream Vera Sans Bold" size="14.0" />
+                                                        <Font name="Bitstream Vera Sans Bold" size="14.0"/>
                                                     </font>
                                                     <HBox.margin>
-                                                        <Insets left="10.0" />
+                                                        <Insets left="10.0"/>
                                                     </HBox.margin>
                                                 </JFXButton>
                                             </children>
@@ -213,46 +235,57 @@
                         </BorderPane>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="pnl_boxes" layoutX="10.0" layoutY="10.0" prefHeight="760.0" prefWidth="1090.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane fx:id="pnl_boxes" layoutX="10.0" layoutY="10.0" prefHeight="760.0" prefWidth="1090.0"
+                            visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                  <HBox prefHeight="750.0" prefWidth="1080.0" style="-fx-background-color: #1e213d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Text fill="#fcfaf5" strokeType="OUTSIDE" strokeWidth="0.0" text="%panel.boxes">
-                           <font>
-                              <Font name="Bitstream Vera Sans Bold" size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="450.0" top="15.0" />
-                           </HBox.margin>
-                        </Text>
-                     </children>
-                  </HBox>
-                        <BorderPane layoutY="50.0" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                        <HBox prefHeight="750.0" prefWidth="1080.0" style="-fx-background-color: #1e213d;"
+                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                              AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Text fill="#fcfaf5" strokeType="OUTSIDE" strokeWidth="0.0" text="%panel.boxes">
+                                    <font>
+                                        <Font name="Bitstream Vera Sans Bold" size="16.0"/>
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets left="450.0" top="15.0"/>
+                                    </HBox.margin>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <BorderPane layoutY="50.0" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0"
+                                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                    AnchorPane.topAnchor="50.0">
                             <center>
-                                <TableView fx:id="boxTable" prefHeight="750.0" prefWidth="1080.0" stylesheets="@../css/Theme.css" BorderPane.alignment="CENTER">
+                                <TableView fx:id="boxTable" prefHeight="750.0" prefWidth="1080.0"
+                                           stylesheets="@../css/Theme.css" BorderPane.alignment="CENTER">
                                     <columns>
-                                        <TableColumn fx:id="sizeCol" prefWidth="243.0" text="%sizenumber" />
-                                        <TableColumn fx:id="heightCol" prefWidth="177.0" text="%height" />
-                                        <TableColumn fx:id="widthCol" prefWidth="209.0" text="%width" />
+                                        <TableColumn fx:id="sizeCol" prefWidth="243.0" text="%sizenumber"/>
+                                        <TableColumn fx:id="heightCol" prefWidth="177.0" text="%height"/>
+                                        <TableColumn fx:id="widthCol" prefWidth="209.0" text="%width"/>
                                     </columns>
                                 </TableView>
                             </center>
                             <right>
-                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1e213d;" BorderPane.alignment="CENTER">
+                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1e213d;"
+                                            BorderPane.alignment="CENTER">
                                     <children>
-                                        <HBox fx:id="addBox" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;" AnchorPane.topAnchor="250.0">
+                                        <HBox fx:id="addBox" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0"
+                                              style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;"
+                                              AnchorPane.topAnchor="250.0">
                                             <children>
                                                 <FontAwesomeIconView fill="#fcfaf5" glyphName="PLUS" size="20">
                                                     <HBox.margin>
-                                                        <Insets left="10.0" />
+                                                        <Insets left="10.0"/>
                                                     </HBox.margin>
                                                 </FontAwesomeIconView>
-                                                <JFXButton fx:id="boxAddDB" text="%addbox" textAlignment="CENTER" textFill="#fcfaf5">
+                                                <JFXButton fx:id="boxAddDB" text="%addbox" textAlignment="CENTER"
+                                                           textFill="#fcfaf5">
                                                     <font>
-                                                        <Font name="Bitstream Vera Sans Bold" size="16.0" />
+                                                        <Font name="Bitstream Vera Sans Bold" size="16.0"/>
                                                     </font>
                                                     <HBox.margin>
-                                                        <Insets left="10.0" />
+                                                        <Insets left="10.0"/>
                                                     </HBox.margin>
                                                 </JFXButton>
                                             </children>
@@ -263,52 +296,63 @@
                         </BorderPane>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="pnl_clients" layoutX="10.0" layoutY="10.0" prefHeight="770.0" prefWidth="1100.0" stylesheets="@../css/Theme.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane fx:id="pnl_clients" layoutX="10.0" layoutY="10.0" prefHeight="770.0" prefWidth="1100.0"
+                            stylesheets="@../css/Theme.css" visible="false" AnchorPane.bottomAnchor="0.0"
+                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                  <HBox prefHeight="750.0" prefWidth="1080.0" style="-fx-background-color: #1e213d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Text fill="#fcfaf5" strokeType="OUTSIDE" strokeWidth="0.0" text="%panel.clients">
-                           <font>
-                              <Font name="Bitstream Vera Sans Bold" size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="450.0" top="15.0" />
-                           </HBox.margin>
-                        </Text>
-                     </children>
-                  </HBox>
-                        <BorderPane layoutY="50.0" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                        <HBox prefHeight="750.0" prefWidth="1080.0" style="-fx-background-color: #1e213d;"
+                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                              AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Text fill="#fcfaf5" strokeType="OUTSIDE" strokeWidth="0.0" text="%panel.clients">
+                                    <font>
+                                        <Font name="Bitstream Vera Sans Bold" size="16.0"/>
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets left="450.0" top="15.0"/>
+                                    </HBox.margin>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <BorderPane layoutY="50.0" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0"
+                                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                    AnchorPane.topAnchor="50.0">
                             <center>
-                                <TableView fx:id="clientTable" prefHeight="750.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
+                                <TableView fx:id="clientTable" prefHeight="750.0" prefWidth="1080.0"
+                                           BorderPane.alignment="CENTER">
                                     <columns>
-                                        <TableColumn fx:id="idCol" prefWidth="51.0" text="ID" />
-                                        <TableColumn fx:id="nameCol" prefWidth="330.0" text="%name" />
-                                        <TableColumn fx:id="discConfCol" prefWidth="64.0" text="%discconf" />
-                                        <TableColumn fx:id="discPcsCol" prefWidth="68.0" text="%pcs" />
-                                        <TableColumn fx:id="coatedConfCol" prefWidth="78.0" text="%coated" />
-                                        <TableColumn fx:id="coatedPcsCol" prefWidth="68.0" text="%pcs" />
-                                        <TableColumn fx:id="drumsConfCol" prefWidth="84.0" text="%drum" />
-                                        <TableColumn fx:id="drumsPcsCol" prefWidth="65.0" text="%pcs" />
-                                        <TableColumn fx:id="montCol" prefWidth="67.0" text="%mont" />
+                                        <TableColumn fx:id="idCol" prefWidth="51.0" text="ID"/>
+                                        <TableColumn fx:id="nameCol" prefWidth="330.0" text="%name"/>
+                                        <TableColumn fx:id="discConfCol" prefWidth="64.0" text="%discconf"/>
+                                        <TableColumn fx:id="discPcsCol" prefWidth="68.0" text="%pcs"/>
+                                        <TableColumn fx:id="coatedConfCol" prefWidth="78.0" text="%coated"/>
+                                        <TableColumn fx:id="coatedPcsCol" prefWidth="68.0" text="%pcs"/>
+                                        <TableColumn fx:id="drumsConfCol" prefWidth="84.0" text="%drum"/>
+                                        <TableColumn fx:id="drumsPcsCol" prefWidth="65.0" text="%pcs"/>
+                                        <TableColumn fx:id="montCol" prefWidth="67.0" text="%mont"/>
                                     </columns>
                                 </TableView>
                             </center>
                             <right>
-                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1e213d;" BorderPane.alignment="CENTER">
+                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1e213d;"
+                                            BorderPane.alignment="CENTER">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;" AnchorPane.topAnchor="250.0">
+                                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0"
+                                              style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;"
+                                              AnchorPane.topAnchor="250.0">
                                             <children>
                                                 <FontAwesomeIconView fill="#fcfaf5" glyphName="PLUS" size="20">
                                                     <HBox.margin>
-                                                        <Insets left="10.0" />
+                                                        <Insets left="10.0"/>
                                                     </HBox.margin>
                                                 </FontAwesomeIconView>
-                                                <JFXButton fx:id="addClient" text="%addclient" textAlignment="CENTER" textFill="#fcfaf5">
+                                                <JFXButton fx:id="addClient" text="%addclient" textAlignment="CENTER"
+                                                           textFill="#fcfaf5">
                                                     <font>
-                                                        <Font name="Bitstream Vera Sans Bold" size="16.0" />
+                                                        <Font name="Bitstream Vera Sans Bold" size="16.0"/>
                                                     </font>
                                                     <HBox.margin>
-                                                        <Insets left="10.0" />
+                                                        <Insets left="10.0"/>
                                                     </HBox.margin>
                                                 </JFXButton>
                                             </children>
@@ -319,37 +363,47 @@
                         </BorderPane>
                     </children>
                 </AnchorPane>
-                <AnchorPane fx:id="pnl_conf" layoutX="10.0" layoutY="10.0" prefHeight="780.0" prefWidth="1110.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane fx:id="pnl_conf" layoutX="10.0" layoutY="10.0" prefHeight="780.0" prefWidth="1110.0"
+                            visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
-                  <HBox prefHeight="750.0" prefWidth="1080.0" style="-fx-background-color: #1e213d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Text fill="#fcfaf5" strokeType="OUTSIDE" strokeWidth="0.0" text="%panel.conf">
-                           <font>
-                              <Font name="Bitstream Vera Sans Bold" size="16.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets left="450.0" top="15.0" />
-                           </HBox.margin>
-                        </Text>
-                     </children>
-                  </HBox>
-                        <BorderPane layoutY="50.0" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                        <HBox prefHeight="750.0" prefWidth="1080.0" style="-fx-background-color: #1e213d;"
+                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                              AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Text fill="#fcfaf5" strokeType="OUTSIDE" strokeWidth="0.0" text="%panel.conf">
+                                    <font>
+                                        <Font name="Bitstream Vera Sans Bold" size="16.0"/>
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets left="450.0" top="15.0"/>
+                                    </HBox.margin>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <BorderPane layoutY="50.0" prefHeight="700.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0"
+                                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                    AnchorPane.topAnchor="50.0">
                             <right>
-                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1e213d;" BorderPane.alignment="CENTER">
+                                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1e213d;"
+                                            BorderPane.alignment="CENTER">
                                     <children>
-                                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0" style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;" AnchorPane.topAnchor="250.0">
+                                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="190.0"
+                                              style="-fx-border-color: #fcfaf5; -fx-border-width: 0 0 0 5px;"
+                                              AnchorPane.topAnchor="250.0">
                                             <children>
                                                 <FontAwesomeIconView fill="#fcfaf5" glyphName="PLUS" size="20">
                                                     <HBox.margin>
-                                                        <Insets left="10.0" />
+                                                        <Insets left="10.0"/>
                                                     </HBox.margin>
                                                 </FontAwesomeIconView>
-                                                <JFXButton fx:id="addConf" text="Add Conf." textAlignment="CENTER" textFill="#fcfaf5">
+                                                <JFXButton fx:id="addConf" text="Add Conf." textAlignment="CENTER"
+                                                           textFill="#fcfaf5">
                                                     <font>
-                                                        <Font name="Bitstream Vera Sans Bold" size="16.0" />
+                                                        <Font name="Bitstream Vera Sans Bold" size="16.0"/>
                                                     </font>
                                                     <HBox.margin>
-                                                        <Insets left="10.0" />
+                                                        <Insets left="10.0"/>
                                                     </HBox.margin>
                                                 </JFXButton>
                                             </children>
@@ -358,17 +412,25 @@
                                 </AnchorPane>
                             </right>
                             <center>
-                                <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                                <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0"
+                                         tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
                                     <tabs>
                                         <Tab fx:id="NK" text="NK">
                                             <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="721.0" prefWidth="825.0" style="-fx-background-color: blue;">
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="721.0"
+                                                            prefWidth="825.0" style="-fx-background-color: blue;">
                                                     <children>
-                                                        <TableView prefHeight="721.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <TableView prefHeight="721.0" prefWidth="880.0"
+                                                                   AnchorPane.bottomAnchor="0.0"
+                                                                   AnchorPane.leftAnchor="0.0"
+                                                                   AnchorPane.rightAnchor="0.0"
+                                                                   AnchorPane.topAnchor="0.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="150.0" text="Number" />
-                                                                <TableColumn minWidth="0.0" prefWidth="141.0" text="Width" />
-                                                                <TableColumn minWidth="0.0" prefWidth="213.0" text="Height" />
+                                                                <TableColumn prefWidth="150.0" text="Number"/>
+                                                                <TableColumn minWidth="0.0" prefWidth="141.0"
+                                                                             text="Width"/>
+                                                                <TableColumn minWidth="0.0" prefWidth="213.0"
+                                                                             text="Height"/>
                                                             </columns>
                                                         </TableView>
                                                     </children>
@@ -377,13 +439,20 @@
                                         </Tab>
                                         <Tab text="NK - 1">
                                             <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                            prefWidth="200.0">
                                                     <children>
-                                                        <TableView prefHeight="721.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <TableView prefHeight="721.0" prefWidth="880.0"
+                                                                   AnchorPane.bottomAnchor="0.0"
+                                                                   AnchorPane.leftAnchor="0.0"
+                                                                   AnchorPane.rightAnchor="0.0"
+                                                                   AnchorPane.topAnchor="0.0">
                                                             <columns>
-                                                                <TableColumn prefWidth="150.0" text="Number" />
-                                                                <TableColumn minWidth="0.0" prefWidth="141.0" text="Width" />
-                                                                <TableColumn minWidth="0.0" prefWidth="213.0" text="Height" />
+                                                                <TableColumn prefWidth="150.0" text="Number"/>
+                                                                <TableColumn minWidth="0.0" prefWidth="141.0"
+                                                                             text="Width"/>
+                                                                <TableColumn minWidth="0.0" prefWidth="213.0"
+                                                                             text="Height"/>
                                                             </columns>
                                                         </TableView>
                                                     </children>

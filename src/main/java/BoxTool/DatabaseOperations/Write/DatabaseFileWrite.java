@@ -9,9 +9,9 @@ import java.io.IOException;
 public class DatabaseFileWrite {
 
 
-  public void save(String fileOut, String list) throws IOException {
-    FileWriter file = new FileWriter(fileOut);
-    file.write(list);
-    file.flush();
-  }
+    public void save(String fileOut, String list) throws IOException {
+        FileWriter file = new FileWriter(fileOut);
+        file.write(list);
+        file.flush();
+    }
 }

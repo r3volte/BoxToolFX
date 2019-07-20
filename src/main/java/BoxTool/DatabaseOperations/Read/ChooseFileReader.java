@@ -17,38 +17,38 @@ import java.util.logging.Logger;
 @Component
 public class ChooseFileReader {
 
-  private final Logger logger = Logger.getLogger(this.getClass().getName());
+    private final Logger logger = Logger.getLogger(this.getClass().getName());
 
 
-  public List<Discs> fileReader(SelectDisc selectDisc, DatabaseDiscService discsDB) throws IOException {
-    Scanner scanner = new Scanner(fileChooser());
-    List<Discs> tempList = new ArrayList<>();
-    while (scanner.hasNext()) {
-      if (scanner.hasNextInt()) {
-        tempList.addAll(selectDisc
-                .searchDisc(discsDB.getData(), scanner.nextInt()));
-      } else {
-        scanner.next();
-      }
+    public List<Discs> fileReader(SelectDisc selectDisc, DatabaseDiscService discsDB) throws IOException {
+        Scanner scanner = new Scanner(fileChooser());
+        List<Discs> tempList = new ArrayList<>();
+        while (scanner.hasNext()) {
+            if (scanner.hasNextInt()) {
+                tempList.addAll(selectDisc
+                        .searchDisc(discsDB.getData(), scanner.nextInt()));
+            } else {
+                scanner.next();
+            }
+        }
+        return tempList;
     }
-    return tempList;
-  }
 
-  //metoda do wybierania pliku txt ze wskazanej lokacji,ktory nastepnie jest zwracany jako File
-  private File fileChooser() {
-    FileChooser fileChooser = getFileChooser();
-    File file = fileChooser.showOpenDialog(null);
-    if (file != null) {
-      System.out.println(file.getAbsoluteFile());
+    //metoda do wybierania pliku txt ze wskazanej lokacji,ktory nastepnie jest zwracany jako File
+    private File fileChooser() {
+        FileChooser fileChooser = getFileChooser();
+        File file = fileChooser.showOpenDialog(null);
+        if (file != null) {
+            System.out.println(file.getAbsoluteFile());
+        }
+        return file;
     }
-    return file;
-  }
 
-  private FileChooser getFileChooser() {
-    FileChooser fileChooser = new FileChooser();
-    fileChooser.getExtensionFilters()
-            .add(new FileChooser
-                    .ExtensionFilter("Txt file", "*.txt"));
-    return fileChooser;
-  }
+    private FileChooser getFileChooser() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters()
+                .add(new FileChooser
+                        .ExtensionFilter("Txt file", "*.txt"));
+        return fileChooser;
+    }
 }

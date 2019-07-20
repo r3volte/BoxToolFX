@@ -20,69 +20,79 @@ import java.util.logging.Logger;
 @Component
 public class BoxSelector {
 
-  private final Logger logger = Logger.getLogger(this.getClass().getName());
-  private final String RES_ONE = "Disc is packed single";
-  private final String RES_TWO = "Disc is packed double";
+    private final Logger logger = Logger.getLogger(this.getClass().getName());
+    private final String RES_ONE = "Disc is packed single";
+    private final String RES_TWO = "Disc is packed double";
+    private final String NEU = " in neutral - NEU box";
 
 
-  public List<Box> selectBox(List<Discs> discsList, List<Box> boxList, TextArea result) {
-    final List<Box> list = new ArrayList<>();
-    final List neuSingleBox = new ArrayList<>();
-    final List neuDoubleBox = new ArrayList<>();
-    discsList.forEach(i -> {
-      if (i.getWeight() > 9.5 || i.getHeight2() > 179) {
-        try {
-          neuSingleBox.addAll(singleDisc(neutralBoxList(), singleDiscPre(discsList))
-                  .map(Collections::singletonList).orElse(Collections.EMPTY_LIST));
-        } catch (FileNotFoundException e) {
-          e.printStackTrace();
-        }
-        list.addAll(singleDisc(boxList, singleDiscPre(discsList))
-                .map(Collections::singletonList)
-                .orElse(neuSingleBox));
-        logger.info(String.valueOf(list));
-        result.appendText(RES_ONE + "\n");
-      } else {
-        try {
-          neuSingleBox.addAll(doubleDisc(neutralBoxList(), doubleDiscPre(discsList))
-                  .map(Collections::singletonList).orElse(Collections.EMPTY_LIST));
-        } catch (FileNotFoundException e) {
-          e.printStackTrace();
-        }
-        list.addAll(doubleDisc(boxList, doubleDiscPre(discsList)).map(Collections::singletonList)
-                .orElse(neuDoubleBox));
-        result.appendText(RES_TWO + "\n");
-        logger.info(String.valueOf(list));
-      }
-    });
-    return list;
-  }
+    public List<Box> selectBox(List<Discs> discsList, List<Box> boxList, TextArea result) {
+        final List<Box> list = new ArrayList<>();
+        discsList.forEach(i -> {
+            if (i.getWeight() > 9.5 || i.getHeight2() > 179) {
+                list.addAll(singleDisc(boxList, singleDiscPre(discsList))
+                        .map(Collections::singletonList)
+                        .orElseGet(Collections::emptyList));
+                if (list.isEmpty()) {
+                    try {
+                        list.addAll(singleDisc(neutralBoxList(), singleDiscPre(discsList))
+                                .map(Collections::singletonList)
+                                .orElseGet(Collections::emptyList));
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    result.appendText(RES_ONE + NEU + "\n");
+                } else {
+                    logger.info(String.valueOf(list));
+                    result.appendText(RES_ONE + "\n");
+                }
+            } else {
+                list.addAll(doubleDisc(boxList, doubleDiscPre(discsList))
+                        .map(Collections::singletonList)
+                        .orElseGet(Collections::emptyList));
+                if (list.isEmpty()) {
+                    try {
+                        list.addAll(doubleDisc(neutralBoxList(), doubleDiscPre(discsList))
+                                .map(Collections::singletonList)
+                                .orElse(Collections.EMPTY_LIST));
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    result.appendText(RES_TWO + NEU + "\n");
+                } else {
+                    result.appendText(RES_TWO + "\n");
+                    logger.info(String.valueOf(list));
+                }
+            }
+        });
+        return list;
+    }
 
-  private Predicate<Box> singleDiscPre(List<Discs> discsList) {
-    return x ->
-            x.getWidth() >= discsList.listIterator().next().getDiameter()
-                    && x.getHeight() > discsList.iterator().next().getHeight();
-  }
+    private Predicate<Box> singleDiscPre(List<Discs> discsList) {
+        return x ->
+                x.getWidth() >= discsList.listIterator().next().getDiameter()
+                        && x.getHeight() > discsList.iterator().next().getHeight();
+    }
 
-  private Optional<Box> singleDisc(List<Box> boxList, Predicate<Box> predicate) {
-    return boxList.stream().filter(predicate).findFirst();
-  }
+    private Optional<Box> singleDisc(List<Box> boxList, Predicate<Box> predicate) {
+        return boxList.stream().filter(predicate).findFirst();
+    }
 
-  private Predicate<Box> doubleDiscPre(List<Discs> discsList) {
-    return x ->
-            x.getWidth() >= discsList.listIterator().next().getDiameter()
-                    && x.getHeight() > discsList.iterator().next().getHeight2();
-  }
+    private Predicate<Box> doubleDiscPre(List<Discs> discsList) {
+        return x ->
+                x.getWidth() >= discsList.listIterator().next().getDiameter()
+                        && x.getHeight() > discsList.iterator().next().getHeight2();
+    }
 
 
-  private Optional<Box> doubleDisc(List<Box> boxList, Predicate<Box> predicate) {
-    return boxList.stream().filter(predicate).findFirst();
-  }
+    private Optional<Box> doubleDisc(List<Box> boxList, Predicate<Box> predicate) {
+        return boxList.stream().filter(predicate).findFirst();
+    }
 
-  public List<Box> neutralBoxList() throws FileNotFoundException {
-    List<Box> list = new ArrayList<>();
-    ArrayList tempList = new Gson().fromJson(new FileReader(Resources.neuDB()), ListType.listBox());
-    list.addAll(tempList);
-    return list;
-  }
+    public List<Box> neutralBoxList() throws FileNotFoundException {
+        List<Box> list = new ArrayList<>();
+        ArrayList tempList = new Gson().fromJson(new FileReader(Resources.neuDB()), ListType.listBox());
+        list.addAll(tempList);
+        return list;
+    }
 }
